@@ -1,4 +1,8 @@
 package objets;
 
-public class Couleurs {
+public enum Couleurs {
+    JAUNE,
+    ROUGE,
+    BLEU,
+    NOIR,
 }
