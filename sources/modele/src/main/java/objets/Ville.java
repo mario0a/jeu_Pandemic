@@ -1,12 +1,17 @@
 package objets;
 
 
+import cartes.Carte;
+import cartes.CarteVille;
+
 import java.util.List;
 
 public class Ville implements IVille{
     private String nom;
     private String nomPays;
     private List<Ville> villeVoisines;
+
+    private CarteVille carteVille;
     //permet de savoir s'il y a un centre de recherche dans une ville
     private Boolean aUnCentreDeRecherche;
 
