@@ -3,6 +3,7 @@ package objets;
 public class Joueur {
     private String id;
     private String mdp;
+    private Ville position;
 
     //constructeur
     public Joueur() {}

@@ -1,4 +1,4 @@
-package objets;
+package marqueurs;
 
 public class MarqueurRemede {
 }
