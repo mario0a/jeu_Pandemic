@@ -1,5 +1,5 @@
-package objets;
+package cartes;
 
-public class DéfaussePropagation {
+public class DefaussePropagation {
     //contient une collection de cartes propagation défaussées
 }

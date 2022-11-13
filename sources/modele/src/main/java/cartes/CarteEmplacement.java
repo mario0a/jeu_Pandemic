@@ -1,5 +1,5 @@
 package cartes;
 
-public class CarteEmplacement
+public class CarteEmplacement extends Carte
 {
 }

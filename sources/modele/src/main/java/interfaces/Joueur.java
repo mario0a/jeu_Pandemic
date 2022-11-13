@@ -1,4 +1,6 @@
-package objets;
+package interfaces;
+
+import objets.Ville;
 
 public class Joueur {
     private String id;

@@ -1,4 +1,4 @@
-package objets;
+package main;
 
 public class InitialisationPartie {
 }
