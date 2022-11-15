@@ -1,0 +1,10 @@
+package modele;
+
+public enum TypeRole {
+    SCIENTIFIQUE,
+    CHERCHEUSE,
+    REPARTITEUR,
+    MEDECIN,
+    EXPERT_AUX_OPERATIONS,
+    PLANIFICATEUR_DURGENCE,
+}
