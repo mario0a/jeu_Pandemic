@@ -1,3 +1,5 @@
+package modele;
+
 public enum TypeEvenement {
     PONT_AERIEN,
     SUBVENTION_PUBLIQUE,

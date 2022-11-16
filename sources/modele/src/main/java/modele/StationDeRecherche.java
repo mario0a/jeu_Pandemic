@@ -1,4 +1,4 @@
-package objets;
+package modele;
 
 public class StationDeRecherche {
 }

@@ -1,6 +1,6 @@
 package cartes;
 
-import objets.CouleursMaladie;
+import modele.CouleursMaladie;
 
 public class CarteVille {
     private String nomVille;

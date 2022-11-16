@@ -1,10 +1,10 @@
-package objets;
+package modele;
 
-import cartes.CartePropagation;
-import cartes.CartesJoueurs;
 import cartes.DefausseJoueur;
 import cartes.DefaussePropagation;
 import eclosions.PisteDeclosion;
+import modele.EmplacementMaladies;
+import modele.Ville;
 
 import java.util.ArrayList;
 import java.util.List;

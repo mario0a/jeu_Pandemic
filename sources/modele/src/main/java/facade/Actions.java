@@ -1,6 +1,7 @@
-package objets;
+package facade;
 
 import cartes.Carte;
+import modele.StationDeRecherche;
 
 //contient les différentes actions qu'on peut effectuer sur le plateau
 public interface Actions {

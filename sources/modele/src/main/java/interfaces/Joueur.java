@@ -1,6 +1,6 @@
 package interfaces;
 
-import objets.Ville;
+import modele.Ville;
 
 public class Joueur {
     private String id;

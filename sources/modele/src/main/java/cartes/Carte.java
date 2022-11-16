@@ -1,4 +1,8 @@
 package cartes;
 
-public class Carte {
+import java.io.Serializable;
+
+
+public class Carte implements Serializable {
+
 }

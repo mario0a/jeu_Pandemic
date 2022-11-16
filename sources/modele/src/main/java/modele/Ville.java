@@ -1,12 +1,11 @@
-package objets;
+package modele;
 
 
-import cartes.Carte;
 import cartes.CarteVille;
 
 import java.util.List;
 
-public class Ville implements IVille{
+public class Ville {
     private String nom;
     private String nomPays;
     private List<Ville> villeVoisines;
