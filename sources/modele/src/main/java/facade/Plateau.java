@@ -1,95 +1,127 @@
 package facade;
 
+import LesActions.Actions;
 import cartes.DefausseJoueur;
 import cartes.DefaussePropagation;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Plateau {
-    private List<Ville> LesVilles;
-    private List<CartesJoueurs> cartesJoueurs;
-    private List<CartePropagation> cartesPropagation;
-    private List<DefausseJoueur> cartesDeLaDefausseJoueur;
-    private List<DefaussePropagation> cartesDeLaDefaussePropagation;
-    private PisteDeclosion pisteDeclosion;
-    //private int[] pisteDeclosion ;
-    private int[] pisteDePropagation;
-    private EmplacementMaladies emplacementMaladies;
+    private final List<Integer> PistevitesseDePropagation =List.of(2,2,2,3,3,4,4);
+    private List<ICartes> cartesJoueur;
+    private List<ICartes>carte_epidemie;
+    private List<Joueur> lesJoueurs;
+    private int nombreEclosion;
+    private int vitesseDePropagation;
+    private List<ICartes> cartesPropagation;
+    private List<ICartes> defausse_cartesJoueur;
+    private List<ICartes> defausse_carteDePropagation;
+    private List<Ville> lesVilles;
+    private List<Ville> villes_ontEclosion;
+    private List<Actions> stationDeRecherche;
 
-    public Plateau(List<Ville> lesVilles, List<CartesJoueurs> cartesJoueurs, List<CartePropagation> cartesPropagation, List<DefausseJoueur> cartesDeLaDefausseJoueur, List<DefaussePropagation> cartesDeLaDefaussePropagation, int[] pisteDeclosion, int[] pisteDePropagation) {
-        LesVilles = new ArrayList<>();
-        this.cartesJoueurs = new ArrayList<>();
-        this.cartesPropagation = new ArrayList<>();
-        this.cartesDeLaDefausseJoueur = new ArrayList<>();
-        this.cartesDeLaDefaussePropagation = new ArrayList<>();
-        this.pisteDeclosion = this.pisteDeclosion;
-        //this.pisteDeclosion = new int  [8];
-        this.pisteDePropagation = pisteDePropagation;
-        this.emplacementMaladies = new EmplacementMaladies();
+    public Plateau() {
+        this.nombreEclosion=0;
+        this.vitesseDePropagation=0;
+        this.cartesJoueur=new ArrayList<>();
+        this.defausse_carteDePropagation = new ArrayList<>();
+        this.lesVilles = new ArrayList<>();
+        this.carte_epidemie = new ArrayList<>();
+        this.lesJoueurs =new ArrayList<>();
+        this.cartesPropagation=new ArrayList<>();
+        this.defausse_cartesJoueur= new ArrayList<>();
+        for (Ville v: lesVilles){
+            cartesPropagation.add(new CarteEpidemie("propagation", TypeCarte.PROPAGATION));            )
+        }
+        Collections.shuffle(cartesPropagation);
     }
 
-    public List<Ville> getLesVilles() {
-        return LesVilles;
+    public List<Joueur> getLesJoueurs() {
+        return lesJoueurs;
     }
 
-    public void setLesVilles(List<Ville> lesVilles) {
-        LesVilles = lesVilles;
+    public void setLesJoueurs(List<Joueur> lesJoueurs) {
+        this.lesJoueurs = lesJoueurs;
     }
 
-    public List<CartesJoueurs> getCartesJoueurs() {
-        return cartesJoueurs;
+    public int getNombreEclosion() {
+        return nombreEclosion;
     }
 
-    public void setCartesJoueurs(List<CartesJoueurs> cartesJoueurs) {
-        this.cartesJoueurs = cartesJoueurs;
+    public void setNombreEclosion(int nombreEclosion) {
+        this.nombreEclosion = nombreEclosion;
     }
 
-    public List<CartePropagation> getCartesPropagation() {
+    public int getVitesseDePropagation() {
+        return vitesseDePropagation;
+    }
+
+    public void setVitesseDePropagation(int vitesseDePropagation) {
+        this.vitesseDePropagation = vitesseDePropagation;
+    }
+
+    public List<ICartes> getCartesJoueur() {
+        return cartesJoueur;
+    }
+
+    public void setCartesJoueur(List<ICartes> cartesJoueur) {
+        this.cartesJoueur = cartesJoueur;
+    }
+
+    public List<ICartes> getCartesPropagation() {
         return cartesPropagation;
     }
 
-    public void setCartesPropagation(List<CartePropagation> cartesPropagation) {
+    public void setCartesPropagation(List<ICartes> cartesPropagation) {
         this.cartesPropagation = cartesPropagation;
     }
 
-    public List<DefausseJoueur> getCartesDeLaDefausseJoueur() {
-        return cartesDeLaDefausseJoueur;
+    public List<ICartes> getDefausse_cartesJoueur() {
+        return defausse_cartesJoueur;
     }
 
-    public void setCartesDeLaDefausseJoueur(List<DefausseJoueur> cartesDeLaDefausseJoueur) {
-        this.cartesDeLaDefausseJoueur = cartesDeLaDefausseJoueur;
+    public void setDefausse_cartesJoueur(List<ICartes> defausse_cartesJoueur) {
+        this.defausse_cartesJoueur = defausse_cartesJoueur;
     }
 
-    public List<DefaussePropagation> getCartesDeLaDefaussePropagation() {
-        return cartesDeLaDefaussePropagation;
+    public List<ICartes> getDefausse_carteDePropagation() {
+        return defausse_carteDePropagation;
     }
 
-    public void setCartesDeLaDefaussePropagation(List<DefaussePropagation> cartesDeLaDefaussePropagation) {
-        this.cartesDeLaDefaussePropagation = cartesDeLaDefaussePropagation;
+    public void setDefausse_carteDePropagation(List<ICartes> defausse_carteDePropagation) {
+        this.defausse_carteDePropagation = defausse_carteDePropagation;
     }
 
-    public PisteDeclosion getPisteDeclosion() {
-        return pisteDeclosion;
+    public List<Actions> getStationDeRecherche(Ville ville) {
+        return this.stationDeRecherche;
     }
 
-    public void setPisteDeclosion(PisteDeclosion pisteDeclosion) {
-        this.pisteDeclosion = pisteDeclosion;
+    public List<Ville> getLesVilles() {
+        return lesVilles;
     }
 
-    public int[] getPisteDePropagation() {
-        return pisteDePropagation;
+    public void setLesVilles(List<Ville> lesVilles) {
+        this.lesVilles = lesVilles;
     }
 
-    public void setPisteDePropagation(int[] pisteDePropagation) {
-        this.pisteDePropagation = pisteDePropagation;
+    public List<Integer> getPistevitesseDePropagation() {
+        return PistevitesseDePropagation;
     }
+    public void rejoindrePartie(Joueur joueur){this.lesJoueurs.add(joueur);}
+    public void abandonnerPartie(Joueur joueur){this.lesJoueurs.remove(joueur);}
 
-    public EmplacementMaladies getEmplacementMaladies() {
-        return emplacementMaladies;
-    }
-
-    public void setEmplacementMaladies(EmplacementMaladies emplacementMaladies) {
-        this.emplacementMaladies = emplacementMaladies;
+    public void ajouterCartesJoueur(ICartes carte){this.cartesJoueur.add(carte);}
+    public void ajouterCartePropagation(ICartes carte){this.cartesPropagation.add(carte);}
+    public void ajouterCarteALaDefausse(ICartes carte){this.defausse_cartesJoueur.add(carte);}
+    public void ajouterCarteALaDefaussePropagation(ICartes carte){this.defausse_carteDePropagation.add(carte);}
+    public void diffusionEpidemie(){
+        villes_ontEclosion.addAll(lesVilles);
+        int nombreCube=0;
+        getPistevitesseDePropagation();
+        CarteVille cartePropagation = (CarteVille) cartesPropagation.remove(cartesPropagation.size()-1);
+        Ville villeInfectee = cartePropagation.getVille();
+        CouleursMaladie maladie = villeInfectee.getMaladie();
     }
 }

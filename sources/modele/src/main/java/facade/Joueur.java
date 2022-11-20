@@ -9,9 +9,8 @@ public class Joueur {
     private String mdp;
     private Ville position;
     private TypeRole typeRole;
-    private List<CartesJoueur> cartes_en_main;
-    private int nombreCarteJoueur;
-    private int nombre_action =4;
+    //private List<CartesJoueur> cartes_en_main;
+    //private int nombreCarteJoueur;
     private Partie1Joueur partie;
     private ArrayList<CartesJoueur> carte_a_partager = new ArrayList();
 
@@ -23,11 +22,11 @@ public class Joueur {
         this.mdp = mdp;
     }
 
-    public Joueur(String nomJoueur, Ville position, TypeRole typeRole, List<CartesJoueur> cartes_en_main) {
+    public Joueur(String nomJoueur, Ville position, TypeRole typeRole) {
         this.nomJoueur = nomJoueur;
         this.position = position;
         this.typeRole = typeRole;
-        this.cartes_en_main = cartes_en_main;
+
     }
 
     public Partie1Joueur getPartie() {
@@ -62,29 +61,13 @@ public class Joueur {
         this.typeRole = typeRole;
     }
 
-    public List<CartesJoueur> getCartes_en_main() {
-        return cartes_en_main;
-    }
+    //public List<CartesJoueur> getCartes_en_main() return cartes_en_main;}
 
-    public void setCartes_en_main(List<CartesJoueur> cartes_en_main) {
-        this.cartes_en_main = cartes_en_main;
-    }
+    //public void setCartes_en_main(List<CartesJoueur> cartes_en_main) {this.cartes_en_main = cartes_en_main;}
 
-    public int getNombreCarteJoueur() {
-        return nombreCarteJoueur;
-    }
+   // public int getNombreCarteJoueur() {return nombreCarteJoueur;}
 
-    public void setNombreCarteJoueur(int nombreCarteJoueur) {
-        this.nombreCarteJoueur = nombreCarteJoueur;
-    }
-
-    public int getNombre_action() {
-        return nombre_action;
-    }
-
-    public void setNombre_action(int nombre_action) {
-        this.nombre_action = nombre_action;
-    }
+    //public void setNombreCarteJoueur(int nombreCarteJoueur) {this.nombreCarteJoueur = nombreCarteJoueur;}
 
     public ArrayList<CartesJoueur> getCarte_a_partager() {
         return carte_a_partager;

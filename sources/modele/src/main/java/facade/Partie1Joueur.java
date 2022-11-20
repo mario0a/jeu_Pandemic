@@ -1,9 +1,43 @@
 package facade;
 
+import cartes.Carte;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Partie1Joueur {
+    private Joueur joueur;
+    private Plateau partie;
+    private List<JeuDeCartes> cartesVille;
+    private List<JeuDeCartes> cartEpidemie;
+    private List<JeuDeCartes> carteEvenement;
+    private List<JeuDeCartes> cartePropagation;
+
+
+    private int nombre_action =4;
+
+
+    private List<CartesJoueur> cartes_en_main;
+    private int nombreCarteJoueur;
+
+
+
+
+
+    public int getNombre_action() {
+        return nombre_action;
+    }
+
+     public void setNombre_action(int nombre_action) {this.nombre_action = nombre_action;}
+
+
+
+
+
 
     //retire une carte des cartes que le joueur a en main
     public void diminuer_carte_en_main (CartesJoueur carte){
+
         cartes_en_main.removeIf(cartesJoueur -> cartesJoueur == carte);
     }
 
