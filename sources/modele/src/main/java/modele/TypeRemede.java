@@ -1,4 +1,4 @@
-package facade;
+package modele;
 
 public enum TypeRemede {
     REMEDE_ROUGE,

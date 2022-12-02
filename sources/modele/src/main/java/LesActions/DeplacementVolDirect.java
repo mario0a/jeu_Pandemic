@@ -1,9 +1,9 @@
 package LesActions;
 
 import exceptions.CarteArriveeInexistanteException;
-import facade.ICartes;
-import facade.Joueur;
-import facade.Ville;
+import modele.interfaces.ICartes;
+import modele.Joueur;
+import modele.Ville;
 
 // permet de se déplacer vers une ville dont on a joué la carte
 public class DeplacementVolDirect implements IDeplacements {

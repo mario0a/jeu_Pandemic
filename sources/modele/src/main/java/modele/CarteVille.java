@@ -1,6 +1,8 @@
-package facade;
+package modele;
 
-public class CarteVille implements ICartes{
+import modele.interfaces.ICartes;
+
+public class CarteVille implements ICartes {
     private Ville ville;
     private TypeCarte typeCarte;
 

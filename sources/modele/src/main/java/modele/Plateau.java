@@ -1,8 +1,7 @@
-package facade;
+package modele;
 
 import LesActions.Actions;
-import cartes.DefausseJoueur;
-import cartes.DefaussePropagation;
+import modele.interfaces.ICartes;
 
 import java.util.ArrayList;
 import java.util.Collections;

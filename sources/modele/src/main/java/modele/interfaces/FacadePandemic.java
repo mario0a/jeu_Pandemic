@@ -1,4 +1,4 @@
-package facade;
+package modele.interfaces;
 
 import exceptions.PartieCompleteException;
 import exceptions.PartieDejaTermineException;

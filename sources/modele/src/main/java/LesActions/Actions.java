@@ -1,7 +1,7 @@
 package LesActions;
 
 import cartes.Carte;
-import facade.Ville;
+import modele.Ville;
 
 //contient les différentes actions qu'on peut effectuer sur le plateau
 public interface Actions {

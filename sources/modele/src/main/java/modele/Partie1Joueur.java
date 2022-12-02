@@ -1,8 +1,5 @@
-package facade;
+package modele;
 
-import cartes.Carte;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class Partie1Joueur {

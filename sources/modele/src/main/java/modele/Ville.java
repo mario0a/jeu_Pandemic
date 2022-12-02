@@ -1,4 +1,4 @@
-package facade;
+package modele;
 
 
 import java.util.HashSet;

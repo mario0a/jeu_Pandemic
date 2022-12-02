@@ -1,7 +1,6 @@
-package facade;
+package modele;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Joueur {
     private String nomJoueur;

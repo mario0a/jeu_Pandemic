@@ -1,10 +1,12 @@
-package facade;
+package modele;
 
-public class CarteEpidemie implements ICartes{
+import modele.interfaces.ICartes;
+
+public class CarteEvenement implements ICartes {
     private String nom;
     private TypeCarte typeCarte;
 
-    public CarteEpidemie(String nom, TypeCarte typeCarte) {
+    public CarteEvenement(String nom, TypeCarte typeCarte) {
         this.nom = nom;
         this.typeCarte = typeCarte;
     }

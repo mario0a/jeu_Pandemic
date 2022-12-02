@@ -1,4 +1,4 @@
-package facade;
+package modele;
 
 public enum FaceCartes {
     FACEVISIBLE,

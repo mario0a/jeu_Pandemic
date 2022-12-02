@@ -1,7 +1,7 @@
 package LesActions;
 
 import exceptions.CarteArriveeInexistanteException;
-import facade.Joueur;
+import modele.Joueur;
 
 public class ContexteDeplacement {
     private IDeplacements lesDeplacements;
