@@ -10,9 +10,9 @@ public class DeplacementVolDirect implements IDeplacements {
     private Ville villeArrivee;
 
     @Override
-    public void faireAction(Joueur joueur) throws Exception {
-        if (joueur.getCarteJoueur().stream().anyMatch(carte -> carte.information().equals(villeArrivee.getNomVille()))) {
-            ICartes carte = joueur.getCartesJoueur().stream.filter(carte -> carte.information().equals(villeArrivee.getNomVille())).collect(collectors.toList()).get(0);
+    public void faireAction(Joueur joueur) throws Exception, CarteArriveeInexistanteException {
+        if (joueur.getCartes_en_main().stream().anyMatch(carte -> carte.informations().equals(villeArrivee.getNomVille()))) {
+            ICartes carte = joueur.getCartes_en_main().stream().filter(carte -> carte.informations().equals(villeArrivee.getNomVille())).collect(collectors.toList()).get(0);
             joueur.removeCarte(carte);
             joueur.getPartie().addCarteDeffaussee(carte);
         }else {

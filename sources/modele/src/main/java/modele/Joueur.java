@@ -1,6 +1,7 @@
 package modele;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Joueur {
     private String nomJoueur;
@@ -60,7 +61,7 @@ public class Joueur {
         this.typeRole = typeRole;
     }
 
-    //public List<CartesJoueur> getCartes_en_main() return cartes_en_main;}
+    public List<CartesJoueur> getCartes_en_main() return cartes_en_main;}
 
     //public void setCartes_en_main(List<CartesJoueur> cartes_en_main) {this.cartes_en_main = cartes_en_main;}
 
