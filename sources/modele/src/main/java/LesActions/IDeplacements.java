@@ -4,5 +4,5 @@ import exceptions.CarteArriveeInexistanteException;
 import modele.Joueur;
 
 public interface IDeplacements {
-    public void faireAction(Joueur joueur) throws CarteArriveeInexistanteException;
+    public void operationDeplacement(Joueur joueur) throws CarteArriveeInexistanteException;
 }

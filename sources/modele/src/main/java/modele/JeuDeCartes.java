@@ -196,17 +196,12 @@ return cartes;
         return lesVilles;
     }
     public static List<ICartes> distribuerCartes(int i){
-        switch (i){
-            case 2:
-                return cartesJoueur.subList(0,4);
-            case 3:
-                return cartesJoueur.subList(5,8);
-            case 4:
-                return cartesJoueur.subList(8,10);
-            default:
-                return null;
-
-        }
+        return switch (i) {
+            case 2 -> cartesJoueur.subList(0, 4);
+            case 3 -> cartesJoueur.subList(5, 8);
+            case 4 -> cartesJoueur.subList(8, 10);
+            default -> null;
+        };
     }
 
 }

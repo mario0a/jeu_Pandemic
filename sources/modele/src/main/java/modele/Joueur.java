@@ -9,7 +9,8 @@ public class Joueur {
     private String mdp;
     private Ville position;
     private TypeRole typeRole;
-    //private List<CartesJoueur> cartes_en_main;
+    private List<CartesJoueur> cartes_en_main;
+
     //private int nombreCarteJoueur;
     private Partie1Joueur partie;
     private ArrayList<CartesJoueur> carte_a_partager = new ArrayList();
@@ -27,6 +28,10 @@ public class Joueur {
         this.position = position;
         this.typeRole = typeRole;
 
+    }
+
+    public List<CartesJoueur> getCartes_en_main() {
+        return cartes_en_main;
     }
 
     public Partie1Joueur getPartie() {
@@ -61,9 +66,7 @@ public class Joueur {
         this.typeRole = typeRole;
     }
 
-    public List<CartesJoueur> getCartes_en_main() return cartes_en_main;}
 
-    //public void setCartes_en_main(List<CartesJoueur> cartes_en_main) {this.cartes_en_main = cartes_en_main;}
 
    // public int getNombreCarteJoueur() {return nombreCarteJoueur;}
 

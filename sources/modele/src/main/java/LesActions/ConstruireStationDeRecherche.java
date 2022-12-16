@@ -1,15 +1,19 @@
 package LesActions;
 
 import exceptions.CarteArriveeInexistanteException;
+import modele.JeuDeCartes;
 import modele.Joueur;
+import modele.Plateau;
 
-public class ConstruireStationDeRecherche implements IDeplacements{
+public class ConstruireStationDeRecherche {
     private String villeAUneStationDeRecherche;
 
-    @Override
-    public void faireAction(Joueur joueur) throws CarteArriveeInexistanteException {
+    public void construireStationDeRecherche(Joueur joueur, Plateau plateau) throws CarteArriveeInexistanteException {
         if (joueur.getCartes_en_main().stream().anyMatch(carte->carte.informations().equals(joueur.getPosition().getNomVille()))){
-            if (joueur.getPartie().getLesVilles().stream.filter(v ->v));
+            if (JeuDeCartes.lesVilles().stream().anyMatch(v ->v.getNomVille().equals(joueur.getPosition().getNomVille()))){
+                int index = plateau.getLesVilles().indexOf(joueur.getPosition());
+                plateau.getLesVilles().get(index).setaUnCentreDeRecherche(true);
+            }
         }
     }
 }

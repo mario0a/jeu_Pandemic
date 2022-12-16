@@ -21,9 +21,10 @@ public class ContexteDeplacement {
     //délègue le déplacement d'un pion à la stratégie lesDeplacements qui fera à la bonne stratégie concrète de déplacement
     public void executerDeplacement(Joueur joueur){
         try {
-            lesDeplacements.executeDeplacement(joueur); // lève une exception, à traiter!!
+            lesDeplacements.operationDeplacement(joueur); // lève une exception, à traiter!!
         } catch (CarteArriveeInexistanteException e) {
             throw new RuntimeException(e);
         }
     }
 }
+

@@ -26,13 +26,14 @@ public class Plateau {
         this.vitesseDePropagation=0;
         this.cartesJoueur=new ArrayList<>();
         this.defausse_carteDePropagation = new ArrayList<>();
-        this.lesVilles = new ArrayList<>();
+        this.lesVilles = JeuDeCartes.lesVilles();
         this.carte_epidemie = new ArrayList<>();
         this.lesJoueurs =new ArrayList<>();
         this.cartesPropagation=new ArrayList<>();
         this.defausse_cartesJoueur= new ArrayList<>();
+
         for (Ville v: lesVilles){
-            cartesPropagation.add(new CarteEpidemie("propagation", TypeCarte.PROPAGATION));            )
+            cartesPropagation.add(new CarteEpidemie("propagation", TypeCarte.PROPAGATION));
         }
         Collections.shuffle(cartesPropagation);
     }
