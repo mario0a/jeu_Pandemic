@@ -1,6 +1,7 @@
 package modele;
 
 import exceptions.PartiePleineException;
+import modele.interfaces.ICartes;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -10,7 +11,7 @@ public class Partie {
     private String id;
     private EtatPartie etatPartie;
     private LocalDate dateCreation;
-    private List<CarteVille> carteDefausse;
+    private List<ICartes> carteDefausse;
     private List<Partie1Joueur> partieJoueur;
 
     public Partie() {}
@@ -37,9 +38,9 @@ public class Partie {
         this.dateCreation = dateCreation;
     }
 
-    public List<CarteVille> getCarteDefausse() { return carteDefausse;}
+    public List<ICartes> getCarteDefausse() { return carteDefausse;}
 
-    public void setCarteDefausse(List<CarteVille> carteDefausse) { this.carteDefausse = carteDefausse; }
+    public void setCarteDefausse(List<ICartes> carteDefausse) { this.carteDefausse = carteDefausse; }
 
     public List<Partie1Joueur> getPartieJoueur() {
         return partieJoueur;
@@ -64,6 +65,18 @@ public class Partie {
         };
     }
 
+    public void ajouterUneCarteALaDefausse(ICartes carte){
+        this.carteDefausse.add(carte);
+    }
 
-
+    @Override
+    public String toString() {
+        return "Partie{" +
+                "id='" + id + '\'' +
+                ", etatPartie=" + etatPartie +
+                ", dateCreation=" + dateCreation +
+                ", carteDefausse=" + carteDefausse +
+                ", partieJoueur=" + partieJoueur +
+                '}';
+    }
 }
