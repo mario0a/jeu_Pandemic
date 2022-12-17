@@ -1,5 +1,7 @@
 package modele;
 
+import exceptions.PartiePleineException;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -47,5 +49,12 @@ public class Partie {
         this.partieJoueur = partieJoueur;
     }
 
+    public void  ajouterPartie1Joueur(Partie1Joueur partie1Joueur) throws PartiePleineException{
+        if (this.partieJoueur.size()<4){
+            this.partieJoueur.add(partie1Joueur);
+        }else {
+            throw  new PartiePleineException();
+        }
+    }
 
 }
