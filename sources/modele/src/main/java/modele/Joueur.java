@@ -10,8 +10,6 @@ public class Joueur {
     private Ville position;
     private TypeRole typeRole;
     private List<CartesJoueur> cartes_en_main;
-
-    //private int nombreCarteJoueur;
     private Partie1Joueur partie;
     private ArrayList<CartesJoueur> carte_a_partager = new ArrayList();
 
@@ -65,12 +63,6 @@ public class Joueur {
     public void setTypeRole(TypeRole typeRole) {
         this.typeRole = typeRole;
     }
-
-
-
-   // public int getNombreCarteJoueur() {return nombreCarteJoueur;}
-
-    //public void setNombreCarteJoueur(int nombreCarteJoueur) {this.nombreCarteJoueur = nombreCarteJoueur;}
 
     public ArrayList<CartesJoueur> getCarte_a_partager() {
         return carte_a_partager;
