@@ -57,4 +57,13 @@ public class Partie {
         }
     }
 
+    public boolean partieInitialisee(){
+        return switch (this.partieJoueur.size()){
+            case 2,3,4 -> true;
+            default -> false;
+        };
+    }
+
+
+
 }
