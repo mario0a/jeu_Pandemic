@@ -20,4 +20,32 @@ public class Partie {
         this.carteDefausse = new ArrayList<>();
         this.etatPartie = EtatPartie.DEBUT;
     }
+
+    public String getId() { return id; }
+
+    public void setId(String id) { this.id = id;}
+
+    public EtatPartie getEtatPartie() { return etatPartie;}
+
+    public void setEtatPartie(EtatPartie etatPartie) {this.etatPartie = etatPartie;}
+
+    public LocalDate getDateCreation() { return dateCreation; }
+
+    public void setDateCreation(LocalDate dateCreation) {
+        this.dateCreation = dateCreation;
+    }
+
+    public List<CarteVille> getCarteDefausse() { return carteDefausse;}
+
+    public void setCarteDefausse(List<CarteVille> carteDefausse) { this.carteDefausse = carteDefausse; }
+
+    public List<Partie1Joueur> getPartieJoueur() {
+        return partieJoueur;
+    }
+
+    public void setPartieJoueur(List<Partie1Joueur> partieJoueur) {
+        this.partieJoueur = partieJoueur;
+    }
+
+
 }
