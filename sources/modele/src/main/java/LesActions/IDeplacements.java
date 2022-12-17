@@ -1,8 +1,10 @@
 package LesActions;
 
 import exceptions.CarteArriveeInexistanteException;
+import exceptions.PasCentreRechercheException;
 import modele.Joueur;
+import modele.Ville;
 
 public interface IDeplacements {
-    public void operationDeplacement(Joueur joueur) throws CarteArriveeInexistanteException;
+    void operationDeplacement(Joueur joueur, Ville choix) throws PasCentreRechercheException;
 }
