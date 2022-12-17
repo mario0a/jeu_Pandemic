@@ -20,6 +20,8 @@ public class Plateau {
     private List<Ville> lesVilles;
     private List<Ville> villes_ontEclosion;
     private List<Actions> stationDeRecherche;
+    private List<TypeRemede> lesRemedesActif = new ArrayList<>();
+    private List<Ville> lesStationsDeRecherche;
 
     public Plateau() {
         this.nombreEclosion=0;
@@ -31,6 +33,7 @@ public class Plateau {
         this.lesJoueurs =new ArrayList<>();
         this.cartesPropagation=new ArrayList<>();
         this.defausse_cartesJoueur= new ArrayList<>();
+
 
         for (Ville v: lesVilles){
             cartesPropagation.add(new CarteEpidemie("propagation", TypeCarte.PROPAGATION));
@@ -108,6 +111,13 @@ public class Plateau {
 
     public List<Integer> getPistevitesseDePropagation() {
         return PistevitesseDePropagation;
+    }
+    public List<Ville> getLesStationsDeRecherche() {
+        return lesStationsDeRecherche;
+    }
+
+    public List<TypeRemede> getLesRemedesActif() {
+        return lesRemedesActif;
     }
     public void rejoindrePartie(Joueur joueur){this.lesJoueurs.add(joueur);}
     public void abandonnerPartie(Joueur joueur){this.lesJoueurs.remove(joueur);}
