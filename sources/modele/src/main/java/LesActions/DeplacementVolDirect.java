@@ -10,8 +10,6 @@ import java.util.stream.Collectors;
 
 /* permet de se déplacer vers une ville dont on a joué la carte*/
 public class DeplacementVolDirect implements IDeplacements {
-    private Ville villeArrivee;
-
 
     @Override
     public void operationDeplacement(Joueur joueur, Ville choix) throws PasCentreRechercheException {
