@@ -20,5 +20,4 @@ public class DeplacementVolCharter implements IDeplacements{
             joueur.setPosition(choix);
         }
     }
-    }
 }
