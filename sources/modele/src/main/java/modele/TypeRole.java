@@ -7,9 +7,8 @@ public enum TypeRole {
     MEDECIN("Medecin"),
     EXPERT_AUX_OPERATIONS("Expert aux opérations"),
     PLANIFICATEUR_DURGENCE ("Planificateur d'urgence"),
-    SPECIALISTE_EN_MISE_EN_QUARANTAINE("Spécialiste en mise e quarentaire"),
+    SPECIALISTE_EN_MISE_EN_QUARANTAINE("Spécialiste en mise en quarentaire"),
     ;
 
-    TypeRole(String s) {
-    }
+    TypeRole(String s) {}
 }

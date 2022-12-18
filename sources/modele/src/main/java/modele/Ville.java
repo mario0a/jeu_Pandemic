@@ -104,6 +104,12 @@ public class Ville {
     public void setVillesLiees(List<Ville> villesLiees) {
         this.villesLiees = villesLiees;
     }
+    public Boolean getaUnCentreDeRecherche() {return aUnCentreDeRecherche;}
+
+    public void setaUnCentreDeRecherche(Boolean aUnCentreDeRecherche) {
+        this.aUnCentreDeRecherche = aUnCentreDeRecherche;
+    }
+    public boolean aUnCentreDeRecherche(){return aUnCentreDeRecherche;}
 
     /*public int getNombre_carte_propagation() {
         return nombre_carte_propagation;
@@ -114,11 +120,6 @@ public class Ville {
     }
 */
     public void ajouterVillesLiees(Ville ville){ this.villesLiees.add(ville);}
-    public Boolean getaUnCentreDeRecherche() {return aUnCentreDeRecherche;}
-
-    public void setaUnCentreDeRecherche(Boolean aUnCentreDeRecherche) {
-        this.aUnCentreDeRecherche = aUnCentreDeRecherche;
-    }
 
 
     @Override
