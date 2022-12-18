@@ -2,6 +2,7 @@ package facade;
 
 import dao.Dao;
 import exceptions.PartieNonRepriseException;
+import exceptions.PartieNonSuspenduException;
 import exceptions.PartiePleineException;
 import modele.Partie;
 import modele.Plateau;
@@ -19,9 +20,8 @@ public class FacadePandemicOnline implements IFacadePandemicOnline {
 
     @Override
     public void inscription(String nomJoueur, String mdp) {
-
+        Dao.inscription(nomJoueur,mdp);
     }
-
     @Override
     public boolean seConnecter(String nomJoueur, String mdp) {
         return Dao.seConnecter(nomJoueur,mdp);
@@ -29,126 +29,46 @@ public class FacadePandemicOnline implements IFacadePandemicOnline {
 
     @Override
     public void creerPartie(String id, String nomJoueur) throws PartiePleineException {
-
+        Dao.creerPartie(id,nomJoueur);
     }
 
     @Override
     public Collection<Partie> getLesParties() {
-        return null;
+        return Dao.getLesParties();
     }
 
     @Override
     public String getEtatPartie(String id) {
-        return null;
+        return Dao.getEtatPartie(id);
     }
 
     @Override
     public Collection<Partie> getLesPartiesSuspendues() {
-        return null;
+        return Dao.getLesPartiesSuspendues();
     }
 
     @Override
     public boolean suspendreLaPartie(String idPartie, String nomJoueur) throws PartieNonRepriseException {
-        return false;
+        return Dao.suspendreLaPartie(idPartie,nomJoueur);
     }
 
     @Override
     public boolean quitterLaPartie(String idPartie, String nomJoueur) {
-        return false;
+        return Dao.quitterLaPartie(idPartie,nomJoueur);
+    }
+
+    @Override
+    public boolean reprendreUnePartie(String idPartie, String nomJoueur) throws PartieNonSuspenduException {
+        return Dao.reprendreUnePartie(idPartie,nomJoueur);
     }
 
     @Override
     public boolean peutQuitterLaPartie(String idPartie) {
-        return false;
+        return Dao.peutQuitterLaPartie(idPartie);
     }
 
     @Override
     public boolean createurPartie(String idPartie, String nomJoueur) {
-        return false;
-    }
-
-    @Override
-    public void piocherCarte(ICartes carte) {
-
-    }
-
-    @Override
-    public void seDeplacer() {
-
-    }
-
-    @Override
-    public void contruireUneStationDeRcherche() {
-
-    }
-
-    @Override
-    public void traiterUneMaladie() {
-
-    }
-
-    @Override
-    public void partagerDesConnaissances() {
-
-    }
-
-    @Override
-    public void trouvrerRemede() {
-
-    }
-
-    @Override
-    public boolean carte_en_main_par_rapport_a_position(Ville ville) {
-        return false;
-    }
-
-    @Override
-    public void diminuerActions() {
-
-    }
-
-    @Override
-    public boolean carte_en_main() {
-        return false;
-    }
-
-    @Override
-    public void diminuer_carte_en_main() {
-
-    }
-
-    @Override
-    public void distribution(String idPartie) {
-
-    }
-
-    @Override
-    public void partieCommence(String idPartie) {
-
-    }
-
-    @Override
-    public void accederPartie(String idPartie, String pseudo) {
-
-    }
-
-    @Override
-    public void accederUnePartie(String idPartie, String pseudo) {
-
-    }
-
-    @Override
-    public boolean connexion(String pseudo, String mdp) {
-        return false;
-    }
-
-    @Override
-    public boolean reAccederAuJeu(String idPartie, String pseudo) {
-        return false;
-    }
-
-    @Override
-    public Collection<Plateau> getLesPartiesSuspendues(String idPArtie, String pseudo) {
-        return null;
+        return Dao.createurPartie(idPartie, nomJoueur);
     }
 }
