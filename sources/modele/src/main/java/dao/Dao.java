@@ -103,5 +103,12 @@ public class Dao {
         else {
             throw new PartieNonSuspenduException();
         }
+
+    }
+
+    public static boolean peutQuitterLaPartie(String idPartie){
+        MongoCollection<Partie> partieMongoCollection = db.getCollection("parties", Partie.class);
+        Partie partie = partieMongoCollection.find(Filters.and(Filters.eq("_id",idPartie),Filters.or(Filters.eq("etatPartie","EN_COURS"), Filters.eq("etatPartie","DEBUT")))).first();
+        return Objects.isNull(partie);
     }
 }
