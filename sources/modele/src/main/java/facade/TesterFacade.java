@@ -16,7 +16,6 @@ public class TesterFacade {
         } catch (PartiePleineException e) {
             throw new RuntimeException("Vous ne pouvez pas créer une partie");
         }
-
     }
 
 

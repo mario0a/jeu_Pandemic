@@ -96,7 +96,7 @@ public class FacadePandemicOnline implements IFacadePandemicOnline {
     }
 
     @Override
-    public void echangerCarte(String idPartie, String nomJoueurDonneur, String nomJoueurReceveur, CartesJoueur carte, Actions actions) throws NombreCarteDepasseException, AbsenceCarteJoueurException, PositionJoueursDifferenteExceptions {
+    public void echangerCarte(String idPartie, String nomJoueurDonneur, String nomJoueurReceveur, CartesJoueur carte, Actions actions) throws NombreCarteDepasseException, AbsenceCarteJoueurException, PositionJoueursDifferenteExceptions, CarteVilleDifferentePositionJoueur {
     Dao.echangerCarte(idPartie,  nomJoueurDonneur,  nomJoueurReceveur,  carte,  actions);
     }
 

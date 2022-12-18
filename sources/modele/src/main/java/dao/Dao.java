@@ -198,7 +198,7 @@ public class Dao {
     }
 
 
-    public static void echangerCarte(String idPartie,String nomJoueurDonneur, String nomJoueurReceveur, CartesJoueur carte,Actions actions) throws NombreCarteDepasseException, AbsenceCarteJoueurException, PositionJoueursDifferenteExceptions {
+    public static void echangerCarte(String idPartie,String nomJoueurDonneur, String nomJoueurReceveur, CartesJoueur carte,Actions actions) throws NombreCarteDepasseException, AbsenceCarteJoueurException, PositionJoueursDifferenteExceptions, CarteVilleDifferentePositionJoueur {
         MongoCollection<Partie> partieMongoCollection = db.getCollection("parties", Partie.class);
         Collection<Partie> partieCollection = new ArrayList<>();
         Partie partie = partieMongoCollection.find(Filters.eq("_id",idPartie)).first();
