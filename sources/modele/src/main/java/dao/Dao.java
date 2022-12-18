@@ -7,8 +7,10 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.Filters;
 import com.mongodb.client.model.Updates;
-import exceptions.PartieNonReprendreException;
+import exceptions.PartieNonRepriseException;
+import exceptions.PartieNonRepriseException;
 import exceptions.PartieNonSuspenduException;
+import exceptions.PartiePleineException;
 import modele.Joueur;
 import modele.Partie;
 import modele.Partie1Joueur;
@@ -44,11 +46,26 @@ public class Dao {
         return partie.partieInitialisee();
     }
 
+    //Pour créer une nouvelle partie
+    public static void creerPartie(String id, String nomJoueur) throws PartiePleineException {
+        MongoCollection<Partie> partieMongoCollection = db.getCollection("parties", Partie.class);
+        Partie partie = new Partie(id);
+        partie.ajouterPartie1Joueur(new Partie1Joueur(nomJoueur, true));
+        partieMongoCollection.insertOne(partie);
+    }
+
     public static Collection<Partie> getLesParties() {
         MongoCollection<Partie> partieMongoCollection = db.getCollection("parties", Partie.class);
         Collection<Partie> partieCollection = new ArrayList<>();
         partieMongoCollection.find().forEach(p -> partieCollection.add(p));
         return partieCollection;
+    }
+
+    //Récuperer l'état actuel d'une partie
+    public static String getEtatPartie(String id) {
+        MongoCollection<Partie> partieMongoCollection = db.getCollection("parties", Partie.class);
+        Partie partie = partieMongoCollection.find(Filters.eq("_id", id)).first();
+        return String.valueOf(partie.getEtatPartie());
     }
 
     //Récupérer les parties suspendues
@@ -59,7 +76,7 @@ public class Dao {
         return partieCollection;
     }
 
-    public static boolean suspendreLaPartie(String idPartie, String nomJoueur) throws PartieNonReprendreException {
+    public static boolean suspendreLaPartie(String idPartie, String nomJoueur) throws PartieNonRepriseException {
         MongoCollection<Partie> partieMongoCollection = db.getCollection("parties", Partie.class);
         Partie partie = partieMongoCollection.find(Filters.and(Filters.eq("_id", idPartie), Filters.or(Filters.eq("etatPartie", "EN_COURS"), Filters.eq("etatPartie", "DEBUT")))).first();
         if (Objects.nonNull(partie)) {
@@ -70,7 +87,7 @@ public class Dao {
                 return false;
             }
         } else {
-            throw new PartieNonReprendreException();
+            throw new PartieNonRepriseException();
         }
     }
 
