@@ -1,15 +1,13 @@
 package facade;
 
+import LesActions.Actions;
 import dao.Dao;
-import exceptions.PartieNonRepriseException;
-import exceptions.PartieNonSuspenduException;
-import exceptions.PartiePleineException;
-import modele.Partie;
-import modele.Plateau;
-import modele.Ville;
+import exceptions.*;
+import modele.*;
 import modele.interfaces.ICartes;
 
 import java.util.Collection;
+import java.util.List;
 
 public class FacadePandemicOnline implements IFacadePandemicOnline {
 
@@ -70,5 +68,35 @@ public class FacadePandemicOnline implements IFacadePandemicOnline {
     @Override
     public boolean createurPartie(String idPartie, String nomJoueur) {
         return Dao.createurPartie(idPartie, nomJoueur);
+    }
+
+    @Override
+    public void traiterMaladie(String idPartie, String nomJoueur, CouleursMaladie couleurMaladie, Actions actions) {
+        Dao.traiterMaladie( idPartie,  nomJoueur,  couleurMaladie,  actions);
+    }
+
+    @Override
+    public void construireStationRecherche(String idPartie, String nomJoueur, Actions actions) throws CentreRechercheDejaExistantException, NombreMaxCentreRechercheAtteintException, AbsenceCarteJoueurException {
+        Dao.construireStationRecherche( idPartie,  nomJoueur,  actions);
+    }
+
+    @Override
+    public void deplacerStationRecherche(String idPartie, String nomJoueur, Actions actions, Ville ville) throws CentreRechercheDejaExistantException, CentreRechercheInexistantException, VilleIdentiqueException {
+    Dao.deplacerStationRecherche( idPartie,  nomJoueur,  actions,  ville);
+    }
+
+    @Override
+    public void decouvrirRemede(String idPartie, String nomJoueur, Actions actions) throws CentreRechercheInexistantException {
+    Dao.decouvrirRemede( idPartie,  nomJoueur,  actions);
+    }
+
+    @Override
+    public void piocherCarte(String idPartie, String nomJoueur, Actions actions, List<CartesJoueur> cartesJoueurList) throws CartesJoueurInsuffisantes, NombreCarteDepasseException {
+    Dao.piocherCarte(idPartie,  nomJoueur,  actions, cartesJoueurList);
+    }
+
+    @Override
+    public void echangerCarte(String idPartie, String nomJoueurDonneur, String nomJoueurReceveur, CartesJoueur carte, Actions actions) throws NombreCarteDepasseException, AbsenceCarteJoueurException, PositionJoueursDifferenteExceptions {
+    Dao.echangerCarte(idPartie,  nomJoueurDonneur,  nomJoueurReceveur,  carte,  actions);
     }
 }

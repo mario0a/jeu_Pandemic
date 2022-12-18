@@ -1,14 +1,12 @@
 package facade;
 
-import exceptions.PartieNonRepriseException;
-import exceptions.PartieNonSuspenduException;
-import exceptions.PartiePleineException;
-import modele.Partie;
-import modele.Plateau;
-import modele.Ville;
+import LesActions.Actions;
+import exceptions.*;
+import modele.*;
 import modele.interfaces.ICartes;
 
 import java.util.Collection;
+import java.util.List;
 
 //contient les différentes actions qu'on peut effectuer sur le plateau
 public interface IFacadePandemicOnline {
@@ -36,4 +34,17 @@ public interface IFacadePandemicOnline {
  public boolean peutQuitterLaPartie(String idPartie);
 
  public boolean createurPartie(String idPartie, String nomJoueur);
+
+ public void traiterMaladie(String idPartie, String nomJoueur, CouleursMaladie couleurMaladie, Actions actions);
+ public void construireStationRecherche(String idPartie,String nomJoueur, Actions actions) throws CentreRechercheDejaExistantException,
+         NombreMaxCentreRechercheAtteintException, AbsenceCarteJoueurException;
+
+ public void deplacerStationRecherche(String idPartie,String nomJoueur, Actions actions, Ville ville) throws CentreRechercheDejaExistantException,
+         CentreRechercheInexistantException, VilleIdentiqueException;
+
+ public void decouvrirRemede(String idPartie,String nomJoueur,Actions actions) throws CentreRechercheInexistantException;
+ public void piocherCarte(String idPartie,String nomJoueur,Actions actions, List<CartesJoueur> cartesJoueurList) throws CartesJoueurInsuffisantes,
+         NombreCarteDepasseException;
+
+ public void echangerCarte(String idPartie,String nomJoueurDonneur, String nomJoueurReceveur, CartesJoueur carte,Actions actions) throws NombreCarteDepasseException, AbsenceCarteJoueurException, PositionJoueursDifferenteExceptions;
 }

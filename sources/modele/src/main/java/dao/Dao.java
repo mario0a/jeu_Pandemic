@@ -151,7 +151,7 @@ public class Dao {
 
     // Les actions des joueurs
 
-    public void traiterMaladie(String idPartie, String nomJoueur, CouleursMaladie couleurMaladie, Actions actions){
+    public static  void traiterMaladie(String idPartie, String nomJoueur, CouleursMaladie couleurMaladie, Actions actions){
         MongoCollection<Partie> partieMongoCollection = db.getCollection("parties", Partie.class);
         Collection<Partie> partieCollection = new ArrayList<>();
         Partie partie = partieMongoCollection.find(Filters.eq("_id",idPartie)).first();
@@ -159,7 +159,7 @@ public class Dao {
         actions.traiterMaladie(joueur,couleurMaladie);
     }
 
-    public void construireStationRecherche(String idPartie,String nomJoueur, Actions actions) throws CentreRechercheDejaExistantException,
+    public static void construireStationRecherche(String idPartie,String nomJoueur, Actions actions) throws CentreRechercheDejaExistantException,
             NombreMaxCentreRechercheAtteintException, AbsenceCarteJoueurException {
         MongoCollection<Partie> partieMongoCollection = db.getCollection("parties", Partie.class);
         Collection<Partie> partieCollection = new ArrayList<>();
@@ -169,7 +169,7 @@ public class Dao {
     }
 
 
-    public void deplacerStationRecherche(String idPartie,String nomJoueur, Actions actions, Ville ville) throws CentreRechercheDejaExistantException,
+    public static void deplacerStationRecherche(String idPartie,String nomJoueur, Actions actions, Ville ville) throws CentreRechercheDejaExistantException,
             CentreRechercheInexistantException, VilleIdentiqueException {
         MongoCollection<Partie> partieMongoCollection = db.getCollection("parties", Partie.class);
         Collection<Partie> partieCollection = new ArrayList<>();
@@ -179,7 +179,7 @@ public class Dao {
     }
 
 
-    public void decouvrirRemede(String idPartie,String nomJoueur,Actions actions) throws CentreRechercheInexistantException{
+    public static void decouvrirRemede(String idPartie,String nomJoueur,Actions actions) throws CentreRechercheInexistantException{
         MongoCollection<Partie> partieMongoCollection = db.getCollection("parties", Partie.class);
         Collection<Partie> partieCollection = new ArrayList<>();
         Partie partie = partieMongoCollection.find(Filters.eq("_id",idPartie)).first();
@@ -188,7 +188,7 @@ public class Dao {
     }
 
 
-    public void piocherCarte(String idPartie,String nomJoueur,Actions actions, List<CartesJoueur> cartesJoueurList) throws CartesJoueurInsuffisantes,
+    public static void piocherCarte(String idPartie,String nomJoueur,Actions actions, List<CartesJoueur> cartesJoueurList) throws CartesJoueurInsuffisantes,
             NombreCarteDepasseException {
         MongoCollection<Partie> partieMongoCollection = db.getCollection("parties", Partie.class);
         Collection<Partie> partieCollection = new ArrayList<>();
@@ -198,7 +198,7 @@ public class Dao {
     }
 
 
-    public void echangerCarte(String idPartie,String nomJoueurDonneur, String nomJoueurReceveur, CartesJoueur carte,Actions actions) throws NombreCarteDepasseException, AbsenceCarteJoueurException, PositionJoueursDifferenteExceptions {
+    public static void echangerCarte(String idPartie,String nomJoueurDonneur, String nomJoueurReceveur, CartesJoueur carte,Actions actions) throws NombreCarteDepasseException, AbsenceCarteJoueurException, PositionJoueursDifferenteExceptions {
         MongoCollection<Partie> partieMongoCollection = db.getCollection("parties", Partie.class);
         Collection<Partie> partieCollection = new ArrayList<>();
         Partie partie = partieMongoCollection.find(Filters.eq("_id",idPartie)).first();
