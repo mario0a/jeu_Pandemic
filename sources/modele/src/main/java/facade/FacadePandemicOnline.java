@@ -1,5 +1,9 @@
 package facade;
 
+import dao.Dao;
+import exceptions.PartieNonRepriseException;
+import exceptions.PartiePleineException;
+import modele.Partie;
 import modele.Plateau;
 import modele.Ville;
 import modele.interfaces.ICartes;
@@ -7,9 +11,65 @@ import modele.interfaces.ICartes;
 import java.util.Collection;
 
 public class FacadePandemicOnline implements IFacadePandemicOnline {
+
     @Override
-    public ICartes piocherCarte() {
+    public boolean partieInitialisee(String idPartie) {
+        return Dao.partieInitialisee(idPartie);
+    }
+
+    @Override
+    public void inscription(String nomJoueur, String mdp) {
+
+    }
+
+    @Override
+    public boolean seConnecter(String nomJoueur, String mdp) {
+        return false;
+    }
+
+    @Override
+    public void creerPartie(String id, String nomJoueur) throws PartiePleineException {
+
+    }
+
+    @Override
+    public Collection<Partie> getLesParties() {
         return null;
+    }
+
+    @Override
+    public String getEtatPartie(String id) {
+        return null;
+    }
+
+    @Override
+    public Collection<Partie> getLesPartiesSuspendues() {
+        return null;
+    }
+
+    @Override
+    public boolean suspendreLaPartie(String idPartie, String nomJoueur) throws PartieNonRepriseException {
+        return false;
+    }
+
+    @Override
+    public boolean quitterLaPartie(String idPartie, String nomJoueur) {
+        return false;
+    }
+
+    @Override
+    public boolean peutQuitterLaPartie(String idPartie) {
+        return false;
+    }
+
+    @Override
+    public boolean createurPartie(String idPartie, String nomJoueur) {
+        return false;
+    }
+
+    @Override
+    public void piocherCarte(ICartes carte) {
+
     }
 
     @Override
@@ -33,7 +93,7 @@ public class FacadePandemicOnline implements IFacadePandemicOnline {
     }
 
     @Override
-    public void trouverRemede() {
+    public void trouvrerRemede() {
 
     }
 
@@ -78,11 +138,6 @@ public class FacadePandemicOnline implements IFacadePandemicOnline {
     }
 
     @Override
-    public void inscription(String pseudo, String mdp) {
-
-    }
-
-    @Override
     public boolean connexion(String pseudo, String mdp) {
         return false;
     }
@@ -95,20 +150,5 @@ public class FacadePandemicOnline implements IFacadePandemicOnline {
     @Override
     public Collection<Plateau> getLesPartiesSuspendues(String idPArtie, String pseudo) {
         return null;
-    }
-
-    @Override
-    public boolean suspendreLaPartie(String idPArtie, String pseudo) {
-        return false;
-    }
-
-    @Override
-    public boolean quitterLaPartie(String idPartie, String pseudo) {
-        return false;
-    }
-
-    @Override
-    public boolean reprendreUnePartie(String idPartie, String pseudo) {
-        return false;
     }
 }
