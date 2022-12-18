@@ -24,7 +24,7 @@ public class FacadePandemicOnline implements IFacadePandemicOnline {
 
     @Override
     public boolean seConnecter(String nomJoueur, String mdp) {
-        return false;
+        return Dao.seConnecter(nomJoueur,mdp);
     }
 
     @Override
