@@ -1,0 +1,239 @@
+[
+
+{
+  "Cartes": [
+    {
+      "id": "450-1",
+      "type": "Ville",
+      "couleur": "Rouge",
+      "nom": "New York"
+    },
+    {
+      "id": "450-2",
+      "type": "Ville",
+      "couleur": "Jaune",
+      "nom": "Londres"
+    },
+    {
+      "id": "450-3",
+      "type": "Ville",
+      "couleur": "Noir",
+      "nom": "Moscou"
+    },
+    {
+      "id": "450-4",
+      "type": "Remède",
+      "couleur": "Rouge",
+      "nom": "Remède contre la grippe"
+    },
+    {
+      "id": "450-5",
+      "type": "Remède",
+      "couleur": "Jaune",
+      "nom": "Remède contre la fièvre jaune"
+    },
+    {
+      "id": "450-6",
+      "type": "Ville",
+      "couleur": "Rouge",
+      "nom": "Paris"
+    },
+    {
+      "id": "450-7",
+      "type": "Ville",
+      "couleur": "Rouge",
+      "nom": "Atlanta"
+    },
+    {
+      "id": "450-8",
+      "type": "Ville",
+      "couleur": "Rouge",
+      "nom": "Boston"
+    },
+    {
+      "id": "450-9",
+      "type": "Ville",
+      "couleur": "Rouge",
+      "nom": "Calcutta"
+    },
+    {
+      "id": "450-10",
+      "type": "Ville",
+      "couleur": "Rouge",
+      "nom": "Chicago"
+    },
+    {
+      "id": "450-11",
+      "type": "Ville",
+      "couleur": "Rouge",
+      "nom": "Delhi"
+    }
+	,
+	{
+	"id": "450-12",
+	"type": "Ville",
+	"couleur": "Rouge",
+	"nom": "Hong Kong"
+	},
+	{
+	"id": "450-13",
+	"type": "Ville",
+	"couleur": "Rouge",
+	"nom": "Istanbul"
+	},
+	{
+	"id": "450-11",
+	"type": "Ville",
+	"couleur": "Rouge",
+	"nom": "Essen"
+	},
+	{
+  "id": "450-12",
+  "type": "Ville",
+  "couleur": "Rouge",
+  "nom": "Johannesburg"
+	},
+	{
+	  "id": "450-13",
+	  "type": "Ville",
+	  "couleur": "Rouge",
+	  "nom": "Karachi"
+	},
+	{
+	  "id": "450-14",
+	  "type": "Ville",
+	  "couleur": "Rouge",
+	  "nom": "Kinshasa"
+	},
+	{
+	  "id": "450-15",
+	  "type": "Ville",
+	  "couleur": "Rouge",
+	  "nom": "London"
+	},
+	{
+	  "id": "450-16",
+	  "type": "Ville",
+	  "couleur": "Rouge",
+	  "nom": "Madrid"
+	}
+	,
+	{
+	"id": "867-1",
+	"type": "Ville",
+	"couleur": "Rouge",
+	"nom": "Mexico City"
+	},
+	{
+	"id": "867-2",
+	"type": "Ville",
+	"couleur": "Rouge",
+	"nom": "Miami"
+	},
+	{
+	"id": "867-3",
+	"type": "Ville",
+	"couleur": "Rouge",
+	"nom": "Milan"
+	},
+	{
+	"id": "867-4",
+	"type": "Ville",
+	"couleur": "Rouge",
+	"nom": "Montréal"
+	},
+	{
+	"id": "867-5",
+	"type": "Ville",
+	"couleur": "Rouge",
+	"nom": "New York"
+	},
+	{
+	"id": "450-11",
+	"type": "Ville",
+	"couleur": "Rouge",
+	"nom": "Delhi"
+	},
+	{
+	"id": "450-8167",
+	"type": "Ville",
+	"couleur": "Rouge",
+	"nom": "Osaka"
+	},
+	{
+	"id": "450-8168",
+	"type": "Ville",
+	"couleur": "Rouge",
+	"nom": "Paris"
+	},
+	{
+	"id": "450-8169",
+	"type": "Ville",
+	"couleur": "Rouge",
+	"nom": "Rio de Janeiro"
+	},
+	{
+	"id": "450-8170",
+	"type": "Ville",
+	"couleur": "Rouge",
+	"nom": "San Francisco"
+	},
+	{
+	"id": "450-8171",
+	"type": "Ville",
+	"couleur": "Rouge",
+	"nom": "Santiago"
+	},
+	{
+	"id": "450-8172",
+	"type": "Ville",
+	"couleur": "Rouge",
+	"nom": "São Paulo"
+	},
+	{
+	"id": "450-11",
+	"type": "Ville",
+	"couleur": "Rouge",
+	"nom": "Delhi"
+	},
+	{
+      "id": "450-5",
+      "type": "Ville",
+      "couleur": "Rouge",
+      "nom": "St. Petersbourg"
+    },
+    {
+      "id": "450-6",
+      "type": "Ville",
+      "couleur": "Rouge",
+      "nom": "Sydney"
+    },
+    {
+      "id": "450-7",
+      "type": "Ville",
+      "couleur": "Rouge",
+      "nom": "Taipei"
+    },
+    {
+      "id": "450-8",
+      "type": "Ville",
+      "couleur": "Rouge",
+      "nom": "Tehran"
+    },
+    {
+      "id": "450-9",
+      "type": "Ville",
+      "couleur": "Rouge",
+      "nom": "Tokyo"
+    },
+    {
+      "id": "450-10",
+      "type": "Ville",
+      "couleur": "Rouge",
+      "nom": "Washington D.C"
+    }
+  ]
+}
+
+
+]

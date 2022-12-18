@@ -1,0 +1,1779 @@
+[
+	{
+  "villes": [
+    {
+      "nom": "Le Cap",
+      "pays": "Afrique du Sud",
+      "couleur": "blue",
+      "population": 4000000,
+      "voisins": ["Johannesburg", "Durban", "Maputo"]
+    },
+    {
+      "nom": "Johannesburg",
+      "pays": "Afrique du Sud",
+      "couleur": "blue",
+      "population": 3000000,
+      "voisins": ["Le Cap", "Durban", "Harare"]
+    },
+    {
+      "nom": "Durban",
+      "pays": "Afrique du Sud",
+      "couleur": "blue",
+      "population": 2500000,
+      "voisins": ["Le Cap", "Johannesburg", "Maputo"]
+    },
+    {
+      "nom": "Pretoria",
+      "pays": "Afrique du Sud",
+      "couleur": "blue",
+      "population": 2000000,
+      "voisins": ["Johannesburg", "Harare", "Gaborone"]
+    }
+  ],
+  "maladies": [
+    {
+      "nom": "Grippe aviaire",
+      "couleur": "jaune",
+      "traitement": "inconnu"
+    },
+    {
+      "nom": "Ebola",
+      "couleur": "red",
+      "traitement": "inconnu"
+    }
+  ],
+  "joueurs": [
+    {
+      "nom": "Pierre",
+      "role": "chercheur",
+      "emplacement": "Le Cap",
+      "cartes": ["Le Cap", "Johannesburg"]
+    
+	
+},
+	{
+  "villes": [
+    {
+      "nom": "Alger",
+      "pays": "Algérie",
+      "couleur": "blue",
+      "population": 3000000,
+      "voisins": ["Oran", "Tunis", "Rabat"]
+    },
+    {
+      "nom": "Oran",
+      "pays": "Algérie",
+      "couleur": "blue",
+      "population": 800000,
+      "voisins": ["Alger", "Constantine", "Casablanca"]
+    },
+    {
+      "nom": "Constantine",
+      "pays": "Algérie",
+      "couleur": "blue",
+      "population": 500000,
+      "voisins": ["Oran", "Annaba", "Tunis"]
+    },
+    {
+      "nom": "Annaba",
+      "pays": "Algérie",
+      "couleur": "blue",
+      "population": 400000,
+      "voisins": ["Constantine", "Tripoli", "Cairo"]
+    }
+  ],
+  "maladies": [
+    {
+      "nom": "Grippe aviaire",
+      "couleur": "jaune",
+      "traitement": "inconnu"
+    },
+    {
+      "nom": "Ebola",
+      "couleur": "red",
+      "traitement": "inconnu"
+    }
+  ],
+  "joueurs": [
+    {
+      "nom": "Pierre",
+      "role": "chercheur",
+      "emplacement": "Alger",
+      "cartes": ["Alger", "Oran"]
+    },
+    {
+      "nom": "Mvondo",
+      "role": "opérateur de soins de santé",
+      "emplacement": "Oran",
+      "cartes": ["Constantine", "Annaba"]
+    }
+  ],
+  "countries": [
+    {
+      "nom": "Algérie",
+      "villes": ["Alger", "Oran", "Constantine", "Annaba"]
+    }
+  ]
+}
+,
+
+
+{
+  "villes": [
+    {
+      "nom": "Buenos Aires",
+      "pays": "Argentine",
+      "couleur": "blue",
+      "population": 15000000,
+      "voisins": ["São Mvondoo", "Lima", "Santiago"]
+    },
+    {
+      "nom": "Córdoba",
+      "pays": "Argentine",
+      "couleur": "blue",
+      "population": 3000000,
+      "voisins": ["Buenos Aires", "São Mvondoo", "Rio de Janeiro"]
+    },
+    {
+      "nom": "Mendoza",
+      "pays": "Argentine",
+      "couleur": "blue",
+      "population": 2000000,
+      "voisins": ["Santiago", "Lima", "La Paz"]
+    },
+    {
+      "nom": "Rosario",
+      "pays": "Argentine",
+      "couleur": "blue",
+      "population": 1500000,
+      "voisins": ["Buenos Aires", "São Mvondoo", "Montevideo"]
+    }
+  ],
+  "maladies": [
+    {
+      "nom": "Grippe aviaire",
+      "couleur": "jaune",
+      "traitement": "inconnu"
+    },
+    {
+      "nom": "Ebola",
+      "couleur": "red",
+      "traitement": "inconnu"
+    }
+  ],
+  "joueurs": [
+    {
+      "nom": "Pierre",
+      "role": "chercheur",
+      "emplacement": "Buenos Aires",
+      "cartes": ["Buenos Aires", "Córdoba"]
+    },
+    {
+      "nom": "Mvondo",
+      "role": "opérateur de soins de santé",
+      "emplacement": "Córdoba",
+      "cartes": ["Mendoza", "Rosario"]
+    }
+  ],
+  "countries": [
+    {
+      "nom": "Argentine",
+      "villes": ["Buenos Aires", "Córdoba", "Mendoza", "Rosario"]
+	  }
+  ]
+},
+	  
+
+
+
+	  
+{
+  "villes": [
+    {
+      "nom": "Sydney",
+      "pays": "Australie",
+      "couleur": "blue",
+      "population": 5000000,
+      "voisins": ["Melbourne", "Brisbane", "Auckland"]
+    },
+    {
+      "nom": "Melbourne",
+      "pays": "Australie",
+      "couleur": "blue",
+      "population": 4000000,
+      "voisins": ["Sydney", "Brisbane", "Adélaïde"]
+    },
+    {
+      "nom": "Brisbane",
+      "pays": "Australie",
+      "couleur": "blue",
+      "population": 3000000,
+      "voisins": ["Sydney", "Melbourne", "Wellington"]
+    },
+    {
+      "nom": "Perth",
+      "pays": "Australie",
+      "couleur": "blue",
+      "population": 2000000,
+      "voisins": ["Adélaïde", "Darwin", "Jakarta"]
+    }
+  ],
+  "maladies": [
+    {
+      "nom": "Grippe aviaire",
+      "couleur": "jaune",
+      "traitement": "inconnu"
+    },
+    {
+      "nom": "Ebola",
+      "couleur": "red",
+      "traitement": "inconnu"
+    }
+  ],
+  "joueurs": [
+    {
+      "nom": "Pierre",
+      "role": "chercheur",
+      "emplacement": "Sydney",
+      "cartes": ["Sydney", "Melbourne"]
+    },
+    {
+      "nom": "Mvondo",
+      "role": "opérateur de soins de santé",
+      "emplacement": "Melbourne",
+      "cartes": ["Brisbane", "Perth"]
+    }
+  ],
+  "countries": [
+    {
+      "nom": "Australie",
+      "villes": ["Sydney", "Melbourne", "Brisbane", "Perth"]
+    }
+  ]
+},
+
+
+
+{
+  "villes": [
+    {
+      "nom": "Rio de Janeiro",
+      "pays": "Brésil",
+      "couleur": "blue",
+      "population": 12000000,
+      "voisins": ["São Mvondoo", "Bogotá", "Lima"]
+    },
+    {
+      "nom": "São Mvondoo",
+      "pays": "Brésil",
+      "couleur": "blue",
+      "population": 21000000,
+      "voisins": ["Rio de Janeiro", "Buenos Aires", "Lima"]
+    },
+    {
+      "nom": "Brasília",
+      "pays": "Brésil",
+      "couleur": "blue",
+      "population": 3000000,
+      "voisins": ["Rio de Janeiro", "Buenos Aires", "Lima"]
+    },
+    {
+      "nom": "Recife",
+      "pays": "Brésil",
+      "couleur": "blue",
+      "population": 2000000,
+      "voisins": ["Rio de Janeiro", "São Mvondoo", "
+	      }
+  ]
+}
+
+
+{
+  "villes": [
+    {
+      "nom": "Toronto",
+      "pays": "Canada",
+      "couleur": "blue",
+      "population": 6000000,
+      "voisins": ["Montreal", "Chicago", "New York"]
+    },
+    {
+      "nom": "Montreal",
+      "pays": "Canada",
+      "couleur": "blue",
+      "population": 4000000,
+      "voisins": ["Toronto", "New York", "Washington D.C."]
+    },
+    {
+      "nom": "Vancouver",
+      "pays": "Canada",
+      "couleur": "blue",
+      "population": 3000000,
+      "voisins": ["Seattle", "San Francisco", "Los Angeles"]
+    },
+    {
+      "nom": "Calgary",
+      "pays": "Canada",
+      "couleur": "blue",
+      "population": 2000000,
+      "voisins": ["Edmonton", "Winnipeg", "Helena"]
+    }
+  ],
+  "maladies": [
+    {
+      "nom": "Grippe aviaire",
+      "couleur": "jaune",
+      "traitement": "inconnu"
+    },
+    {
+      "nom": "Ebola",
+      "couleur": "red",
+      "traitement": "inconnu"
+    }
+  ],
+  "joueurs": [
+    {
+      "nom": "Pierre",
+      "role": "chercheur",
+      "emplacement": "Toronto",
+      "cartes": ["Toronto", "Montreal"]
+    },
+    {
+      "nom": "Mvondo",
+      "role": "opérateur de soins de santé",
+      "emplacement": "Montreal",
+      "cartes": ["Vancouver", "Calgary"]
+    }
+  ],
+  "countries": [
+    {
+      "nom": "Canada",
+      "villes": ["Toronto", "Montreal", "Vancouver", "Calgary"]
+    }
+  ]
+}
+
+
+{
+  "villes": [
+    {
+      "nom": "Santiago",
+      "pays": "Chili",
+      "couleur": "blue",
+      "population": 7000000,
+      "voisins": ["Lima", "Buenos Aires", "Mendoza"]
+    },
+    {
+      "nom": "Valparaiso",
+      "pays": "Chili",
+      "couleur": "blue",
+      "population": 3000000,
+      "voisins": ["Lima", "Buenos Aires", "Montevideo"]
+    },
+    {
+      "nom": "Concepcion",
+      "pays": "Chili",
+      "couleur": "blue",
+      "population": 2000000,
+      "voisins": ["Lima", "Santiago", "Asunción"]
+    },
+    {
+      "nom": "Antofagasta",
+      "pays": "Chili",
+      "couleur": "blue",
+      "population": 1500000,
+      "voisins": ["Lima", "Santiago", "La Paz"]
+    }
+  ],
+  "maladies": [
+    {
+      "nom": "Grippe aviaire",
+      "couleur": "jaune",
+      "traitement": "inconnu"
+    },
+    {
+      "nom": "Ebola",
+      "couleur": "red",
+      "traitement": "inconnu"
+    }
+  ],
+  "joueurs": [
+    {
+      "nom": "Pierre",
+      "role": "chercheur",
+      "emplacement": "Santiago",
+      "cartes": ["Santiago", "Valparaiso"]
+    },
+    {
+      "nom": "Mvondo",
+      "role": "opérateur de soins de santé",
+      "emplacement": "Valparaiso",
+      "cartes": ["Con"]
+	  }
+	}
+	
+
+
+{
+  "villes": [
+    {
+      "nom": "Pékin",
+      "pays": "Chine",
+      "couleur": "blue",
+      "population": 21000000,
+      "voisins": ["Shanghai", "Séoul", "Tôkyô"]
+    },
+    {
+      "nom": "Shanghai",
+      "pays": "Chine",
+      "couleur": "blue",
+      "population": 24000000,
+      "voisins": ["Pékin", "Séoul", "Tôkyô"]
+    },
+    {
+      "nom": "Chongqing",
+      "pays": "Chine",
+      "couleur": "blue",
+      "population": 31000000,
+      "voisins": ["Pékin", "Bangkok", "Hô Chi Minh-Ville"]
+    },
+    {
+      "nom": "Tianjin",
+      "pays": "Chine",
+      "couleur": "blue",
+      "population": 15000000,
+      "voisins": ["Pékin", "Shanghai", "Séoul"]
+    }
+  ],
+  "maladies": [
+    {
+      "nom": "Grippe aviaire",
+      "couleur": "jaune",
+      "traitement": "inconnu"
+    },
+    {
+      "nom": "Ebola",
+      "couleur": "red",
+      "traitement": "inconnu"
+    }
+  ],
+  "joueurs": [
+    {
+      "nom": "Pierre",
+      "role": "chercheur",
+      "emplacement": "Pékin",
+      "cartes": ["Pékin", "Shanghai"]
+    },
+    {
+      "nom": "Mvondo",
+      "role": "opérateur de soins de santé",
+      "emplacement": "Shanghai",
+      "cartes": ["Chongqing", "Tianjin"]
+    }
+  ],
+  "countries": [
+    {
+      "nom": "Chine",
+      "villes": ["Pékin", "Shanghai", "Chongqing"]
+	   }
+  ]
+}
+
+
+{
+  "villes": [
+    {
+      "nom": "Bogotá",
+      "pays": "Colombie",
+      "couleur": "blue",
+      "population": 7000000,
+      "voisins": ["Mexico City", "Lima", "Quito"]
+    },
+    {
+      "nom": "Medellín",
+      "pays": "Colombie",
+      "couleur": "blue",
+      "population": 3000000,
+      "voisins": ["Mexico City", "Lima", "Quito"]
+    },
+    {
+      "nom": "Cali",
+      "pays": "Colombie",
+      "couleur": "blue",
+      "population": 2000000,
+      "voisins": ["Mexico City", "Lima", "Quito"]
+    },
+    {
+      "nom": "Barranquilla",
+      "pays": "Colombie",
+      "couleur": "blue",
+      "population": 1500000,
+      "voisins": ["Mexico City", "Lima", "Quito"]
+    }
+  ],
+  "maladies": [
+    {
+      "nom": "Grippe aviaire",
+      "couleur": "jaune",
+      "traitement": "inconnu"
+    },
+    {
+      "nom": "Ebola",
+      "couleur": "red",
+      "traitement": "inconnu"
+    }
+  ],
+  "joueurs": [
+    {
+      "nom": "Pierre",
+      "role": "chercheur",
+      "emplacement": "Bogotá",
+      "cartes": ["Bogotá", "Medellín"]
+    },
+    {
+      "nom": "Mvondo",
+      "role": "opérateur de soins de santé",
+      "emplacement": "Medellín",
+      "cartes": ["Cali", "Barranquilla"]
+    }
+  ],
+  "countries": [
+    {
+      "nom": "Colombie",
+      "villes": ["Bogotá", "Medellín", "Cali", "Barranquilla"]
+    }
+  ]
+}
+
+
+
+{
+  "villes": [
+    {
+      "nom": "Édimbourg",
+      "pays": "Écosse",
+      "couleur": "blue",
+      "population": 500000,
+      "voisins": ["Londres", "Dublin", "Manchester"]
+    },
+    {
+      "nom": "Glasgow",
+      "pays": "Écosse",
+      "couleur": "blue",
+      "population": 600000,
+      "voisins": ["Londres", "Dublin", "Manchester"]
+    },
+    {
+      "nom": "Aberdeen",
+      "pays": "Écosse",
+      "couleur": "blue",
+      "population": 250000,
+      "voisins": ["Londres", "Dublin", "Manchester"]
+    },
+    {
+      "nom": "Dundee",
+      "pays": "Écosse",
+      "couleur": "blue",
+      "population": 150000,
+      "voisins": ["Londres", "Dublin", "Manchester"]
+    }
+  ],
+  "maladies": [
+    {
+      "nom": "Grippe aviaire",
+      "couleur": "jaune",
+      "traitement": "inconnu"
+    },
+    {
+      "nom": "Ebola",
+      "couleur": "red",
+      "traitement": "inconnu"
+    }
+  ],
+  "joueurs": [
+    {
+      "nom": "Pierre",
+      "role": "chercheur",
+      "emplacement": "Édimbourg",
+      "cartes": ["Édimbourg", "Glasgow"]
+    },
+    {
+      "nom": "Mvondo",
+      "role": "opérateur de soins de santé",
+      "emplacement": "Glasgow",
+      "cartes": ["Aberdeen", "Dundee"]
+    }
+  ],
+  "countries": [
+    {
+      "nom": "Écosse",
+      "villes": ["Édimbourg", "Glasgow", "Aberdeen", "Dundee"]
+    }
+  ]
+}
+
+
+
+{
+  "villes": [
+    {
+      "nom": "Abou Dhabi",
+      "pays": "Émirats arabes unis",
+      "couleur": "blue",
+      "population": 1000000,
+      "voisins": ["Dubai", "Koweït", "Riyad"]
+    },
+    {
+      "nom": "Dubai",
+      "pays": "Émirats arabes unis",
+      "couleur": "blue",
+      "population": 2000000,
+      "voisins": ["Abou Dhabi", "Koweït", "Riyad"]
+    },
+    {
+      "nom": "Sharjah",
+      "pays": "Émirats arabes unis",
+      "couleur": "blue",
+      "population": 500000,
+      "voisins": ["Abou Dhabi", "Dubai", "Koweït"]
+    },
+    {
+      "nom": "Ajman",
+      "pays": "Émirats arabes unis",
+      "couleur": "blue",
+      "population": 300000,
+      "voisins": ["Abou Dhabi", "Dubai", "Koweït"]
+    }
+  ],
+  "maladies": [
+    {
+      "nom": "Grippe aviaire",
+      "couleur": "jaune",
+      "traitement": "inconnu"
+    },
+    {
+      "nom": "Ebola",
+      "couleur": "red",
+      "traitement": "inconnu"
+    }
+  ],
+  "joueurs": [
+    {
+      "nom": "Pierre",
+      "role": "chercheur",
+      "emplacement": "Abou Dhabi",
+      "cartes": ["Abou Dhabi", "Dubai"]
+    },
+    {
+      "nom": "Mvondo",
+      "role": "opérateur de soins de santé",
+      "emplacement": "Dubai",
+      "cartes": ["Sharjah", "Ajman"]
+    }
+  ],
+  "countries": [
+    {
+      "nom": "Émirats arabes unis",
+      "villes": ["Abou Dhabi", "Dubai", "Sharjah", "Ajman"]
+    }
+  ]
+}
+
+
+
+
+{
+  "villes": [
+    {
+      "nom": "Madrid",
+      "pays": "Espagne",
+      "couleur": "blue",
+      "population": 6000000,
+      "voisins": ["Barcelone", "Valence", "Séville"]
+    },
+    {
+      "nom": "Barcelone",
+      "pays": "Espagne",
+      "couleur": "blue",
+      "population": 5000000,
+      "voisins": ["Madrid", "Valence", "Perpignan"]
+    },
+    {
+      "nom": "Valence",
+      "pays": "Espagne",
+      "couleur": "blue",
+      "population": 400000,
+      "voisins": ["Madrid", "Barcelone", "Alicante"]
+    },
+    {
+      "nom": "Séville",
+      "pays": "Espagne",
+      "couleur": "blue",
+      "population": 700000,
+      "voisins": ["Madrid", "Grenade", "Cadix"]
+    }
+  ],
+  "maladies": [
+    {
+      "nom": "Rougeole",
+      "couleur": "red",
+      "traitement": "oui"
+    },
+    {
+      "nom": "Grippe",
+      "couleur": "jaune",
+      "traitement": "oui"
+    }
+  ],
+  "joueurs": [
+    {
+      "nom": "Pierre",
+      "role": "chercheur",
+      "emplacement": "Madrid",
+      "cartes": ["Madrid", "Barcelone"]
+    },
+    {
+      "nom": "Mvondo",
+      "role": "opérateur de soins de santé",
+      "emplacement": "Barcelone",
+      "cartes": ["Valence", "Séville"]
+    }
+  ],
+  "countries": [
+    {
+      "nom": "Espagne",
+      "villes": ["Madrid", "Barcelone", "Valence", "Séville"]
+    }
+  ]
+}
+
+
+
+{
+  "villes": [
+    {
+      "nom": "New York",
+      "pays": "États-Unis",
+      "couleur": "blue",
+      "population": 8000000,
+      "voisins": ["Boston", "Philadelphia", "Washington D.C."]
+    },
+    {
+      "nom": "Los Angeles",
+      "pays": "États-Unis",
+      "couleur": "blue",
+      "population": 4000000,
+      "voisins": ["San Francisco", "San Diego", "Las Vegas"]
+    },
+    {
+      "nom": "Chicago",
+      "pays": "États-Unis",
+      "couleur": "blue",
+      "population": 3000000,
+      "voisins": ["Detroit", "Cleveland", "Milwaukee"]
+    },
+    {
+      "nom": "Houston",
+      "pays": "États-Unis",
+      "couleur": "blue",
+      "population": 2200000,
+      "voisins": ["New Orleans", "Dallas", "Austin"]
+    }
+  ],
+  "maladies": [
+    {
+      "nom": "Grippe",
+      "couleur": "jaune",
+      "traitement": "oui"
+    },
+    {
+      "nom": "Ebola",
+      "couleur": "red",
+      "traitement": "oui"
+    }
+  ],
+  "joueurs": [
+    {
+      "nom": "Pierre",
+      "role": "chercheur",
+      "emplacement": "New York",
+      "cartes": ["New York", "Los Angeles"]
+    },
+    {
+      "nom": "Mvondo",
+      "role": "opérateur de soins de santé",
+      "emplacement": "Los Angeles",
+      "cartes": ["Chicago", "Houston"]
+    }
+  ],
+  "countries": [
+    {
+      "nom": "États-Unis",
+      "villes": ["New York", "Los Angeles", "Chicago", "Houston"]
+    }
+  ]
+}
+
+ en francais 
+
+{
+  "villes": [
+    {
+      "nom": "Paris",
+      "pays": "France",
+      "couleur": "bleu",
+      "population": 2200000,
+      "voisins": ["Lyon", "Marseille", "Lille"]
+    },
+    {
+      "nom": "Lyon",
+      "pays": "France",
+      "couleur": "bleu",
+      "population": 500000,
+      "voisins": ["Paris", "Marseille", "Genève"]
+    },
+    {
+      "nom": "Marseille",
+      "pays": "France",
+      "couleur": "bleu",
+      "population": 850000,
+      "voisins": ["Paris", "Lyon", "Nice"]
+    },
+    {
+      "nom": "Lille",
+      "pays": "France",
+      "couleur": "bleu",
+      "population": 250000,
+      "voisins": ["Paris", "Bruxelles", "Londres"]
+    }
+  ],
+  "maladies": [
+    {
+      "nom": "Grippe",
+      "couleur": "jaune",
+      "traitement": "oui"
+    },
+    {
+      "nom": "COVID-19",
+      "couleur": "rouge",
+      "traitement": "oui"
+    }
+  ],
+  "joueurs": [
+    {
+      "nom": "Pierre",
+      "role": "chercheur",
+      "emplacement": "Paris",
+      "cartes": ["Paris", "Lyon"]
+    },
+    {
+      "nom": "Mvondo",
+      "role": "opérateur de soins de santé",
+      "emplacement": "Lyon",
+      "cartes": ["Marseille", "Lille"]
+    }
+  ],
+  "pays": [
+    {
+      "nom": "France",
+      "villes": ["Paris", "Lyon", "Marseille", "Lille"]
+    }
+  ]
+}
+
+
+
+{
+  "villes": [
+    {
+      "nom": "Mumbai",
+      "pays": "Inde",
+      "couleur": "bleu",
+      "population": 18000000,
+      "voisins": ["Delhi", "Kolkata", "Bangalore"]
+    },
+    {
+      "nom": "Delhi",
+      "pays": "Inde",
+      "couleur": "bleu",
+      "population": 13000000,
+      "voisins": ["Mumbai", "Kolkata", "Lucknow"]
+    },
+    {
+      "nom": "Kolkata",
+      "pays": "Inde",
+      "couleur": "bleu",
+      "population": 4500000,
+      "voisins": ["Mumbai", "Delhi", "Bangalore"]
+    },
+    {
+      "nom": "Bangalore",
+      "pays": "Inde",
+      "couleur": "bleu",
+      "population": 8000000,
+      "voisins": ["Mumbai", "Delhi", "Chennai"]
+    }
+  ],
+  "maladies": [
+    {
+      "nom": "Grippe",
+      "couleur": "jaune",
+      "traitement": "oui"
+    },
+    {
+      "nom": "COVID-19",
+      "couleur": "rouge",
+      "traitement": "oui"
+    }
+  ],
+  "joueurs": [
+    {
+      "nom": "Pierre",
+      "role": "chercheur",
+      "emplacement": "Mumbai",
+      "cartes": ["Mumbai", "Delhi"]
+    },
+    {
+      "nom": "Mvondo",
+      "role": "opérateur de soins de santé",
+      "emplacement": "Delhi",
+      "cartes": ["Kolkata", "Bangalore"]
+    }
+  ],
+  "pays": [
+    {
+      "nom": "Inde",
+      "villes": ["Mumbai", "Delhi", "Kolkata", "Bangalore"]
+    }
+  ]
+}
+
+
+
+{
+  "villes": [
+    {
+      "nom": "Jakarta",
+      "pays": "Indonésie",
+      "couleur": "bleu",
+      "population": 10100000,
+      "voisins": ["Surabaya", "Semarang", "Medan"]
+    },
+    {
+      "nom": "Surabaya",
+      "pays": "Indonésie",
+      "couleur": "bleu",
+      "population": 5500000,
+      "voisins": ["Jakarta", "Semarang", "Denpasar"]
+    },
+    {
+      "nom": "Semarang",
+      "pays": "Indonésie",
+      "couleur": "bleu",
+      "population": 3200000,
+      "voisins": ["Jakarta", "Surabaya", "Yogyakarta"]
+    },
+    {
+      "nom": "Medan",
+      "pays": "Indonésie",
+      "couleur": "bleu",
+      "population": 2000000,
+      "voisins": ["Jakarta", "Surabaya", "Palembang"]
+    }
+  ],
+  "maladies": [
+    {
+      "nom": "Grippe",
+      "couleur": "jaune",
+      "traitement": "oui"
+    },
+    {
+      "nom": "COVID-19",
+      "couleur": "rouge",
+      "traitement": "oui"
+    }
+  ],
+  "joueurs": [
+    {
+      "nom": "Pierre",
+      "role": "chercheur",
+      "emplacement": "Jakarta",
+      "cartes": ["Jakarta", "Surabaya"]
+    },
+    {
+      "nom": "Mvondo",
+      "role": "opérateur de soins de santé",
+      "emplacement": "Surabaya",
+      "cartes": ["Semarang", "Medan"]
+    }
+  ],
+  "pays": [
+    {
+      "nom": "Indonésie",
+      "villes": ["Jakarta", "Surabaya", "Semarang", "Medan"]
+    }
+  ]
+}
+
+
+
+{
+  "villes": [
+    {
+      "nom": "Dublin",
+      "pays": "Irlande",
+      "couleur": "bleu",
+      "population": 530000,
+      "voisins": ["Belfast", "Cork", "Galway"]
+    },
+    {
+      "nom": "Belfast",
+      "pays": "Irlande",
+      "couleur": "bleu",
+      "population": 270000,
+      "voisins": ["Dublin", "Cork", "Liverpool"]
+    },
+    {
+      "nom": "Cork",
+      "pays": "Irlande",
+      "couleur": "bleu",
+      "population": 210000,
+      "voisins": ["Dublin", "Belfast", "Galway"]
+    },
+    {
+      "nom": "Galway",
+      "pays": "Irlande",
+      "couleur": "bleu",
+      "population": 150000,
+      "voisins": ["Dublin", "Belfast", "Sligo"]
+    }
+  ],
+  "maladies": [
+    {
+      "nom": "Grippe",
+      "couleur": "jaune",
+      "traitement": "oui"
+    },
+    {
+      "nom": "COVID-19",
+      "couleur": "rouge",
+      "traitement": "oui"
+    }
+  ],
+  "joueurs": [
+    {
+      "nom": "Pierre",
+      "role": "chercheur",
+      "emplacement": "Dublin",
+      "cartes": ["Dublin", "Belfast"]
+    },
+    {
+      "nom": "Mvondo",
+      "role": "opérateur de soins de santé",
+      "emplacement": "Belfast",
+      "cartes": ["Cork", "Galway"]
+    }
+  ],
+  "pays": [
+    {
+      "nom": "Irlande",
+      "villes": ["Dublin", "Belfast", "Cork", "Galway"]
+    }
+  ]
+}
+
+
+
+
+{
+  "villes": [
+    {
+      "nom": "Rome",
+      "pays": "Italie",
+      "couleur": "bleu",
+      "population": 2800000,
+      "voisins": ["Milan", "Florence", "Naples"]
+    },
+    {
+      "nom": "Milan",
+      "pays": "Italie",
+      "couleur": "bleu",
+      "population": 1300000,
+      "voisins": ["Rome", "Florence", "Turin"]
+    },
+    {
+      "nom": "Florence",
+      "pays": "Italie",
+      "couleur": "bleu",
+      "population": 400000,
+      "voisins": ["Rome", "Milan", "Bologne"]
+    },
+    {
+      "nom": "Naples",
+      "pays": "Italie",
+      "couleur": "bleu",
+      "population": 1000000,
+      "voisins": ["Rome", "Milan", "Bari"]
+    }
+  ],
+  "maladies": [
+    {
+      "nom": "Grippe",
+      "couleur": "jaune",
+      "traitement": "oui"
+    },
+    {
+      "nom": "COVID-19",
+      "couleur": "rouge",
+      "traitement": "oui"
+    }
+  ],
+  "joueurs": [
+    {
+      "nom": "Pierre",
+      "role": "chercheur",
+      "emplacement": "Rome",
+      "cartes": ["Rome", "Milan"]
+    },
+    {
+      "nom": "Mvondo",
+      "role": "opérateur de soins de santé",
+      "emplacement": "Milan",
+      "cartes": ["Florence", "Naples"]
+    }
+  ],
+  "pays": [
+    {
+      "nom": "Italie",
+      "villes": ["Rome", "Milan", "Florence", "Naples"]
+    }
+  ]
+}
+
+
+
+{
+  "villes": [
+    {
+      "nom": "Tokyo",
+      "pays": "Japon",
+      "couleur": "bleu",
+      "population": 13000000,
+      "voisins": ["Osaka", "Nagoya", "Sapporo"]
+    },
+    {
+      "nom": "Osaka",
+      "pays": "Japon",
+      "couleur": "bleu",
+      "population": 1900000,
+      "voisins": ["Tokyo", "Nagoya", "Fukuoka"]
+    },
+    {
+      "nom": "Nagoya",
+      "pays": "Japon",
+      "couleur": "bleu",
+      "population": 2200000,
+      "voisins": ["Tokyo", "Osaka", "Kobe"]
+    },
+    {
+      "nom": "Sapporo",
+      "pays": "Japon",
+      "couleur": "bleu",
+      "population": 190000,
+      "voisins": ["Tokyo", "Sendai", "Hakodate"]
+    }
+  ],
+  "maladies": [
+    {
+      "nom": "Grippe",
+      "couleur": "jaune",
+      "traitement": "oui"
+    },
+    {
+      "nom": "COVID-19",
+      "couleur": "rouge",
+      "traitement": "oui"
+    }
+  ],
+  "joueurs": [
+    {
+      "nom": "Pierre",
+      "role": "chercheur",
+      "emplacement": "Tokyo",
+      "cartes": ["Tokyo", "Osaka"]
+    },
+    {
+      "nom": "Mvondo",
+      "role": "opérateur de soins de santé",
+      "emplacement": "Osaka",
+      "cartes": ["Nagoya", "Sapporo"]
+    }
+  ],
+  "pays": [
+    {
+      "nom": "Japon",
+      "villes": ["Tokyo", "Osaka", "Nagoya", "Sapporo"]
+    }
+  ]
+}
+
+
+
+
+{
+  "villes": [
+    {
+      "nom": "Mexico",
+      "pays": "Mexique",
+      "couleur": "bleu",
+      "population": 21000000,
+      "voisins": ["Guadalajara", "Monterrey", "Cancún"]
+    },
+    {
+      "nom": "Guadalajara",
+      "pays": "Mexique",
+      "couleur": "bleu",
+      "population": 5000000,
+      "voisins": ["Mexico", "Monterrey", "Puebla"]
+    },
+    {
+      "nom": "Monterrey",
+      "pays": "Mexique",
+      "couleur": "bleu",
+      "population": 4000000,
+      "voisins": ["Mexico", "Guadalajara", "Tijuana"]
+    },
+    {
+      "nom": "Cancún",
+      "pays": "Mexique",
+      "couleur": "bleu",
+      "population": 1500000,
+      "voisins": ["Mexico", "Mérida", "Cozumel"]
+    }
+  ],
+  "maladies": [
+    {
+      "nom": "Grippe",
+      "couleur": "jaune",
+      "traitement": "oui"
+    },
+    {
+      "nom": "COVID-19",
+      "couleur": "rouge",
+      "traitement": "oui"
+    }
+  ],
+  "joueurs": [
+    {
+      "nom": "Pierre",
+      "role": "chercheur",
+      "emplacement": "Mexico",
+      "cartes": ["Mexico", "Guadalajara"]
+    },
+    {
+      "nom": "Mvondo",
+      "role": "opérateur de soins de santé",
+      "emplacement": "Guadalajara",
+      "cartes": ["Monterrey", "Cancún"]
+    }
+  ],
+  "pays": [
+    {
+      "nom": "Mexique",
+      "villes": ["Mexico", "Guadalajara", "Monterrey", "Cancún"]
+    }
+  ]
+}
+
+
+
+{
+  "villes": [
+    {
+      "nom": "Amsterdam",
+      "pays": "Pays-Bas",
+      "couleur": "bleu",
+      "population": 900000,
+      "voisins": ["Rotterdam", "La Haye", "Utrecht"]
+    },
+    {
+      "nom": "Rotterdam",
+      "pays": "Pays-Bas",
+      "couleur": "bleu",
+      "population": 600000,
+      "voisins": ["Amsterdam", "La Haye", "Anvers"]
+    },
+    {
+      "nom": "La Haye",
+      "pays": "Pays-Bas",
+      "couleur": "bleu",
+      "population": 500000,
+      "voisins": ["Amsterdam", "Rotterdam", "Breda"]
+    },
+    {
+      "nom": "Utrecht",
+      "pays": "Pays-Bas",
+      "couleur": "bleu",
+      "population": 400000,
+      "voisins": ["Amsterdam", "Eindhoven", "Maastricht"]
+    }
+  ],
+  "maladies": [
+    {
+      "nom": "Grippe",
+      "couleur": "jaune",
+      "traitement": "oui"
+    },
+    {
+      "nom": "COVID-19",
+      "couleur": "rouge",
+      "traitement": "oui"
+    }
+  ],
+  "joueurs": [
+    {
+      "nom": "Pierre",
+      "role": "chercheur",
+      "emplacement": "Amsterdam",
+      "cartes": ["Amsterdam", "Rotterdam"]
+    },
+    {
+      "nom": "Mvondo",
+      "role": "opérateur de soins de santé",
+      "emplacement": "Rotterdam",
+      "cartes": ["La Haye", "Utrecht"]
+    }
+  ],
+  "pays": [
+    {
+      "nom": "Pays-Bas",
+      "villes": ["Amsterdam", "Rotterdam", "La Haye", "Utrecht"]
+    }
+  ]
+}
+
+
+
+{
+  "villes": [
+    {
+      "nom": "Lima",
+      "pays": "Pérou",
+      "couleur": "bleu",
+      "population": 11000000,
+      "voisins": ["Arequipa", "Trujillo", "Chiclayo"]
+    },
+    {
+      "nom": "Arequipa",
+      "pays": "Pérou",
+      "couleur": "bleu",
+      "population": 900000,
+      "voisins": ["Lima", "Trujillo", "Cusco"]
+    },
+    {
+      "nom": "Trujillo",
+      "pays": "Pérou",
+      "couleur": "bleu",
+      "population": 800000,
+      "voisins": ["Lima", "Arequipa", "Piura"]
+    },
+    {
+      "nom": "Chiclayo",
+      "pays": "Pérou",
+      "couleur": "bleu",
+      "population": 700000,
+      "voisins": ["Lima", "Tacna", "Iquitos"]
+    }
+  ],
+  "maladies": [
+    {
+      "nom": "Grippe",
+      "couleur": "jaune",
+      "traitement": "oui"
+    },
+    {
+      "nom": "COVID-19",
+      "couleur": "rouge",
+      "traitement": "oui"
+    }
+  ],
+  "joueurs": [
+    {
+      "nom": "Pierre",
+      "role": "chercheur",
+      "emplacement": "Lima",
+      "cartes": ["Lima", "Arequipa"]
+    },
+    {
+      "nom": "Mvondo",
+      "role": "opérateur de soins de santé",
+      "emplacement": "Arequipa",
+      "cartes": ["Trujillo", "Chiclayo"]
+    }
+  ],
+  "pays": [
+    {
+      "nom": "Pérou",
+      "villes": ["Lima", "Arequipa", "Trujillo", "Chiclayo"]
+    }
+  ]
+}
+
+
+
+{
+  "villes": [
+    {
+      "nom": "Varsovie",
+      "pays": "Pologne",
+      "couleur": "bleu",
+      "population": 1700000,
+      "voisins": ["Cracovie", "Lodz", "Gdansk"]
+    },
+    {
+      "nom": "Cracovie",
+      "pays": "Pologne",
+      "couleur": "bleu",
+      "population": 750000,
+      "voisins": ["Varsovie", "Lodz", "Wroclaw"]
+    },
+    {
+      "nom": "Lodz",
+      "pays": "Pologne",
+      "couleur": "bleu",
+      "population": 600000,
+      "voisins": ["Varsovie", "Cracovie", "Bydgoszcz"]
+    },
+    {
+      "nom": "Gdansk",
+      "pays": "Pologne",
+      "couleur": "bleu",
+      "population": 450000,
+      "voisins": ["Varsovie", "Torun", "Szczecin"]
+    }
+  ],
+  "maladies": [
+    {
+      "nom": "Grippe",
+      "couleur": "jaune",
+      "traitement": "oui"
+    },
+    {
+      "nom": "COVID-19",
+      "couleur": "rouge",
+      "traitement": "oui"
+    }
+  ],
+  "joueurs": [
+    {
+      "nom": "Pierre",
+      "role": "chercheur",
+      "emplacement": "Varsovie",
+      "cartes": ["Varsovie", "Cracovie"]
+    },
+    {
+      "nom": "Mvondo",
+      "role": "opérateur de soins de santé",
+      "emplacement": "Cracovie",
+      "cartes": ["Lodz", "Gdansk"]
+    }
+  ],
+  "pays": [
+    {
+      "nom": "Pologne",
+      "villes": ["Varsovie", "Cracovie", "Lodz", "Gdansk"]
+    }
+  ]
+}
+
+
+
+{
+  "villes": [
+    {
+      "nom": "Lisbonne",
+      "pays": "Portugal",
+      "couleur": "bleu",
+      "population": 550000,
+      "voisins": ["Porto", "Coimbra", "Faro"]
+    },
+    {
+      "nom": "Porto",
+      "pays": "Portugal",
+      "couleur": "bleu",
+      "population": 350000,
+      "voisins": ["Lisbonne", "Coimbra", "Braga"]
+    },
+    {
+      "nom": "Coimbra",
+      "pays": "Portugal",
+      "couleur": "bleu",
+      "population": 250000,
+      "voisins": ["Lisbonne", "Porto", "Evora"]
+    },
+    {
+      "nom": "Faro",
+      "pays": "Portugal",
+      "couleur": "bleu",
+      "population": 150000,
+      "voisins": ["Lisbonne", "Setubal", "Albufeira"]
+    }
+  ],
+  "maladies": [
+    {
+      "nom": "Grippe",
+      "couleur": "jaune",
+      "traitement": "oui"
+    },
+    {
+      "nom": "COVID-19",
+      "couleur": "rouge",
+      "traitement": "oui"
+    }
+  ],
+  "joueurs": [
+    {
+      "nom": "Pierre",
+      "role": "chercheur",
+      "emplacement": "Lisbonne",
+      "cartes": ["Lisbonne", "Porto"]
+    },
+    {
+      "nom": "Mvondo",
+      "role": "opérateur de soins de santé",
+      "emplacement": "Porto",
+      "cartes": ["Coimbra", "Faro"]
+    }
+  ],
+  "pays": [
+    {
+      "nom": "Portugal",
+      "villes": ["Lisbonne", "Porto", "Coimbra", "Faro"]
+    }
+  ]
+}
+
+
+
+
+{
+  "villes": [
+    {
+      "nom": "Moscou",
+      "pays": "Russie",
+      "couleur": "bleu",
+      "population": 12500000,
+      "voisins": ["Saint-Pétersbourg", "Nijni Novgorod", "Kazan"]
+    },
+    {
+      "nom": "Saint-Pétersbourg",
+      "pays": "Russie",
+      "couleur": "bleu",
+      "population": 5000000,
+      "voisins": ["Moscou", "Nijni Novgorod", "Kaliningrad"]
+    },
+    {
+      "nom": "Nijni Novgorod",
+      "pays": "Russie",
+      "couleur": "bleu",
+      "population": 3000000,
+      "voisins": ["Moscou", "Saint-Pétersbourg", "Ekaterinbourg"]
+    },
+    {
+      "nom": "Kazan",
+      "pays": "Russie",
+      "couleur": "bleu",
+      "population": 2000000,
+      "voisins": ["Moscou", "Izhevsk", "Chelyabinsk"]
+    }
+  ],
+  "maladies": [
+    {
+      "nom": "Grippe",
+      "couleur": "jaune",
+      "traitement": "oui"
+    },
+    {
+      "nom": "COVID-19",
+      "couleur": "rouge",
+      "traitement": "oui"
+    }
+  ],
+  "joueurs": [
+    {
+      "nom": "Pierre",
+      "role": "chercheur",
+      "emplacement": "Moscou",
+      "cartes": ["Moscou", "Saint-Pétersbourg"]
+    },
+    {
+      "nom": "Mvondo",
+      "role": "opérateur de soins de santé",
+      "emplacement": "Saint-Pétersbourg",
+      "cartes": ["Nijni Novgorod", "Kazan"]
+    }
+  ],
+  "pays": [
+    {
+      "nom": "Russie",
+      "villes": ["Moscou", "Saint-Pétersbourg", "Nijni Novgorod", "Kazan"]
+
+       }
+  ]
+}
+
+
+
+{
+  "villes": [
+    {
+      "nom": "Istanbul",
+      "pays": "Turquie",
+      "couleur": "bleu",
+      "population": 15000000,
+      "voisins": ["Ankara", "Izmir", "Bursa"]
+    },
+    {
+      "nom": "Ankara",
+      "pays": "Turquie",
+      "couleur": "bleu",
+      "population": 5000000,
+      "voisins": ["Istanbul", "Izmir", "Konya"]
+    },
+    {
+      "nom": "Izmir",
+      "pays": "Turquie",
+      "couleur": "bleu",
+      "population": 3000000,
+      "voisins": ["Istanbul", "Ankara", "Antalya"]
+    },
+    {
+      "nom": "Bursa",
+      "pays": "Turquie",
+      "couleur": "bleu",
+      "population": 2000000,
+      "voisins": ["Istanbul", "Sakarya", "Eskişehir"]
+    }
+  ],
+  "maladies": [
+    {
+      "nom": "Grippe",
+      "couleur": "jaune",
+      "traitement": "oui"
+    },
+    {
+      "nom": "COVID-19",
+      "couleur": "rouge",
+      "traitement": "oui"
+    }
+  ],
+  "joueurs": [
+    {
+      "nom": "Pierre",
+      "role": "chercheur",
+      "emplacement": "Istanbul",
+      "cartes": ["Istanbul", "Ankara"]
+    },
+    {
+      "nom": "Mvondo",
+      "role": "opérateur de soins de santé",
+      "emplacement": "Ankara",
+      "cartes": ["Izmir", "Bursa"]
+    }
+  ],
+  "pays": [
+    {
+      "nom": "Turquie",
+      "villes": ["Istanbul", "Ankara", "Izmir", "Bursa"]
+      }
+  ]
+}
+
+
+
+{
+  "villes": [
+    {
+      "nom": "Kiev",
+      "pays": "Ukraine",
+      "couleur": "bleu",
+      "population": 3000000,
+      "voisins": ["Odessa", "Kharkiv", "Dnipro"]
+    },
+    {
+      "nom": "Odessa",
+      "pays": "Ukraine",
+      "couleur": "bleu",
+      "population": 250000,
+      "voisins": ["Kiev", "Kharkiv", "Mykolaïv"]
+    },
+    {
+      "nom": "Kharkiv",
+      "pays": "Ukraine",
+      "couleur": "bleu",
+      "population": 200000,
+      "voisins": ["Kiev", "Odessa", "Donetsk"]
+    },
+    {
+      "nom": "Dnipro",
+      "pays": "Ukraine",
+      "couleur": "bleu",
+      "population": 150000,
+      "voisins": ["Kiev", "Zaporizhzhya", "Kropyvnytskyi"]
+    }
+  ],
+  "maladies": [
+    {
+      "nom": "Grippe",
+      "couleur": "jaune",
+      "traitement": "oui"
+    },
+    {
+      "nom": "COVID-19",
+      "couleur": "rouge",
+      "traitement": "oui"
+    }
+  ],
+  "joueurs": [
+    {
+      "nom": "Pierre",
+      "role": "chercheur",
+      "emplacement": "Kiev",
+      "cartes": ["Kiev", "Odessa"]
+    },
+    {
+      "nom": "Mvondo",
+      "role": "opérateur de soins de santé",
+      "emplacement": "Odessa",
+      "cartes": ["Kharkiv", "Dnipro"]
+    }
+  ],
+  "pays": [
+    {
+      "nom": "Ukraine",
+      "villes": ["Kiev", "Odessa", "Kharkiv"]
+	 }
+  ]
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	  
+
+
+
+
+	
+
+]
