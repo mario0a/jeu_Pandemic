@@ -1,8 +1,8 @@
 package facade;
 
-import modele.Plateau;
-import modele.Ville;
-import modele.interfaces.ICartes;
+import exceptions.PartieNonRepriseException;
+import exceptions.PartiePleineException;
+import modele.Partie;
 
 import java.util.Collection;
 
@@ -12,4 +12,11 @@ public interface IFacadePandemicOnline {
  public boolean partieInitialisee(String idPartie);
 
  public  void inscription(String nomJoueur, String mdp);
+ public  boolean seConnecter(String nomJoueur, String mdp);
+ public  void creerPartie(String id, String nomJoueur) throws PartiePleineException;
+ public  Collection<Partie> getLesParties();
+ public  String getEtatPartie(String id);
+ public  Collection<Partie> getLesPartiesSuspendues();
+ public  boolean suspendreLaPartie(String idPartie, String nomJoueur)throws PartieNonRepriseException;
+ public  boolean quitterLaPartie(String idPartie, String nomJoueur);
 }
