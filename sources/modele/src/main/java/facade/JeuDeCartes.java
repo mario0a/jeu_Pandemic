@@ -1,5 +1,6 @@
-package modele;
+package facade;
 
+import modele.*;
 import modele.interfaces.ICartes;
 
 import java.util.ArrayList;

@@ -1,6 +1,7 @@
 package LesActions;
 
 import exceptions.*;
+import facade.JeuDeCartes;
 import modele.*;
 import modele.interfaces.ICartes;
 
