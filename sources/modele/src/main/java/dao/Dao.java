@@ -1,5 +1,7 @@
 package dao;
 
+import LesActions.Actions;
+import LesActions.IAction;
 import com.mongodb.ConnectionString;
 import com.mongodb.MongoClientSettings;
 import com.mongodb.MongoWriteException;
@@ -9,13 +11,9 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.Filters;
 import com.mongodb.client.model.Updates;
+import exceptions.*;
 import exceptions.PartieNonRepriseException;
-import exceptions.PartieNonRepriseException;
-import exceptions.PartieNonSuspenduException;
-import exceptions.PartiePleineException;
-import modele.Joueur;
-import modele.Partie;
-import modele.Partie1Joueur;
+import modele.*;
 import org.bson.codecs.configuration.CodecRegistries;
 import org.bson.codecs.configuration.CodecRegistry;
 import org.bson.codecs.pojo.PojoCodecProvider;
@@ -23,6 +21,7 @@ import org.bson.codecs.pojo.PojoCodecProvider;
 import java.security.cert.CollectionCertStoreParameters;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.Objects;
 
 public class Dao {
@@ -148,4 +147,65 @@ public class Dao {
     public static MongoDatabase getDb() {
         return db;
     }
-}
+
+
+    // Les actions des joueurs
+
+    public void traiterMaladie(String idPartie, String nomJoueur, CouleursMaladie couleurMaladie, Actions actions){
+        MongoCollection<Partie> partieMongoCollection = db.getCollection("parties", Partie.class);
+        Collection<Partie> partieCollection = new ArrayList<>();
+        Partie partie = partieMongoCollection.find(Filters.eq("_id",idPartie)).first();
+        Joueur joueur=partie.getJoueurByName(nomJoueur);
+        actions.traiterMaladie(joueur,couleurMaladie);
+    }
+
+    public void construireStationRecherche(String idPartie,String nomJoueur, Actions actions) throws CentreRechercheDejaExistantException,
+            NombreMaxCentreRechercheAtteintException, AbsenceCarteJoueurException {
+        MongoCollection<Partie> partieMongoCollection = db.getCollection("parties", Partie.class);
+        Collection<Partie> partieCollection = new ArrayList<>();
+        Partie partie = partieMongoCollection.find(Filters.eq("_id",idPartie)).first();
+        Joueur joueur=partie.getJoueurByName(nomJoueur);
+        actions.construireStationRecherche(joueur);
+    }
+
+
+    public void deplacerStationRecherche(String idPartie,String nomJoueur, Actions actions, Ville ville) throws CentreRechercheDejaExistantException,
+            CentreRechercheInexistantException, VilleIdentiqueException {
+        MongoCollection<Partie> partieMongoCollection = db.getCollection("parties", Partie.class);
+        Collection<Partie> partieCollection = new ArrayList<>();
+        Partie partie = partieMongoCollection.find(Filters.eq("_id",idPartie)).first();
+        Joueur joueur=partie.getJoueurByName(nomJoueur);
+        actions.deplacerStationRecherche(joueur,ville);
+    }
+
+
+    public void decouvrirRemede(String idPartie,String nomJoueur,Actions actions) throws CentreRechercheInexistantException{
+        MongoCollection<Partie> partieMongoCollection = db.getCollection("parties", Partie.class);
+        Collection<Partie> partieCollection = new ArrayList<>();
+        Partie partie = partieMongoCollection.find(Filters.eq("_id",idPartie)).first();
+        Joueur joueur=partie.getJoueurByName(nomJoueur);
+        actions.decouvrirRemede(joueur);
+    }
+
+
+    public void piocherCarte(String idPartie,String nomJoueur,Actions actions, List<CartesJoueur> cartesJoueurList) throws CartesJoueurInsuffisantes,
+            NombreCarteDepasseException {
+        MongoCollection<Partie> partieMongoCollection = db.getCollection("parties", Partie.class);
+        Collection<Partie> partieCollection = new ArrayList<>();
+        Partie partie = partieMongoCollection.find(Filters.eq("_id",idPartie)).first();
+        Joueur joueur=partie.getJoueurByName(nomJoueur);
+        actions.piocherCarte(joueur,cartesJoueurList);
+    }
+
+
+    public void echangerCarte(String idPartie,String nomJoueurDonneur, String nomJoueurReceveur, CartesJoueur carte,Actions actions) throws NombreCarteDepasseException, AbsenceCarteJoueurException, PositionJoueursDifferenteExceptions {
+        MongoCollection<Partie> partieMongoCollection = db.getCollection("parties", Partie.class);
+        Collection<Partie> partieCollection = new ArrayList<>();
+        Partie partie = partieMongoCollection.find(Filters.eq("_id",idPartie)).first();
+        Joueur joueurDonneur=partie.getJoueurByName(nomJoueurDonneur);
+        Joueur joueurReceveur=partie.getJoueurByName(nomJoueurReceveur);
+        actions.echangerCarte(joueurDonneur,joueurReceveur,carte);
+    }
+
+
+    }

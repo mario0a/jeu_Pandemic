@@ -87,4 +87,8 @@ public class Partie {
     public Partie1Joueur getPartieJoueurByNomJoueur(String nomJoueur) {
         return this.partieJoueur.stream().filter(partieJoueur -> partieJoueur.getJoueur().equals(nomJoueur)).collect(Collectors.toList()).get(0);
     }
+
+    public Joueur getJoueurByName(String nomJoueur){
+        return this.partieJoueur.stream().filter(partie1Joueur ->partie1Joueur.getJoueur().getNomJoueur().equals(nomJoueur)).collect(Collectors.toList()).get(0).getJoueur();
+    }
 }
