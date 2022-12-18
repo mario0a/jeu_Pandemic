@@ -82,7 +82,16 @@ public class Actions implements IAction{
         if(!joueurDonneur.getCartes_en_main().contains(carte)) throw new AbsenceCarteJoueurException();
         if(!joueurDonneur.getPosition().equals(joueurReceveur.getPosition())) throw new PositionJoueursDifferenteExceptions();
         if(joueurReceveur.getCartes_en_main().size()==7) throw new NombreCarteDepasseException();
-        joueurReceveur.getCartes_en_main().add(carte);
+
+        if(!joueurDonneur.getTypeRole().equals(TypeRole.CHERCHEUSE)) {
+            joueurReceveur.getCartes_en_main().add(carte);
+            joueurDonneur.getCartes_en_main().remove(carte);
+        }else {
+            if(!joueurDonneur.getPosition().equals(carte.informations()))throw new CarteVilleDifferentePositionJoueur();
+            joueurReceveur.getCartes_en_main().add(carte);
+            joueurDonneur.getCartes_en_main().remove(carte);
+        }
     }
+
 
 }
