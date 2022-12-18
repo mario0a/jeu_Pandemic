@@ -10,4 +10,6 @@ import java.util.Collection;
 public interface IFacadePandemicOnline {
  //contient les différentes actions qu'on peut effectuer sur le plateau
  public boolean partieInitialisee(String idPartie);
+
+ public  void inscription(String nomJoueur, String mdp);
 }
