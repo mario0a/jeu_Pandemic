@@ -207,5 +207,4 @@ public class Dao {
         actions.echangerCarte(joueurDonneur,joueurReceveur,carte);
     }
 
-
     }

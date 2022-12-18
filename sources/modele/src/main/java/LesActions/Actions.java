@@ -85,5 +85,4 @@ public class Actions implements IAction{
         joueurReceveur.getCartes_en_main().add(carte);
     }
 
-
 }
