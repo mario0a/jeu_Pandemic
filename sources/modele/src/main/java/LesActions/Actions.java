@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 public class Actions implements IAction{
     @Override
     public void traiterMaladie(Joueur joueur, CouleursMaladie couleurMaladie) {
-        if(joueur.getPartie().getPartie().getLesRemedesActif().contains(couleurMaladie)) {
+        if(joueur.getPartie().getPartie().getLesRemedesActif().contains(couleurMaladie) || joueur.getTypeRole().equals(TypeRole.MEDECIN) ){
             joueur.getPosition().getCube().replace(couleurMaladie, 0);
         }else{
             joueur.getPosition().getCube().replace(couleurMaladie,joueur.getPosition().getCube().get(couleurMaladie)-1);
