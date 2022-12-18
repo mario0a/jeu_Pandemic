@@ -12,7 +12,6 @@ public class TestCarte {
             assertEquals("paris", ville.getNomVille());
         }
 
-
         @Test
         public void testCouleurMaladie() {
             String cm = String.valueOf(CouleursMaladie.BLEU);
