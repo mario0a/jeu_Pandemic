@@ -19,6 +19,10 @@ public class Ville {
     //private int nombre_carte_propagation= 1; //chaque ville a exactement 1 carte propagation
     private Boolean aUnCentreDeRecherche;
 
+    public Ville(String nomVille) {
+        this.nomVille = nomVille;
+    }
+
     public Ville(String nomVille, String nomPays, int nombreDeCube, CouleursMaladie couleursMaladie, int nombreHabitant, double superficie, Boolean aUnCentreDeRecherche) {
         this.nomVille = nomVille;
         this.nomPays = nomPays;
