@@ -26,7 +26,10 @@ public class Actions implements IAction{
         joueur.getPosition().setaUnCentreDeRecherche(true);
         joueur.getCartes_en_main().remove(joueur.getPosition());
         ICartes uneCarte = joueur.getCartes_en_main().stream().filter(carte -> carte.informations().equals(joueur.getPosition().getNomVille())).collect(Collectors.toList()).get(0);
-        joueur.getPartie().getPartie().getDefausse_cartesJoueur().add(uneCarte);
+       if (!joueur.getTypeRole().equals(TypeRole.EXPERT_AUX_OPERATIONS)){
+           joueur.getPartie().getPartie().getDefausse_cartesJoueur().add(uneCarte);
+       }
+
     }
 
     @Override
