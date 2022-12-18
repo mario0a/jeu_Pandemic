@@ -111,4 +111,11 @@ public class Dao {
         Partie partie = partieMongoCollection.find(Filters.and(Filters.eq("_id",idPartie),Filters.or(Filters.eq("etatPartie","EN_COURS"), Filters.eq("etatPartie","DEBUT")))).first();
         return Objects.isNull(partie);
     }
+
+    public  static boolean createurPartie(String idPartie, String nomJoueur){
+        MongoCollection<Partie> partieMongoCollection = db.getCollection("parties", Partie.class);
+        Collection<Partie> partieCollection = new ArrayList<>();
+        Partie partie = partieMongoCollection.find(Filters.eq("_id",idPartie)).first();
+        return partie.getPartieJoueurByNomJoueur(nomJoueur).isCreateur();
+    }
 }
