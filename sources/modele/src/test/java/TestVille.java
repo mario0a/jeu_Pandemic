@@ -41,7 +41,7 @@ public class TestVille {
     }
 
     @Test
-    public void testAddDiseaseCubes() {
+    public void testAddCubesMaladies() {
         //ajout de 1 cube noir et 1 cube rouge sur paris
         paris.ajouterCube(CouleursMaladie.ROUGE);
         paris.ajouterCube(CouleursMaladie.NOIR);
