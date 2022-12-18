@@ -72,4 +72,17 @@ public class Dao {
             throw new PartieNonReprendreException();
         }
     }
+
+    //pour quitter la partie
+    public static boolean quitterLaPartie(String idPartie, String nomJoueur){
+        MongoCollection<Partie> partieMongoCollection = db.getCollection("parties", Partie.class);
+        Partie partie = partieMongoCollection.find(Filters.eq("_id", idPartie)).first();
+        if(partie.getPartieJoueurByNomJoueur(nomJoueur).isCreateur()){
+            partieMongoCollection.updateOne(Filters.eq("_id", idPartie), Updates.combine(Updates.set("etatPartie", "TERMINE")));
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 }
