@@ -1,13 +1,17 @@
 package modele;
 
-import LesActions.Actions;
+import facade.IFacadePandemicOnline;
+import facade.JeuDeCartes;
 import modele.interfaces.ICartes;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import org.bson.codecs.pojo.annotations.BsonProperty;
 
 public class Plateau {
+    @BsonProperty("_id")
+    private String id;
     private final List<Integer> PistevitesseDePropagation =List.of(2,2,2,3,3,4,4);
     private List<ICartes> cartesJoueur;
     private List<ICartes>carte_epidemie;
@@ -19,7 +23,7 @@ public class Plateau {
     private List<ICartes> defausse_carteDePropagation;
     private List<Ville> lesVilles;
     private List<Ville> villes_ontEclosion;
-    private List<Actions> stationDeRecherche;
+    private List<IFacadePandemicOnline> stationDeRecherche;
     private List<TypeRemede> lesRemedesActif = new ArrayList<>();
     private List<Ville> lesStationsDeRecherche;
 
@@ -97,7 +101,7 @@ public class Plateau {
         this.defausse_carteDePropagation = defausse_carteDePropagation;
     }
 
-    public List<Actions> getStationDeRecherche(Ville ville) {
+    public List<IFacadePandemicOnline> getStationDeRecherche(Ville ville) {
         return this.stationDeRecherche;
     }
 

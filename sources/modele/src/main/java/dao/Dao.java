@@ -2,6 +2,7 @@ package dao;
 
 import com.mongodb.ConnectionString;
 import com.mongodb.MongoClientSettings;
+import com.mongodb.MongoWriteException;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
@@ -25,17 +26,22 @@ import java.util.Collection;
 import java.util.Objects;
 
 public class Dao {
-    private static final MongoClient mongoClient = MongoClients.create("mongodb://172.17.0.2:27017");
+    private static final MongoClient mongoClient = MongoClients.create("mongodb://0.0.0.0:27017");
     private static final CodecRegistry pojoCodeRegistry = CodecRegistries.fromRegistries(MongoClientSettings.getDefaultCodecRegistry(), CodecRegistries.fromProviders(PojoCodecProvider.builder().automatic(true).build()));
     private static final MongoDatabase db = mongoClient.getDatabase("pandemic1").withCodecRegistry(pojoCodeRegistry);
 
 
     //pour s'inscrire
     public static void inscription(String nomJoueur, String mdp) {
+        try{
         MongoCollection<Joueur> joueurMongoCollection = db.getCollection("joueurs", Joueur.class);
         Joueur joueur = new Joueur(nomJoueur, mdp);
         joueurMongoCollection.insertOne(joueur);
+        }catch(MongoWriteException e){
+            System.out.println(e.getMessage());
+        }
     }
+
 
     public static boolean seConnecter(String nomJoueur, String mdp) {
         MongoCollection<Joueur> joueurMongoCollection = db.getCollection("joueurs", Joueur.class);

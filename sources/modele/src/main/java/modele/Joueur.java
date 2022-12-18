@@ -2,19 +2,21 @@ package modele;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.bson.codecs.configuration.CodecConfigurationException;
+import org.bson.codecs.pojo.annotations.BsonProperty;
 
 public class Joueur {
-    private String nomJoueur;
+
     private String id;
+    private String nomJoueur;
     private String mdp;
     private Ville position;
     private TypeRole typeRole;
     private List<CartesJoueur> cartes_en_main;
     private Partie1Joueur partie;
-    private ArrayList<CartesJoueur> carte_a_partager = new ArrayList();
+    private ArrayList<CartesJoueur> carte_a_partager;
 
     //constructeur
-    public Joueur() {}
 
     public Joueur(String id, String mdp) {
         this.id = id;
@@ -26,6 +28,10 @@ public class Joueur {
         this.position = position;
         this.typeRole = typeRole;
 
+    }
+
+    public Joueur(String nomJoueur) {
+        this.nomJoueur = nomJoueur;
     }
 
     public List<CartesJoueur> getCartes_en_main() {

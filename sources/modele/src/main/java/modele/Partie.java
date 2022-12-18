@@ -6,8 +6,12 @@ import modele.interfaces.ICartes;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+import org.bson.codecs.pojo.annotations.BsonProperty;
+import org.bson.codecs.configuration.CodecConfigurationException;
 
 public class Partie {
+    @BsonProperty("_id")
     private String id;
     private EtatPartie etatPartie;
     private LocalDate dateCreation;
@@ -78,5 +82,9 @@ public class Partie {
                 ", carteDefausse=" + carteDefausse +
                 ", partieJoueur=" + partieJoueur +
                 '}';
+    }
+
+    public Partie1Joueur getPartieJoueurByNomJoueur(String nomJoueur) {
+        return this.partieJoueur.stream().filter(partieJoueur -> partieJoueur.getJoueur().equals(nomJoueur)).collect(Collectors.toList()).get(0);
     }
 }

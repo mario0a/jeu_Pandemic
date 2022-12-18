@@ -3,11 +3,16 @@ package modele;
 import LesActions.*;
 import exceptions.CarteArriveeInexistanteException;
 import exceptions.PasCentreRechercheException;
+import facade.JeuDeCartes;
 import modele.interfaces.ICartes;
+import org.bson.codecs.pojo.annotations.BsonProperty;
+import org.bson.codecs.configuration.CodecConfigurationException;
 
 import java.util.List;
 
 public class Partie1Joueur {
+    @BsonProperty("_id")
+    private String id;
     private Joueur joueur;
     private IDeplacements deplacement;
     private Plateau partie;
@@ -18,6 +23,7 @@ public class Partie1Joueur {
     private int nombre_action =4;
     private List<Ville> villesPartie;
     private int nombreCarteJoueur;
+    private boolean createur;
 
 
     public Partie1Joueur(Joueur joueur, IDeplacements deplacement, Plateau partie, List<JeuDeCartes> cartesVille, List<JeuDeCartes> cartEpidemie, List<JeuDeCartes> carteEvenement, List<JeuDeCartes> cartePropagation, int nombre_action, List<CartesJoueur> cartes_en_main, int nombreCarteJoueur, List<Ville> villesPartie) {
@@ -31,6 +37,11 @@ public class Partie1Joueur {
         this.nombre_action = nombre_action;
         this.villesPartie= villesPartie;
         this.nombreCarteJoueur = nombreCarteJoueur;
+    }
+
+    public Partie1Joueur(String nomJoueur, boolean b) {
+        this.joueur = new Joueur(nomJoueur);
+        this.createur = b;
     }
 
     public int getNombre_action() {
@@ -81,6 +92,10 @@ public class Partie1Joueur {
     }
     public int getNombreCarteJoueur() {
         return nombreCarteJoueur;
+    }
+
+    public boolean isCreateur() {
+        return createur;
     }
 
     public void joueurSeDeplacerNavette(Joueur joueur, Ville choix) throws CarteArriveeInexistanteException, PasCentreRechercheException {
