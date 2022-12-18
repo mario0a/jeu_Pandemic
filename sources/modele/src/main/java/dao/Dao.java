@@ -8,6 +8,7 @@ import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.Filters;
 import com.mongodb.client.model.Updates;
 import exceptions.PartieNonReprendreException;
+import exceptions.PartieNonSuspenduException;
 import modele.Joueur;
 import modele.Partie;
 import modele.Partie1Joueur;
@@ -83,6 +84,24 @@ public class Dao {
         }
         else {
             return false;
+        }
+    }
+
+    public static boolean reprendreUnePartie(String idPartie, String nomJoueur) throws PartieNonSuspenduException {
+        MongoCollection<Partie> partieMongoCollection = db.getCollection("parties", Partie.class);
+        Collection<Partie> partieCollection = new ArrayList<>();
+        Partie partie = partieMongoCollection.find(Filters.and(Filters.eq("_id",idPartie),Filters.eq("etatPartie","SUSPENDU"))).first();
+        if(Objects.nonNull(partie)){
+            if(partie.getPartieJoueurByNomJoueur(nomJoueur).isCreateur()){
+                partieMongoCollection.updateOne(Filters.eq("_id", idPartie), Updates.combine(Updates.set("etatPartie", "DEBUT")));
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        else {
+            throw new PartieNonSuspenduException();
         }
     }
 }
