@@ -1,0 +1,15 @@
+[  
+	{    
+	"id": 200,
+	"nom": "pierre",    
+	"rôle": "Chercheur"  ,
+	 "score": 50,
+	},  
+	{    
+	"id": 201
+	"nom": "Mvondo",    
+	"rôle": "Contrôleur des infections",
+	"score": 50,
+	} 
+	
+]

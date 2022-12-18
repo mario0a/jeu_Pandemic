@@ -1,0 +1,36 @@
+[
+
+{
+  "Maladies": [
+    {
+      "id": "901",
+      "nom": "Ebola",
+      "couleur": "Jaune",
+      "diffusion": 4,
+      "traitement": "Inconnu"
+    },
+    {
+      "id": "902",
+      "nom": "COVID-19",
+      "couleur": "Rouge",
+      "diffusion": 2,
+      "traitement": "Inconnu"
+    },
+    {
+      "id": "903",
+      "nom": "Grippe",
+      "couleur": "Jaune",
+      "diffusion": 3,
+      "traitement": "Inconnu"
+    },
+    {
+      "id": "904",
+      "nom": "Grippe aviaire",
+      "couleur": "Jaune",
+      "diffusion": 3,
+      "traitement": "Oui"
+    }
+  ]
+}
+
+]

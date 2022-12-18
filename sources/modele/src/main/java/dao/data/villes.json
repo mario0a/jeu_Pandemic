@@ -1,0 +1,1935 @@
+[
+{
+"ville": {
+"id": 400,
+"nom": "Atlanta",
+"maladies": [
+{
+"id": 401,
+"nom": "Grippe",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 402,
+"nom": "COVID-19",
+"couleur": "rouge",
+"traitement": "oui"
+},
+{
+"id": 403,
+"nom": "Grippe aviaire",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 404,
+"nom": "Ebola",
+"couleur": "rouge",
+"traitement": "oui"
+}
+],
+"joueurs": [
+{
+"id": 200,
+"nom": "Mvondo",
+"role": "chercheur"
+},
+{
+"id": 201,
+"nom": "Mvondo",
+"role": "opérateur de soins de santé"
+}
+],
+"pays": {
+"id": 407,
+"nom": "Etats-Unis"
+},
+"voisins": [
+{
+"id": 408,
+"nom": "Marietta"
+},
+{
+"id": 409,
+"nom": "Sandy Springs"
+},
+{
+"id": 410,
+"nom": "Alpharetta"
+}
+]
+}
+}
+
+
+{
+"ville": {
+"id": 500,
+"nom": "Boston",
+"maladies": [
+{
+"id": 501,
+"nom": "Grippe",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 502,
+"nom": "COVID-19",
+"couleur": "rouge",
+"traitement": "oui"
+},
+{
+"id": 503,
+"nom": "Grippe aviaire",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 504,
+"nom": "Ebola",
+"couleur": "rouge",
+"traitement": "oui"
+}
+],
+"joueurs": [
+{
+"id": 300,
+"nom": "Mvondo",
+"role": "chercheur"
+},
+{
+"id": 301,
+"nom": "Mvondo",
+"role": "opérateur de soins de santé"
+}
+],
+"pays": {
+"id": 507,
+"nom": "Etats-Unis"
+},
+"voisins": [
+{
+"id": 508,
+"nom": "Cambridge"
+},
+{
+"id": 509,
+"nom": "Somerville"
+},
+{
+"id": 510,
+"nom": "BrookMvondoe"
+}
+]
+}
+}
+
+
+{
+"ville": {
+"id": 500,
+"nom": "Calcutta",
+"maladies": [
+{
+"id": 501,
+"nom": "Grippe",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 502,
+"nom": "COVID-19",
+"couleur": "rouge",
+"traitement": "oui"
+},
+{
+"id": 503,
+"nom": "Grippe aviaire",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 504,
+"nom": "Ebola",
+"couleur": "rouge",
+"traitement": "oui"
+}
+],
+"joueurs": [
+{
+"id": 300,
+"nom": "Mvondo",
+"role": "chercheur"
+},
+{
+"id": 301,
+"nom": "Mvondo",
+"role": "opérateur de soins de santé"
+}
+],
+"pays": {
+"id": 507,
+"nom": "Inde"
+},
+"voisins": [
+{
+"id": 508,
+"nom": "Howrah"
+},
+{
+"id": 509,
+"nom": "Bardhaman"
+},
+{
+"id": 510,
+"nom": "Hooghly"
+},
+{
+"id": 511,
+"nom": "Nadia"
+},
+{
+"id": 512,
+"nom": "Murshidabad"
+}
+]
+}
+}
+
+
+
+{
+"ville": {
+"id": 600,
+"nom": "Chicago",
+"maladies": [
+{
+"id": 601,
+"nom": "Grippe",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 602,
+"nom": "COVID-19",
+"couleur": "rouge",
+"traitement": "oui"
+},
+{
+"id": 603,
+"nom": "Grippe aviaire",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 604,
+"nom": "Ebola",
+"couleur": "rouge",
+"traitement": "oui"
+}
+],
+"joueurs": [
+{
+"id": 400,
+"nom": "Mvondo",
+"role": "chercheur"
+},
+{
+"id": 401,
+"nom": "Mvondo",
+"role": "opérateur de soins de santé"
+}
+],
+"pays": {
+"id": 607,
+"nom": "Etats-Unis"
+},
+"voisins": [
+{
+"id": 608,
+"nom": "Evanston"
+},
+{
+"id": 609,
+"nom": "Skokie"
+},
+{
+"id": 610,
+"nom": "Oak Park"
+}
+]
+}
+}
+
+
+
+{
+"ville": {
+"id": 600,
+"nom": "Delhi",
+"maladies": [
+{
+"id": 601,
+"nom": "Grippe",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 602,
+"nom": "COVID-19",
+"couleur": "rouge",
+"traitement": "oui"
+},
+{
+"id": 603,
+"nom": "Grippe aviaire",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 604,
+"nom": "Ebola",
+"couleur": "rouge",
+"traitement": "oui"
+}
+],
+"joueurs": [
+{
+"id": 400,
+"nom": "Ravi",
+"role": "chercheur"
+},
+{
+"id": 401,
+"nom": "Priya",
+"role": "opérateur de soins de santé"
+}
+],
+"pays": {
+"id": 607,
+"nom": "Inde"
+},
+"voisins": [
+{
+"id": 608,
+"nom": "Gurgaon"
+},
+{
+"id": 609,
+"nom": "Noida"
+},
+{
+"id": 610,
+"nom": "Faridabad"
+}
+]
+}
+}
+
+
+
+
+{
+"ville": {
+"id": 600,
+"nom": "Essen",
+"maladies": [
+{
+"id": 601,
+"nom": "Grippe",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 602,
+"nom": "COVID-19",
+"couleur": "rouge",
+"traitement": "oui"
+},
+{
+"id": 603,
+"nom": "Grippe aviaire",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 604,
+"nom": "Ebola",
+"couleur": "rouge",
+"traitement": "oui"
+}
+],
+"joueurs": [
+{
+"id": 400,
+"nom": "Mvondo",
+"role": "chercheur"
+},
+{
+"id": 401,
+"nom": "Mvondo",
+"role": "opérateur de soins de santé"
+}
+],
+"pays": {
+"id": 607,
+"nom": "Allemagne"
+},
+"voisins": [
+{
+"id": 608,
+"nom": "Mülheim an der Ruhr"
+},
+{
+"id": 609,
+"nom": "Gelsenkirchen"
+},
+{
+"id": 610,
+"nom": "Bochum"
+}
+]
+}
+}
+
+
+
+
+{
+"ville": {
+"id": 600,
+"nom": "Hong Kong",
+"maladies": [
+{
+"id": 601,
+"nom": "Grippe",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 602,
+"nom": "COVID-19",
+"couleur": "rouge",
+"traitement": "oui"
+},
+{
+"id": 603,
+"nom": "Grippe aviaire",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 604,
+"nom": "Ebola",
+"couleur": "rouge",
+"traitement": "oui"
+}
+],
+"joueurs": [
+{
+"id": 400,
+"nom": "Mvondo",
+"role": "chercheur"
+},
+{
+"id": 401,
+"nom": "Mvondo",
+"role": "opérateur de soins de santé"
+}
+],
+"pays": {
+"id": 607,
+"nom": "Chine"
+},
+"voisins": [
+{
+"id": 608,
+"nom": "Kowloon"
+},
+{
+"id": 609,
+"nom": "New Territories"
+},
+{
+"id": 610,
+"nom": "Lantau Island"
+}
+]
+}
+}
+
+
+{
+"ville": {
+"id": 600,
+"nom": "Istanbul",
+"maladies": [
+{
+"id": 601,
+"nom": "Grippe",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 602,
+"nom": "COVID-19",
+"couleur": "rouge",
+"traitement": "oui"
+},
+{
+"id": 603,
+"nom": "Grippe aviaire",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 604,
+"nom": "Ebola",
+"couleur": "rouge",
+"traitement": "oui"
+}
+],
+"joueurs": [
+{
+"id": 400,
+"nom": "Mehmet",
+"role": "chercheur"
+},
+{
+"id": 401,
+"nom": "Ayşe",
+"role": "opérateur de soins de santé"
+}
+],
+"pays": {
+"id": 607,
+"nom": "Turquie"
+},
+"voisins": [
+{
+"id": 608,
+"nom": "Küçükçekmece"
+},
+{
+"id": 609,
+"nom": "Başakşehir"
+},
+{
+"id": 610,
+"nom": "Sarıyer"
+}
+]
+}
+}
+
+
+
+{
+"ville": {
+"id": 600,
+"nom": "Johannesburg",
+"maladies": [
+{
+"id": 601,
+"nom": "Grippe",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 602,
+"nom": "COVID-19",
+"couleur": "rouge",
+"traitement": "oui"
+},
+{
+"id": 603,
+"nom": "Grippe aviaire",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 604,
+"nom": "Ebola",
+"couleur": "rouge",
+"traitement": "oui"
+}
+],
+"joueurs": [
+{
+"id": 400,
+"nom": "Mvondo",
+"role": "chercheur"
+},
+{
+"id": 401,
+"nom": "Mvondo",
+"role": "opérateur de soins de santé"
+}
+],
+"pays": {
+"id": 607,
+"nom": "Afrique du Sud"
+},
+"voisins": [
+{
+"id": 608,
+"nom": "Pretoria"
+},
+{
+"id": 609,
+"nom": "Soweto"
+},
+{
+"id": 610,
+"nom": "Randburg"
+}
+]
+}
+}
+
+
+{
+"ville": {
+"id": 600,
+"nom": "Karachi",
+"maladies": [
+{
+"id": 601,
+"nom": "Grippe",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 602,
+"nom": "COVID-19",
+"couleur": "rouge",
+"traitement": "oui"
+},
+{
+"id": 603,
+"nom": "Grippe aviaire",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 604,
+"nom": "Ebola",
+"couleur": "rouge",
+"traitement": "oui"
+}
+],
+"joueurs": [
+{
+"id": 400,
+"nom": "Ali",
+"role": "chercheur"
+},
+{
+"id": 401,
+"nom": "Mvondo",
+"role": "opérateur de soins de santé"
+}
+],
+"pays": {
+"id": 607,
+"nom": "Pakistan"
+},
+"voisins": [
+{
+"id": 608,
+"nom": "Hyderabad"
+},
+{
+"id": 609,
+"nom": "Sukkur"
+},
+{
+"id": 610,
+"nom": "Larkana"
+}
+]
+}
+}
+
+{
+"ville": {
+"id": 700,
+"nom": "Kinshasa",
+"maladies": [
+{
+"id": 701,
+"nom": "Grippe",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 702,
+"nom": "COVID-19",
+"couleur": "rouge",
+"traitement": "oui"
+},
+{
+"id": 703,
+"nom": "Grippe aviaire",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 704,
+"nom": "Ebola",
+"couleur": "rouge",
+"traitement": "oui"
+}
+],
+"joueurs": [
+{
+"id": 500,
+"nom": "Pierre",
+"role": "chercheur"
+},
+{
+"id": 501,
+"nom": "Mvondo",
+"role": "opérateur de soins de santé"
+}
+],
+"pays": {
+"id": 707,
+"nom": "République démocratique du Congo"
+},
+"voisins": [
+{
+"id": 708,
+"nom": "Mbuji-Mayi"
+},
+{
+"id": 709,
+"nom": "Lubumbashi"
+},
+{
+"id": 710,
+"nom": "Kolwezi"
+}
+]
+}
+}
+
+
+{
+"ville": {
+"id": 1000,
+"nom": "Londres",
+"maladies": [
+{
+"id": 1001,
+"nom": "Grippe",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 1002,
+"nom": "COVID-19",
+"couleur": "rouge",
+"traitement": "oui"
+},
+{
+"id": 1003,
+"nom": "Rougeole",
+"couleur": "rouge",
+"traitement": "oui"
+},
+{
+"id": 1004,
+"nom": "Varicelle",
+"couleur": "jaune",
+"traitement": "oui"
+}
+],
+"joueurs": [
+{
+"id": 800,
+"nom": "Pierre",
+"role": "chercheur"
+},
+{
+"id": 801,
+"nom": "Mvondo",
+"role": "opérateur de soins de santé"
+}
+],
+"pays": {
+"id": 1007,
+"nom": "Royaume-Uni"
+},
+"voisins": [
+{
+"id": 1008,
+"nom": "Brighton"
+},
+{
+"id": 1009,
+"nom": "Canterbury"
+},
+{
+"id": 1010,
+"nom": "Oxford"
+}
+]
+}
+}
+
+
+
+{
+"ville": {
+"id": 80,
+"nom": "Madrid",
+"maladies": [
+{
+"id": 81,
+"nom": "Grippe",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 82,
+"nom": "COVID-19",
+"couleur": "rouge",
+"traitement": "oui"
+},
+{
+"id": 83,
+"nom": "Paludisme",
+"couleur": "rouge",
+"traitement": "oui"
+},
+{
+"id": 84,
+"nom": "Dengue",
+"couleur": "jaune",
+"traitement": "oui"
+}
+],
+"joueurs": [
+{
+"id": 80,
+"nom": "Sandra",
+"role": "chercheur"
+},
+{
+"id": 81,
+"nom": "Pablo",
+"role": "opérateur de soins de santé"
+}
+],
+"pays": {
+"id": 87,
+"nom": "Espagne"
+},
+"voisins": [
+{
+"id": 88,
+"nom": "Valence"
+},
+{
+"id": 89,
+"nom": "Bilbao"
+},
+{
+"id": 90,
+"nom": "Barcelone"
+}
+]
+}
+}
+
+
+
+{
+"ville": {
+"id": 100,
+"nom": "Mexico",
+"maladies": [
+{
+"id": 101,
+"nom": "Grippe",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 102,
+"nom": "COVID-19",
+"couleur": "rouge",
+"traitement": "oui"
+},
+{
+"id": 103,
+"nom": "Dengue",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 104,
+"nom": "Chikungunya",
+"couleur": "rouge",
+"traitement": "oui"
+}
+],
+"joueurs": [
+{
+"id": 100,
+"nom": "Pierre",
+"role": "chercheur"
+},
+{
+"id": 101,
+"nom": "Mvondo",
+"role": "opérateur de soins de santé"
+}
+],
+"pays": {
+"id": 107,
+"nom": "Mexique"
+},
+"voisins": [
+{
+"id": 108,
+"nom": "Puebla"
+},
+{
+"id": 109,
+"nom": "Guadalajara"
+},
+{
+"id": 110,
+"nom": "Monterrey"
+}
+]
+}
+}
+
+
+{
+"ville": {
+"id": 150,
+"nom": "Miami",
+"maladies": [
+{
+"id": 151,
+"nom": "Grippe",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 152,
+"nom": "COVID-19",
+"couleur": "rouge",
+"traitement": "oui"
+},
+{
+"id": 153,
+"nom": "Grippe aviaire",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 154,
+"nom": "Ebola",
+"couleur": "rouge",
+"traitement": "oui"
+}
+],
+"joueurs": [
+{
+"id": 150,
+"nom": "Pierre",
+"role": "chercheur"
+},
+{
+"id": 151,
+"nom": "Mvondo",
+"role": "opérateur de soins de santé"
+}
+],
+"pays": {
+"id": 157,
+"nom": "États-Unis"
+},
+"voisins": [
+{
+"id": 158,
+"nom": "Fort Lauderdale"
+},
+{
+"id": 159,
+"nom": "West Palm Beach"
+},
+{
+"id": 160,
+"nom": "Key West"
+}
+]
+}
+}
+
+
+{
+"ville": {
+"id": 161,
+"nom": "Milan",
+"maladies": [
+{
+"id": 162,
+"nom": "Grippe",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 163,
+"nom": "COVID-19",
+"couleur": "rouge",
+"traitement": "oui"
+},
+{
+"id": 164,
+"nom": "Grippe aviaire",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 165,
+"nom": "Ebola",
+"couleur": "rouge",
+"traitement": "oui"
+}
+],
+"joueurs": [
+{
+"id": 161,
+"nom": "Pierre",
+"role": "chercheur"
+},
+{
+"id": 162,
+"nom": "Mvondo",
+"role": "opérateur de soins de santé"
+}
+],
+"pays": {
+"id": 167,
+"nom": "Italie"
+},
+"voisins": [
+{
+"id": 168,
+"nom": "Turin"
+},
+{
+"id": 169,
+"nom": "Gênes"
+},
+{
+"id": 170,
+"nom": "Bologne"
+}
+]
+}
+}
+
+
+{
+"ville": {
+"id": 20,
+"nom": "Montréal",
+"maladies": [
+{
+"id": 21,
+"nom": "Grippe",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 22,
+"nom": "COVID-19",
+"couleur": "rouge",
+"traitement": "oui"
+},
+{
+"id": 23,
+"nom": "Grippe aviaire",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 24,
+"nom": "Ebola",
+"couleur": "rouge",
+"traitement": "oui"
+}
+],
+"joueurs": [
+{
+"id": 20,
+"nom": "Pierre",
+"role": "chercheur"
+},
+{
+"id": 21,
+"nom": "Mvondo",
+"role": "opérateur de soins de santé"
+}
+],
+"pays": {
+"id": 27,
+"nom": "Canada"
+},
+"voisins": [
+{
+"id": 28,
+"nom": "Laval"
+},
+{
+"id": 29,
+"nom": "Longueuil"
+},
+{
+"id": 30,
+"nom": "Brossard"
+}
+]
+}
+}
+
+
+{
+"ville": {
+"id": 30,
+"nom": "New York",
+"maladies": [
+{
+"id": 31,
+"nom": "Grippe",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 32,
+"nom": "COVID-19",
+"couleur": "rouge",
+"traitement": "oui"
+},
+{
+"id": 33,
+"nom": "Grippe aviaire",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 34,
+"nom": "Ebola",
+"couleur": "rouge",
+"traitement": "oui"
+}
+],
+"joueurs": [
+{
+"id": 30,
+"nom": "Pierre",
+"role": "chercheur"
+},
+{
+"id": 31,
+"nom": "Mvondo",
+"role": "opérateur de soins de santé"
+}
+],
+"pays": {
+"id": 37,
+"nom": "États-Unis"
+},
+"voisins": [
+{
+"id": 38,
+"nom": "Jersey City"
+},
+{
+"id": 39,
+"nom": "Brooklyn"
+},
+{
+"id": 40,
+"nom": "Staten Island"
+}
+]
+}
+}
+
+
+{
+"ville": {
+"id": 30,
+"nom": "Osaka",
+"maladies": [
+{
+"id": 31,
+"nom": "Grippe",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 32,
+"nom": "COVID-19",
+"couleur": "rouge",
+"traitement": "oui"
+},
+{
+"id": 33,
+"nom": "Grippe aviaire",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 34,
+"nom": "Ebola",
+"couleur": "rouge",
+"traitement": "oui"
+}
+],
+"joueurs": [
+{
+"id": 30,
+"nom": "Pierre",
+"role": "chercheur"
+},
+{
+"id": 31,
+"nom": "Mvondo",
+"role": "opérateur de soins de santé"
+}
+],
+"pays": {
+"id": 37,
+"nom": "Japon"
+},
+"voisins": [
+{
+"id": 38,
+"nom": "Kobe"
+},
+{
+"id": 39,
+"nom": "Kyoto"
+},
+{
+"id": 40,
+"nom": "Nara"
+}
+]
+}
+}
+
+
+{
+"ville": {
+"id": 125,
+"nom": "Paris",
+"maladies": [
+{
+"id": 126,
+"nom": "Grippe",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 127,
+"nom": "COVID-19",
+"couleur": "rouge",
+"traitement": "oui"
+},
+{
+"id": 128,
+"nom": "Grippe aviaire",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 129,
+"nom": "Ebola",
+"couleur": "rouge",
+"traitement": "oui"
+}
+],
+"joueurs": [
+{
+"id": 125,
+"nom": "Pierre",
+"role": "chercheur"
+},
+{
+"id": 126,
+"nom": "Mvondo",
+"role": "opérateur de soins de santé"
+}
+],
+"pays": {
+"id": 131,
+"nom": "France"
+},
+"voisins": [
+{
+"id": 132,
+"nom": "Lyon"
+},
+{
+"id": 133,
+"nom": "Marseille"
+},
+{
+"id": 134,
+"nom": "Lille"
+}
+]
+}
+}
+
+
+{
+"ville": {
+"id": 21125,
+"nom": "Rio de Janeiro",
+"maladies": [
+{
+"id": 21126,
+"nom": "Grippe",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 21127,
+"nom": "COVID-19",
+"couleur": "rouge",
+"traitement": "oui"
+},
+{
+"id": 21128,
+"nom": "Grippe aviaire",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 21129,
+"nom": "Ebola",
+"couleur": "rouge",
+"traitement": "oui"
+}
+],
+"joueurs": [
+{
+"id": 21125,
+"nom": "Pierre",
+"role": "chercheur"
+},
+{
+"id": 21126,
+"nom": "Mvondo",
+"role": "opérateur de soins de santé"
+}
+],
+"pays": {
+"id": 21131,
+"nom": "Brésil"
+},
+"voisins": [
+{
+"id": 21132,
+"nom": "Niterói"
+},
+{
+"id": 21133,
+"nom": "São Gonçalo"
+},
+{
+"id": 21134,
+"nom": "Belford Roxo"
+}
+]
+}
+}
+
+
+
+{
+"ville": {
+"id": 2115,
+"nom": "San Francisco",
+"maladies": [
+{
+"id": 2116,
+"nom": "Grippe",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 2117,
+"nom": "COVID-19",
+"couleur": "rouge",
+"traitement": "oui"
+},
+{
+"id": 2118,
+"nom": "Grippe aviaire",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 2119,
+"nom": "Ebola",
+"couleur": "rouge",
+"traitement": "oui"
+}
+],
+"joueurs": [
+{
+"id": 2115,
+"nom": "Pierre",
+"role": "chercheur"
+},
+{
+"id": 2116,
+"nom": "Mvondo",
+"role": "opérateur de soins de santé"
+}
+],
+"pays": {
+"id": 2121,
+"nom": "États-Unis"
+},
+"voisins": [
+{
+"id": 2122,
+"nom": "Oakland"
+},
+{
+"id": 2123,
+"nom": "San Jose"
+},
+{
+"id": 2124,
+"nom": "Berkeley"
+}
+]
+}
+}
+
+{
+"ville": {
+"id": 215,
+"nom": "Santiago",
+"maladies": [
+{
+"id": 216,
+"nom": "Grippe",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 217,
+"nom": "COVID-19",
+"couleur": "rouge",
+"traitement": "oui"
+},
+{
+"id": 218,
+"nom": "Grippe aviaire",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 219,
+"nom": "Ebola",
+"couleur": "rouge",
+"traitement": "oui"
+}
+],
+"joueurs": [
+{
+"id": 215,
+"nom": "Pierre",
+"role": "chercheur"
+},
+{
+"id": 216,
+"nom": "Mvondo",
+"role": "opérateur de soins de santé"
+}
+],
+"pays": {
+"id": 221,
+"nom": "Chili"
+},
+"voisins": [
+{
+"id": 222,
+"nom": "Valparaíso"
+},
+{
+"id": 223,
+"nom": "Concepción"
+},
+{
+"id": 224,
+"nom": "Temuco"
+}
+]
+}
+}
+
+{
+"ville": {
+"id": 315,
+"nom": "São Paulo",
+"maladies": [
+{
+"id": 316,
+"nom": "Grippe",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 317,
+"nom": "COVID-19",
+"couleur": "rouge",
+"traitement": "oui"
+},
+{
+"id": 318,
+"nom": "Grippe aviaire",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 319,
+"nom": "Ebola",
+"couleur": "rouge",
+"traitement": "oui"
+}
+],
+"joueurs": [
+{
+"id": 315,
+"nom": "Pierre",
+"role": "chercheur"
+},
+{
+"id": 316,
+"nom": "Mvondo",
+"role": "opérateur de soins de santé"
+}
+],
+"pays": {
+"id": 322,
+"nom": "Brésil"
+},
+"voisins": [
+{
+"id": 323,
+"nom": "Campinas"
+},
+{
+"id": 324,
+"nom": "Santos"
+},
+{
+"id": 325,
+"nom": "Guarulhos"
+}
+]
+}
+}
+
+
+{
+"ville": {
+"id": 3006,
+"nom": "St. Petersbourg",
+"maladies": [
+{
+"id": 3007,
+"nom": "Grippe",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 3008,
+"nom": "COVID-19",
+"couleur": "rouge",
+"traitement": "oui"
+},
+{
+"id": 3009,
+"nom": "Grippe aviaire",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 3010,
+"nom": "Ebola",
+"couleur": "rouge",
+"traitement": "oui"
+}
+],
+"joueurs": [
+{
+"id": 3006,
+"nom": "Pierre",
+"role": "chercheur"
+},
+{
+"id": 3007,
+"nom": "Mvondo",
+"role": "opérateur de soins de santé"
+}
+],
+"pays": {
+"id": 3013,
+"nom": "Russie"
+},
+"voisins": [
+{
+"id": 3014,
+"nom": "Tver"
+},
+{
+"id": 3015,
+"nom": "Veliky Novgorod"
+},
+{
+"id": 3016,
+"nom": "Pskov"
+}
+]
+}
+}
+
+
+{
+"ville": {
+"id": 3015,
+"nom": "Sydney",
+"maladies": [
+{
+"id": 3016,
+"nom": "Grippe",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 3017,
+"nom": "COVID-19",
+"couleur": "rouge",
+"traitement": "oui"
+},
+{
+"id": 3018,
+"nom": "Grippe aviaire",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 3019,
+"nom": "Ebola",
+"couleur": "rouge",
+"traitement": "oui"
+}
+],
+"joueurs": [
+{
+"id": 3015,
+"nom": "Pierre",
+"role": "chercheur"
+},
+{
+"id": 3016,
+"nom": "Mvondo",
+"role": "opérateur de soins de santé"
+}
+],
+"pays": {
+"id": 3022,
+"nom": "Australie"
+},
+"voisins": [
+{
+"id": 3023,
+"nom": "Newcastle"
+},
+{
+"id": 3024,
+"nom": "Wollongong"
+},
+{
+"id": 3025,
+"nom": "Central Coast"
+}
+]
+}
+}
+
+
+{
+"ville": {
+"id": 3035,
+"nom": "Taipei",
+"maladies": [
+{
+"id": 3036,
+"nom": "Grippe",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 3037,
+"nom": "COVID-19",
+"couleur": "rouge",
+"traitement": "oui"
+},
+{
+"id": 3038,
+"nom": "Grippe aviaire",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 3039,
+"nom": "Ebola",
+"couleur": "rouge",
+"traitement": "oui"
+}
+],
+"joueurs": [
+{
+"id": 3035,
+"nom": "Pierre",
+"role": "chercheur"
+},
+{
+"id": 3036,
+"nom": "Mvondo",
+"role": "opérateur de soins de santé"
+}
+],
+"pays": {
+"id": 3042,
+"nom": "Taiwan"
+},
+"voisins": [
+{
+"id": 3043,
+"nom": "New Taipei"
+},
+{
+"id": 3044,
+"nom": "Taichung"
+},
+{
+"id": 3045,
+"nom": "Tainan"
+}
+]
+}
+}
+
+{
+"ville": {
+"id": 3055,
+"nom": "Téhéran",
+"maladies": [
+{
+"id": 3056,
+"nom": "Grippe",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 3057,
+"nom": "COVID-19",
+"couleur": "rouge",
+"traitement": "oui"
+},
+{
+"id": 3058,
+"nom": "Grippe aviaire",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 3059,
+"nom": "Ebola",
+"couleur": "rouge",
+"traitement": "oui"
+}
+],
+"joueurs": [
+{
+"id": 3055,
+"nom": "Pierre",
+"role": "chercheur"
+},
+{
+"id": 3056,
+"nom": "Mvondo",
+"role": "opérateur de soins de santé"
+}
+],
+"pays": {
+"id": 3061,
+"nom": "Iran"
+},
+"voisins": [
+{
+"id": 3062,
+"nom": "Qom"
+},
+{
+"id": 3063,
+"nom": "Mashhad"
+},
+{
+"id": 3064,
+"nom": "Esfahan"
+}
+]
+}
+}
+
+
+{
+"ville": {
+"id": 3075,
+"nom": "Tokyo",
+"maladies": [
+{
+"id": 3076,
+"nom": "Grippe",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 3077,
+"nom": "COVID-19",
+"couleur": "rouge",
+"traitement": "oui"
+},
+{
+"id": 3078,
+"nom": "Grippe aviaire",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 3079,
+"nom": "Ebola",
+"couleur": "rouge",
+"traitement": "oui"
+}
+],
+"joueurs": [
+{
+"id": 3075,
+"nom": "Pierre",
+"role": "chercheur"
+},
+{
+"id": 3076,
+"nom": "Mvondo",
+"role": "opérateur de soins de santé"
+}
+],
+"pays": {
+"id": 3082,
+"nom": "Japon"
+},
+"voisins": [
+{
+"id": 3083,
+"nom": "Yokohama"
+},
+{
+"id": 3084,
+"nom": "Osaka"
+},
+{
+"id": 3085,
+"nom": "Nagoya"
+}
+]
+}
+}
+
+
+{
+"ville": {
+"id": 2075,
+"nom": "Washington D.C.",
+"maladies": [
+{
+"id": 2076,
+"nom": "Grippe",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 2077,
+"nom": "COVID-19",
+"couleur": "rouge",
+"traitement": "oui"
+},
+{
+"id": 2078,
+"nom": "Grippe aviaire",
+"couleur": "jaune",
+"traitement": "oui"
+},
+{
+"id": 2079,
+"nom": "Ebola",
+"couleur": "rouge",
+"traitement": "oui"
+}
+],
+"joueurs": [
+{
+"id": 2075,
+"nom": "Pierre",
+"role": "chercheur"
+},
+{
+"id": 2076,
+"nom": "Mvondo",
+"role": "opérateur de soins de santé"
+}
+],
+"pays": {
+"id": 2082,
+"nom": "États-Unis"
+},
+"voisins": [
+{
+"id": 2083,
+"nom": "Arlington"
+},
+{
+"id": 2084,
+"nom": "Alexandria"
+},
+{
+"id": 2085,
+"nom": "Bethesda"
+}
+]
+}
+}
+
+]
