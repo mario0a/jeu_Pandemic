@@ -46,4 +46,11 @@ public class Dao {
         return partieCollection;
     }
 
+    //Récupérer les parties suspendues
+    public static Collection<Partie> getLesPartiesSuspendues(){
+        MongoCollection<Partie> partieMongoCollection = db.getCollection("parties", Partie.class);
+        Collection<Partie> partieCollection = new ArrayList<>();
+        partieMongoCollection.find(Filters.eq("etatPartie", "SUSPENDU")).forEach(p -> partieCollection.add(p));
+        return partieCollection;
+    }
 }
