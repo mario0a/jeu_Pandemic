@@ -96,4 +96,34 @@ public class Actions implements IAction{
         }
     }
 
+    @Override
+    public void subventionPublique(Joueur joueur, Ville ville) throws CentreRechercheDejaExistantException, NombreMaxCentreRechercheAtteintException {
+        if(ville.getaUnCentreDeRecherche()) throw new CentreRechercheDejaExistantException();
+        if(joueur.getPartie().getPartie().getLesStationsDeRecherche().size()>5) throw new NombreMaxCentreRechercheAtteintException();
+        ville.setaUnCentreDeRecherche(true);
+        joueur.getPartie().getPartie().getLesStationsDeRecherche().add(ville);
+
+
+    }
+
+    @Override
+    public void parUneNuitTranquille(Plateau plateau) {
+
+    }
+
+    @Override
+    public void populationResiliente(ICartes choix, Plateau plateau) throws CarteDejaExistanteException, ActionNotAutorizedException {
+
+    }
+
+    @Override
+    public void deplacerUnPionQuelconque(Joueur joueur, Ville ville) throws ActionNotAutorizedException {
+
+    }
+
+    @Override
+    public void prevention(Plateau plateau) {
+
+    }
+
 }
