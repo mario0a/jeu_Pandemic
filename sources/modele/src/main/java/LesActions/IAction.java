@@ -20,7 +20,7 @@ public interface IAction {
     void parUneNuitTranquille(Plateau plateau);
     void populationResiliente(ICartes choix, Plateau plateau) throws CarteDejaExistanteException, ActionNotAutorizedException;
 
-    void deplacerUnPionQuelconque(Joueur joueur,Ville ville) throws ActionNotAutorizedException;
+    void deplacerUnPionQuelconque(Joueur joueurADeplacer,Ville ville) throws ActionNotAutorizedException;
     void prevention(Plateau plateau);
 
 }
