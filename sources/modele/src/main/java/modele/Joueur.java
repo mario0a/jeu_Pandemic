@@ -16,6 +16,8 @@ public class Joueur {
     private Partie1Joueur partie;
     private ArrayList<CartesJoueur> carte_a_partager;
 
+    private boolean autorisationDeplacement = false;
+
     //constructeur
 
     public Joueur(String id, String mdp) {
@@ -76,6 +78,14 @@ public class Joueur {
 
     public void setCarte_a_partager(ArrayList<CartesJoueur> carte_a_partager) {
         this.carte_a_partager = carte_a_partager;
+    }
+
+    public boolean getAutorisationDeplacement() {
+        return autorisationDeplacement;
+    }
+
+    public void setAutorisationDeplacement(boolean autorisationDeplacement) {
+        this.autorisationDeplacement = autorisationDeplacement;
     }
 
     public String getId() {
