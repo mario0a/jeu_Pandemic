@@ -1,5 +1,6 @@
 package modele;
 
+import LesActions.EtatEpidemie;
 import facade.IFacadePandemicOnline;
 import facade.JeuDeCartes;
 import modele.interfaces.ICartes;
@@ -26,6 +27,8 @@ public class Plateau {
     private List<IFacadePandemicOnline> stationDeRecherche;
     private List<TypeRemede> lesRemedesActif = new ArrayList<>();
     private List<Ville> lesStationsDeRecherche;
+    private EtatEpidemie etatEpidemie;
+    private boolean parUneNuitTranquille=false;
 
     public Plateau() {
         this.nombreEclosion=0;
@@ -130,6 +133,23 @@ public class Plateau {
     public void ajouterCartePropagation(ICartes carte){this.cartesPropagation.add(carte);}
     public void ajouterCarteALaDefausse(ICartes carte){this.defausse_cartesJoueur.add(carte);}
     public void ajouterCarteALaDefaussePropagation(ICartes carte){this.defausse_carteDePropagation.add(carte);}
+
+    public EtatEpidemie getEtatEpidemie() {
+        return etatEpidemie;
+    }
+
+    public void setEtatEpidemie(EtatEpidemie etatEpidemie) {
+        this.etatEpidemie = etatEpidemie;
+    }
+
+    public boolean isParUneNuitTranquille() {
+        return parUneNuitTranquille;
+    }
+
+    public static void setParUneNuitTranquille(boolean parUneNuitTranquille) {
+        this.parUneNuitTranquille = parUneNuitTranquille;
+    }
+
     public void diffusionEpidemie(){
         villes_ontEclosion.addAll(lesVilles);
         int nombreCube=0;
