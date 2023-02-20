@@ -108,7 +108,7 @@ public class Actions implements IAction{
 
     @Override
     public void parUneNuitTranquille(Plateau plateau) {
-
+        Plateau.setParUneNuitTranquille(true);
     }
 
     @Override
