@@ -113,7 +113,8 @@ public class Actions implements IAction{
 
     @Override
     public void populationResiliente(ICartes choix, Plateau plateau) throws CarteDejaExistanteException, ActionNotAutorizedException {
-
+        if(!plateau.getDefausse_carteDePropagation().contains(choix)) throw new CarteDejaExistanteException();
+        if (plateau.getEtatEpidemie() != EtatEpidemie.INFECTION || plateau.getEtatEPidemie() !=EtatEpidemie.INTENSIFICATION) throw new ActionNotAutorizedException
     }
 
     @Override
