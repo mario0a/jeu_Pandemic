@@ -119,8 +119,9 @@ public class Actions implements IAction{
     }
 
     @Override
-    public void deplacerUnPionQuelconque(Joueur joueur, Ville ville) throws ActionNotAutorizedException {
-
+    public void deplacerUnPionQuelconque(Joueur joueurADeplacer, Ville ville) throws ActionNotAutorizedException {
+        if (joueurADeplacer.getAutorisationDeplacement()) throw new ActionNotAutorizedException();
+        joueurADeplacer.setAutorisationDeplacement(false);
     }
 
     @Override
