@@ -136,6 +136,204 @@ return cartes;
 
         atlanta.ajouterVillesLiees(miami);
         miami.ajouterVillesLiees(atlanta);
+
+        miami.ajouterVillesLiees(mexico);
+        mexico.ajouterVillesLiees(miami);
+        miami.ajouterVillesLiees(bogota);
+        bogota.ajouterVillesLiees(miami);
+        mexico.ajouterVillesLiees(los_angeles);
+        los_angeles.ajouterVillesLiees(mexico);
+        mexico.ajouterVillesLiees(bogota);
+        bogota.ajouterVillesLiees(mexico);
+        mexico.ajouterVillesLiees(lima);
+        lima.ajouterVillesLiees(mexico);
+
+        lima.ajouterVillesLiees(santiago);
+        santiago.ajouterVillesLiees(lima);
+        lima.ajouterVillesLiees(bogota);
+        bogota.ajouterVillesLiees(lima);
+
+        bogota.ajouterVillesLiees(sao_paulo);
+        sao_paulo.ajouterVillesLiees(bogota);
+        bogota.ajouterVillesLiees(buenos_aires);
+        buenos_aires.ajouterVillesLiees(bogota);
+        buenos_aires.ajouterVillesLiees(sao_paulo);
+        sao_paulo.ajouterVillesLiees(buenos_aires);
+
+        new_york.ajouterVillesLiees(londres);
+        londres.ajouterVillesLiees(new_york);
+        new_york.ajouterVillesLiees(madrid);
+        madrid.ajouterVillesLiees(new_york);
+
+        madrid.ajouterVillesLiees(londres);
+        londres.ajouterVillesLiees(madrid);
+        madrid.ajouterVillesLiees(paris);
+        paris.ajouterVillesLiees(madrid);
+        madrid.ajouterVillesLiees(alger);
+        alger.ajouterVillesLiees(madrid);
+
+        paris.ajouterVillesLiees(londres);
+        londres.ajouterVillesLiees(paris);
+        paris.ajouterVillesLiees(alger);
+        alger.ajouterVillesLiees(paris);
+        paris.ajouterVillesLiees(essen);
+        essen.ajouterVillesLiees(paris);
+
+        londres.ajouterVillesLiees(essen);
+        essen.ajouterVillesLiees(londres);
+        essen.ajouterVillesLiees(milan);
+        milan.ajouterVillesLiees(essen);
+        essen.ajouterVillesLiees(saint_petersbourg);
+        saint_petersbourg.ajouterVillesLiees(essen);
+
+        saint_petersbourg.ajouterVillesLiees(moscou);
+        moscou.ajouterVillesLiees(saint_petersbourg);
+        saint_petersbourg.ajouterVillesLiees(istanbul);
+        istanbul.ajouterVillesLiees(saint_petersbourg);
+
+        milan.ajouterVillesLiees(paris);
+        paris.ajouterVillesLiees(milan);
+        milan.ajouterVillesLiees(istanbul);
+        istanbul.ajouterVillesLiees(milan);
+
+        istanbul.ajouterVillesLiees(moscou);
+        moscou.ajouterVillesLiees(istanbul);
+        moscou.ajouterVillesLiees(teheran);
+        teheran.ajouterVillesLiees(moscou);
+
+        istanbul.ajouterVillesLiees(alger);
+        alger.ajouterVillesLiees(istanbul);
+        istanbul.ajouterVillesLiees(le_caire);
+        le_caire.ajouterVillesLiees(istanbul);
+        istanbul.ajouterVillesLiees(bagdad);
+        bagdad.ajouterVillesLiees(istanbul);
+
+        alger.ajouterVillesLiees(madrid);
+        madrid.ajouterVillesLiees(alger);
+        alger.ajouterVillesLiees(paris);
+        paris.ajouterVillesLiees(alger);
+        alger.ajouterVillesLiees(istanbul);
+        istanbul.ajouterVillesLiees(alger);
+        alger.ajouterVillesLiees(le_caire);
+        le_caire.ajouterVillesLiees(alger);
+
+        le_caire.ajouterVillesLiees(bagdad);
+        bagdad.ajouterVillesLiees(le_caire);
+        le_caire.ajouterVillesLiees(riyad);
+        riyad.ajouterVillesLiees(le_caire);
+        le_caire.ajouterVillesLiees(khartoum);
+        khartoum.ajouterVillesLiees(le_caire);
+
+        bagdad.ajouterVillesLiees(riyad);
+        riyad.ajouterVillesLiees(bagdad);
+        bagdad.ajouterVillesLiees(teheran);
+        teheran.ajouterVillesLiees(bagdad);
+        bagdad.ajouterVillesLiees(karachi);
+        karachi.ajouterVillesLiees(bagdad);
+
+        teheran.ajouterVillesLiees(dehli);
+        dehli.ajouterVillesLiees(teheran);
+        teheran.ajouterVillesLiees(karachi);
+        karachi.ajouterVillesLiees(teheran);
+
+        dehli.ajouterVillesLiees(karachi);
+        karachi.ajouterVillesLiees(dehli);
+        dehli.ajouterVillesLiees(calcutta);
+        calcutta.ajouterVillesLiees(dehli);
+        dehli.ajouterVillesLiees(mumbai);
+        mumbai.ajouterVillesLiees(dehli);
+        dehli.ajouterVillesLiees(chennai);
+        chennai.ajouterVillesLiees(dehli);
+
+        karachi.ajouterVillesLiees(mumbai);
+        mumbai.ajouterVillesLiees(karachi);
+        karachi.ajouterVillesLiees(riyad);
+        riyad.ajouterVillesLiees(karachi);
+
+        mumbai.ajouterVillesLiees(chennai);
+        chennai.ajouterVillesLiees(mumbai);
+
+        calcutta.ajouterVillesLiees(chennai);
+        chennai.ajouterVillesLiees(calcutta);
+        calcutta.ajouterVillesLiees(hong_kong);
+        hong_kong.ajouterVillesLiees(calcutta);
+        calcutta.ajouterVillesLiees(bangkok);
+        bangkok.ajouterVillesLiees(calcutta);
+
+        chennai.ajouterVillesLiees(bangkok);
+        bangkok.ajouterVillesLiees(chennai);
+        chennai.ajouterVillesLiees(jakarta);
+        jakarta.ajouterVillesLiees(chennai);
+
+        bangkok.ajouterVillesLiees(hong_kong);
+        hong_kong.ajouterVillesLiees(bangkok);
+        bangkok.ajouterVillesLiees(ho_chi_minh_ville);
+        ho_chi_minh_ville.ajouterVillesLiees(bangkok);
+        bangkok.ajouterVillesLiees(jakarta);
+        jakarta.ajouterVillesLiees(bangkok);
+
+        hong_kong.ajouterVillesLiees(ho_chi_minh_ville);
+        ho_chi_minh_ville.ajouterVillesLiees(hong_kong);
+        hong_kong.ajouterVillesLiees(manille);
+        manille.ajouterVillesLiees(hong_kong);
+        hong_kong.ajouterVillesLiees(taipei);
+        taipei.ajouterVillesLiees(hong_kong);
+        hong_kong.ajouterVillesLiees(shangai);
+        shangai.ajouterVillesLiees(hong_kong);
+
+        jakarta.ajouterVillesLiees(sydney);
+        sydney.ajouterVillesLiees(jakarta);
+        jakarta.ajouterVillesLiees(ho_chi_minh_ville);
+        ho_chi_minh_ville.ajouterVillesLiees(jakarta);
+
+        ho_chi_minh_ville.ajouterVillesLiees(manille);
+        manille.ajouterVillesLiees(ho_chi_minh_ville);
+
+        manille.ajouterVillesLiees(sydney);
+        sydney.ajouterVillesLiees(manille);
+        manille.ajouterVillesLiees(taipei);
+        taipei.ajouterVillesLiees(manille);
+
+        taipei.ajouterVillesLiees(osaka);
+        osaka.ajouterVillesLiees(taipei);
+        taipei.ajouterVillesLiees(shangai);
+        shangai.ajouterVillesLiees(taipei);
+
+        shangai.ajouterVillesLiees(pekin);
+        pekin.ajouterVillesLiees(shangai);
+        shangai.ajouterVillesLiees(seoul);
+        seoul.ajouterVillesLiees(shangai);
+        shangai.ajouterVillesLiees(tokyo);
+        tokyo.ajouterVillesLiees(shangai);
+
+        osaka.ajouterVillesLiees(tokyo);
+        tokyo.ajouterVillesLiees(osaka);
+
+        tokyo.ajouterVillesLiees(seoul);
+        seoul.ajouterVillesLiees(tokyo);
+
+        seoul.ajouterVillesLiees(pekin);
+        pekin.ajouterVillesLiees(seoul);
+
+        khartoum.ajouterVillesLiees(lagos);
+        lagos.ajouterVillesLiees(khartoum);
+        khartoum.ajouterVillesLiees(kinshasa);
+        kinshasa.ajouterVillesLiees(khartoum);
+        khartoum.ajouterVillesLiees(johannesburg);
+        johannesburg.ajouterVillesLiees(khartoum);
+
+        johannesburg.ajouterVillesLiees(kinshasa);
+        kinshasa.ajouterVillesLiees(johannesburg);
+
+        kinshasa.ajouterVillesLiees(lagos);
+        lagos.ajouterVillesLiees(kinshasa);
+
+        lagos.ajouterVillesLiees(sao_paulo);
+        sao_paulo.ajouterVillesLiees(lagos);
+
+        sao_paulo.ajouterVillesLiees(madrid);
+        madrid.ajouterVillesLiees(sao_paulo);
+
         san_francisco.ajouterVillesLiees(los_angeles);
         los_angeles.ajouterVillesLiees(san_francisco);
 
