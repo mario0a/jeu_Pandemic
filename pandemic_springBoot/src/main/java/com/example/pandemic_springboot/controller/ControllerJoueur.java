@@ -8,6 +8,7 @@ import exceptions.PartieNonRepriseException;
 import exceptions.PartiePleineException;
 import facade.FacadePandemicOnline;
 import facade.IFacadePandemicOnline;
+import modele.Joueur;
 import modele.Partie;
 import org.springframework.web.bind.annotation.*;
 
@@ -42,4 +43,18 @@ public class ControllerJoueur {
         return this.iFacadePandemicOnline.suspendreLaPartie(partieDto.getId(), partieDto.getNomJoueur());
     }
 
+    @DeleteMapping("/supprimerLesParties")
+    public boolean supprimerLesParties() {
+        return this.iFacadePandemicOnline.supprimerLesParties();
+    }
+
+    @GetMapping("/lesJoueurs")
+    public Collection<Joueur> getLesJoueurs() {
+        return this.iFacadePandemicOnline.getLesJoueurs();
+    }
+
+    @DeleteMapping("/supprimerLesJoueurs")
+    public boolean supprimerLesJoueurs() {
+        return this.iFacadePandemicOnline.supprimerLesJoueurs();
+    }
 }
