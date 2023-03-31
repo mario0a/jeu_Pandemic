@@ -7,94 +7,36 @@ import org.bson.codecs.pojo.annotations.BsonProperty;
 
 public class Joueur {
 
-    private String id;
-    private String nomJoueur;
-    private String mdp;
-    private Ville position;
-    private TypeRole typeRole;
-    private List<CartesJoueur> cartes_en_main;
-    private Partie1Joueur partie;
-    private ArrayList<CartesJoueur> carte_a_partager;
+   private String nom="";
+   private String mdp="";
+    public Joueur() {}
 
-    private boolean autorisationDeplacement = false;
-
-    //constructeur
-
-    public Joueur(String id, String mdp) {
-        this.id = id;
+    public Joueur(String nom, String mdp) {
+        this.nom = nom;
         this.mdp = mdp;
     }
 
-    public Joueur(String nomJoueur, Ville position, TypeRole typeRole) {
-        this.nomJoueur = nomJoueur;
-        this.position = position;
-        this.typeRole = typeRole;
-
+    public String getNom() {
+        return nom;
     }
 
-    public Joueur(String nomJoueur) {
-        this.nomJoueur = nomJoueur;
+    public void setNom(String nom) {
+        this.nom = nom;
     }
 
-    public List<CartesJoueur> getCartes_en_main() {
-        return cartes_en_main;
+    public String getMdp() {
+        return mdp;
     }
 
-    public Partie1Joueur getPartie() {
-        return partie;
+    public void setMdp(String mdp) {
+        this.mdp = mdp;
     }
 
-    public void setPartie(Partie1Joueur partie) {
-        this.partie = partie;
+    @Override
+    public String toString() {
+        return "Joueur{" +
+                "nom='" + nom + '\'' +
+                ", mdp='" + mdp + '\'' +
+                '}';
     }
-
-    public String getNomJoueur() {
-        return nomJoueur;
-    }
-
-    public void setNomJoueur(String nomJoueur) {
-        this.nomJoueur = nomJoueur;
-    }
-
-    public Ville getPosition() {
-        return position;
-    }
-
-    public void setPosition(Ville position) {
-        this.position = position;
-    }
-
-    public TypeRole getTypeRole() {
-        return typeRole;
-    }
-
-    public void setTypeRole(TypeRole typeRole) {
-        this.typeRole = typeRole;
-    }
-
-    public ArrayList<CartesJoueur> getCarte_a_partager() {
-        return carte_a_partager;
-    }
-
-    public void setCarte_a_partager(ArrayList<CartesJoueur> carte_a_partager) {
-        this.carte_a_partager = carte_a_partager;
-    }
-
-    public boolean getAutorisationDeplacement() {
-        return autorisationDeplacement;
-    }
-
-    public void setAutorisationDeplacement(boolean autorisationDeplacement) {
-        this.autorisationDeplacement = autorisationDeplacement;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {this.id = id;}
-
-    public String getMdp() {return mdp;}
-
-    public void setMdp(String mdp) {this.mdp = mdp;}
 }

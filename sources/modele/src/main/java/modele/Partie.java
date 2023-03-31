@@ -4,6 +4,7 @@ import exceptions.PartiePleineException;
 import modele.interfaces.ICartes;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -11,40 +12,65 @@ import org.bson.codecs.pojo.annotations.BsonProperty;
 import org.bson.codecs.configuration.CodecConfigurationException;
 
 public class Partie {
-    @BsonProperty("_id")
-    private String id;
-    private EtatPartie etatPartie;
-    private LocalDate dateCreation;
-    private List<ICartes> carteDefausse;
-    private List<Partie1Joueur> partieJoueur;
+    private Long id;
+    private EtatPartie etatPartie=EtatPartie.DEBUT;
+    private final LocalDateTime dateCreation=LocalDateTime.now();
+    private List<ICartes> carteDefausse= new ArrayList<>();
+    private List<Partie1Joueur> partieJoueur= new ArrayList<>();
 
     public Partie() {}
 
-    public Partie(String id) {
+    public Partie(Long id, Partie1Joueur partie1Joueur) {
         this.id = id;
-        this.dateCreation = LocalDate.now();
-        this.partieJoueur= new ArrayList<>();
-        this.carteDefausse = new ArrayList<>();
-        this.etatPartie = EtatPartie.DEBUT;
+        this.partieJoueur.add(partie1Joueur);
     }
 
-    public String getId() { return id; }
-
-    public void setId(String id) { this.id = id;}
-
-    public EtatPartie getEtatPartie() { return etatPartie;}
-
-    public void setEtatPartie(EtatPartie etatPartie) {this.etatPartie = etatPartie;}
-
-    public LocalDate getDateCreation() { return dateCreation; }
-
-    public void setDateCreation(LocalDate dateCreation) {
-        this.dateCreation = dateCreation;
+    public Partie(Long id, EtatPartie etatPartie, List<ICartes> carteDefausse, List<Partie1Joueur> partieJoueur) {
+        this.id = id;
+        this.etatPartie=etatPartie;
+        this.carteDefausse = carteDefausse;
+        this.partieJoueur= partieJoueur;
     }
 
-    public List<ICartes> getCarteDefausse() { return carteDefausse;}
+    @Override
+    public String toString() {
+        return "Partie{" +
+                "id=" + id +
+                ", etatPartie=" + etatPartie +
+                ", dateCreation=" + dateCreation +
+                ", carteDefausse=" + carteDefausse +
+                ", partieJoueur=" + partieJoueur +
+                '}';
+    }
 
-    public void setCarteDefausse(List<ICartes> carteDefausse) { this.carteDefausse = carteDefausse; }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public EtatPartie getEtatPartie() {
+        return etatPartie;
+    }
+
+    public void setEtatPartie(EtatPartie etatPartie) {
+        this.etatPartie = etatPartie;
+    }
+
+    public LocalDateTime getDateCreation() {
+        return dateCreation;
+    }
+
+    public List<ICartes> getCarteDefausse() {
+        return carteDefausse;
+    }
+
+    public void setCarteDefausse(List<ICartes> carteDefausse) {
+        this.carteDefausse = carteDefausse;
+    }
 
     public List<Partie1Joueur> getPartieJoueur() {
         return partieJoueur;
@@ -53,6 +79,7 @@ public class Partie {
     public void setPartieJoueur(List<Partie1Joueur> partieJoueur) {
         this.partieJoueur = partieJoueur;
     }
+
 
     public void  ajouterPartie1Joueur(Partie1Joueur partie1Joueur) throws PartiePleineException{
         if (this.partieJoueur.size()<4){
@@ -73,22 +100,13 @@ public class Partie {
         this.carteDefausse.add(carte);
     }
 
-    @Override
-    public String toString() {
-        return "Partie{" +
-                "id='" + id + '\'' +
-                ", etatPartie=" + etatPartie +
-                ", dateCreation=" + dateCreation +
-                ", carteDefausse=" + carteDefausse +
-                ", partieJoueur=" + partieJoueur +
-                '}';
-    }
-
     public Partie1Joueur getPartieJoueurByNomJoueur(String nomJoueur) {
-        return this.partieJoueur.stream().filter(partieJoueur -> partieJoueur.getJoueur().equals(nomJoueur)).collect(Collectors.toList()).get(0);
+        return this.partieJoueur.stream().filter
+                (partieJoueur -> partieJoueur.getJoueur().equals(nomJoueur))
+                .collect(Collectors.toList()).get(0);
     }
 
-    public Joueur getJoueurByName(String nomJoueur){
+    /*public Joueur getJoueurByName(String nomJoueur){
         return this.partieJoueur.stream().filter(partie1Joueur ->partie1Joueur.getJoueur().getNomJoueur().equals(nomJoueur)).collect(Collectors.toList()).get(0).getJoueur();
-    }
+    }*/
 }
