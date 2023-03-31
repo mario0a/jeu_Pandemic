@@ -9,13 +9,13 @@ public class TesterFacade {
         Dao.inscription("Paul","Lauriche");
         System.out.println(Dao.getDb().getCollection("joueurs").find().first());
         Dao.seConnecter("pom","Lauriche");
-        try {
+       /* try {
             Dao.creerPartie("1","Paul");
             Dao.partieInitialisee("1");
             String action;
         } catch (PartiePleineException e) {
             throw new RuntimeException("Vous ne pouvez pas créer une partie");
-        }
+        }*/
     }
 
 

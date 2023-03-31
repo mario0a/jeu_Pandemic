@@ -17,17 +17,23 @@ public class FacadePandemicOnline implements IFacadePandemicOnline {
     }
 
     @Override
-    public void inscription(String nomJoueur, String mdp) {
-        Dao.inscription(nomJoueur,mdp);
+    public boolean inscription(String nomJoueur, String mdp) {
+        return Dao.inscription(nomJoueur,mdp);
     }
+
     @Override
     public boolean seConnecter(String nomJoueur, String mdp) {
         return Dao.seConnecter(nomJoueur,mdp);
     }
 
     @Override
-    public void creerPartie(String id, String nomJoueur) throws PartiePleineException {
+    public void creerPartie(Long id, String nomJoueur) throws PartiePleineException, ActionNotAutorizedException {
         Dao.creerPartie(id,nomJoueur);
+    }
+
+    @Override
+    public boolean supprimerLesParties() {
+        return Dao.supprimerLesParties();
     }
 
     @Override
@@ -36,7 +42,17 @@ public class FacadePandemicOnline implements IFacadePandemicOnline {
     }
 
     @Override
-    public String getEtatPartie(String id) {
+    public Collection<Joueur> getLesJoueurs() {
+        return Dao.getLesJoueurs();
+    }
+
+    @Override
+    public boolean supprimerLesJoueurs() {
+        return Dao.supprimerLesJoueurs();
+    }
+
+    @Override
+    public String getEtatPartie(Long id) {
         return Dao.getEtatPartie(id);
     }
 
@@ -46,58 +62,57 @@ public class FacadePandemicOnline implements IFacadePandemicOnline {
     }
 
     @Override
-    public boolean suspendreLaPartie(String idPartie, String nomJoueur) throws PartieNonRepriseException {
+    public boolean suspendreLaPartie(Long idPartie, String nomJoueur) throws PartieNonRepriseException {
         return Dao.suspendreLaPartie(idPartie,nomJoueur);
     }
 
     @Override
-    public boolean quitterLaPartie(String idPartie, String nomJoueur) {
+    public boolean quitterLaPartie(Long idPartie, String nomJoueur) {
         return Dao.quitterLaPartie(idPartie,nomJoueur);
     }
 
     @Override
-    public boolean reprendreUnePartie(String idPartie, String nomJoueur) throws PartieNonSuspenduException {
+    public boolean reprendreUnePartie(Long idPartie, String nomJoueur) throws PartieNonSuspenduException {
         return Dao.reprendreUnePartie(idPartie,nomJoueur);
     }
 
     @Override
-    public boolean peutQuitterLaPartie(String idPartie) {
+    public boolean peutQuitterLaPartie(Long idPartie) {
         return Dao.peutQuitterLaPartie(idPartie);
     }
 
     @Override
-    public boolean createurPartie(String idPartie, String nomJoueur) {
+    public boolean createurPartie(Long idPartie, String nomJoueur) {
         return Dao.createurPartie(idPartie, nomJoueur);
     }
 
     @Override
-    public void traiterMaladie(String idPartie, String nomJoueur, CouleursMaladie couleurMaladie, Actions actions) {
+    public void traiterMaladie(Long idPartie, String nomJoueur, CouleursMaladie couleurMaladie, Actions actions) {
         Dao.traiterMaladie( idPartie,  nomJoueur,  couleurMaladie,  actions);
     }
 
     @Override
-    public void construireStationRecherche(String idPartie, String nomJoueur, Actions actions) throws CentreRechercheDejaExistantException, NombreMaxCentreRechercheAtteintException, AbsenceCarteJoueurException {
+    public void construireStationRecherche(Long idPartie, String nomJoueur, Actions actions) throws CentreRechercheDejaExistantException, NombreMaxCentreRechercheAtteintException, AbsenceCarteJoueurException {
         Dao.construireStationRecherche( idPartie,  nomJoueur,  actions);
     }
 
     @Override
-    public void deplacerStationRecherche(String idPartie, String nomJoueur, Actions actions, Ville ville) throws CentreRechercheDejaExistantException, CentreRechercheInexistantException, VilleIdentiqueException {
-    Dao.deplacerStationRecherche( idPartie,  nomJoueur,  actions,  ville);
+    public void deplacerStationRecherche(Long idPartie, String nomJoueur, Actions actions, Ville ville) throws CentreRechercheDejaExistantException, CentreRechercheInexistantException, VilleIdentiqueException {
+        Dao.deplacerStationRecherche( idPartie,  nomJoueur,  actions,  ville);
     }
 
     @Override
-    public void decouvrirRemede(String idPartie, String nomJoueur, Actions actions) throws CentreRechercheInexistantException {
-    Dao.decouvrirRemede( idPartie,  nomJoueur,  actions);
+    public void decouvrirRemede(Long idPartie, String nomJoueur, Actions actions) throws CentreRechercheInexistantException {
+        Dao.decouvrirRemede( idPartie,  nomJoueur,  actions);
     }
 
     @Override
-    public void piocherCarte(String idPartie, String nomJoueur, Actions actions, List<CartesJoueur> cartesJoueurList) throws CartesJoueurInsuffisantes, NombreCarteDepasseException {
-    Dao.piocherCarte(idPartie,  nomJoueur,  actions, cartesJoueurList);
+    public void piocherCarte(Long idPartie, String nomJoueur, Actions actions, List<CartesJoueur> cartesJoueurList) throws CartesJoueurInsuffisantes, NombreCarteDepasseException {
+        Dao.piocherCarte(idPartie,  nomJoueur,  actions, cartesJoueurList);
     }
 
     @Override
-    public void echangerCarte(String idPartie, String nomJoueurDonneur, String nomJoueurReceveur, CartesJoueur carte, Actions actions) throws NombreCarteDepasseException, AbsenceCarteJoueurException, PositionJoueursDifferenteExceptions, CarteVilleDifferentePositionJoueur {
-    Dao.echangerCarte(idPartie,  nomJoueurDonneur,  nomJoueurReceveur,  carte,  actions);
+    public void echangerCarte(Long idPartie, String nomJoueurDonneur, String nomJoueurReceveur, CartesJoueur carte, Actions actions) throws NombreCarteDepasseException, AbsenceCarteJoueurException, PositionJoueursDifferenteExceptions, CarteVilleDifferentePositionJoueur {
+        Dao.echangerCarte(idPartie,  nomJoueurDonneur,  nomJoueurReceveur,  carte,  actions);
     }
-
 }

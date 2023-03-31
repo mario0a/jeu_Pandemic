@@ -9,42 +9,43 @@ import java.util.Collection;
 import java.util.List;
 
 //contient les différentes actions qu'on peut effectuer sur le plateau
-public interface IFacadePandemicOnline {
- //contient les différentes actions qu'on peut effectuer sur le plateau
+public interface IFacadePandemicOnline {//contient les différentes actions qu'on peut effectuer sur le plateau
  public boolean partieInitialisee(String idPartie);
 
- public void inscription(String nomJoueur, String mdp);
+ public boolean inscription(String nomJoueur, String mdp);
 
  public boolean seConnecter(String nomJoueur, String mdp);
 
- public void creerPartie(String id, String nomJoueur) throws PartiePleineException;
-
+ public void creerPartie(Long id, String nomJoueur) throws PartiePleineException,ActionNotAutorizedException;
+ public boolean supprimerLesParties();
  public Collection<Partie> getLesParties();
+ public Collection<Joueur> getLesJoueurs();
+ public boolean supprimerLesJoueurs();
 
- public String getEtatPartie(String id);
+ public String getEtatPartie(Long id);
 
  public Collection<Partie> getLesPartiesSuspendues();
 
- public boolean suspendreLaPartie(String idPartie, String nomJoueur) throws PartieNonRepriseException;
+ public boolean suspendreLaPartie(Long idPartie, String nomJoueur) throws PartieNonRepriseException;
 
- public boolean quitterLaPartie(String idPartie, String nomJoueur);
+ public boolean quitterLaPartie(Long idPartie, String nomJoueur);
 
- public boolean reprendreUnePartie(String idPartie, String nomJoueur) throws PartieNonSuspenduException;
+ public boolean reprendreUnePartie(Long idPartie, String nomJoueur) throws PartieNonSuspenduException;
 
- public boolean peutQuitterLaPartie(String idPartie);
+ public boolean peutQuitterLaPartie(Long idPartie);
 
- public boolean createurPartie(String idPartie, String nomJoueur);
+ public boolean createurPartie(Long idPartie, String nomJoueur);
 
- public void traiterMaladie(String idPartie, String nomJoueur, CouleursMaladie couleurMaladie, Actions actions);
- public void construireStationRecherche(String idPartie,String nomJoueur, Actions actions) throws CentreRechercheDejaExistantException,
+ public void traiterMaladie(Long idPartie, String nomJoueur, CouleursMaladie couleurMaladie, Actions actions);
+ public void construireStationRecherche(Long idPartie,String nomJoueur, Actions actions) throws CentreRechercheDejaExistantException,
          NombreMaxCentreRechercheAtteintException, AbsenceCarteJoueurException;
 
- public void deplacerStationRecherche(String idPartie,String nomJoueur, Actions actions, Ville ville) throws CentreRechercheDejaExistantException,
+ public void deplacerStationRecherche(Long idPartie,String nomJoueur, Actions actions, Ville ville) throws CentreRechercheDejaExistantException,
          CentreRechercheInexistantException, VilleIdentiqueException;
 
- public void decouvrirRemede(String idPartie,String nomJoueur,Actions actions) throws CentreRechercheInexistantException;
- public void piocherCarte(String idPartie,String nomJoueur,Actions actions, List<CartesJoueur> cartesJoueurList) throws CartesJoueurInsuffisantes,
+ public void decouvrirRemede(Long idPartie,String nomJoueur,Actions actions) throws CentreRechercheInexistantException;
+ public void piocherCarte(Long idPartie,String nomJoueur,Actions actions, List<CartesJoueur> cartesJoueurList) throws CartesJoueurInsuffisantes,
          NombreCarteDepasseException;
 
- public void echangerCarte(String idPartie,String nomJoueurDonneur, String nomJoueurReceveur, CartesJoueur carte,Actions actions) throws NombreCarteDepasseException, AbsenceCarteJoueurException, PositionJoueursDifferenteExceptions, CarteVilleDifferentePositionJoueur;
+ public void echangerCarte(Long idPartie,String nomJoueurDonneur, String nomJoueurReceveur, CartesJoueur carte,Actions actions) throws NombreCarteDepasseException, AbsenceCarteJoueurException, PositionJoueursDifferenteExceptions, CarteVilleDifferentePositionJoueur;
 }
