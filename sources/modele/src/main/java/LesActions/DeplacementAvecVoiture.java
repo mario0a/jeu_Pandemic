@@ -5,6 +5,7 @@ package LesActions;
 import exceptions.CarteArriveeInexistanteException;
 import exceptions.PasCentreRechercheException;
 import modele.Joueur;
+import modele.Partie1Joueur;
 import modele.Ville;
 
 import java.util.List;
@@ -12,13 +13,13 @@ import java.util.List;
 public class DeplacementAvecVoiture implements IDeplacements{
 
     @Override
-    public void operationDeplacement(Joueur joueur, Ville choix) throws PasCentreRechercheException {
+    public void operationDeplacement(Partie1Joueur partie1Joueur, Ville choix) throws PasCentreRechercheException {
 
-        List<Ville> villesVoisines=joueur.getPosition().getVillesLiees();
+        List<Ville> villesVoisines=partie1Joueur.getPosition().getVillesLiees();
         if(villesVoisines.contains(choix)){
-            joueur.setPosition(choix);
+            partie1Joueur.setPosition(choix);
         }else{
-            System.out.println("Le joueur n'a pas le droit de se déplacer en voiture, veuillez choisir un autre moyen de déplacement");
+            System.out.println("Le partie1Joueur n'a pas le droit de se déplacer en voiture, veuillez choisir un autre moyen de déplacement");
         }
     }
 }

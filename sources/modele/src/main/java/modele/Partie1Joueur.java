@@ -186,7 +186,7 @@ public class Partie1Joueur {
         this.cartes_en_main = cartes_en_main;
     }
 
-    public boolean isAutorisationDeplacementPion() {
+    public boolean getAutorisationDeplacementPion() {
         return autorisationDeplacementPion;
     }
 
@@ -194,28 +194,25 @@ public class Partie1Joueur {
         this.autorisationDeplacementPion = autorisationDeplacementPion;
     }
 
-
     public void joueurSeDeplacerVoiture(Partie1Joueur partie1Joueur, Ville choix) throws PasCentreRechercheException {
         this.deplacement= new DeplacementAvecVoiture();
         this.deplacement.operationDeplacement(partie1Joueur, choix);
     }
 
-
-
-
-    public void joueurSeDeplacerNavette(Joueur joueur, Ville choix) throws CarteArriveeInexistanteException, PasCentreRechercheException {
+    public void joueurSeDeplacerNavette(Partie1Joueur partie1Joueur, Ville choix) throws CarteArriveeInexistanteException, PasCentreRechercheException {
         this.deplacement= new DeplacementNavette();
-        this.deplacement.operationDeplacement(joueur, choix);
+        this.deplacement.operationDeplacement(partie1Joueur, choix);
     }
 
-    public void joueurSeDeplacerVolCharter(Joueur joueur, Ville choix) throws CarteArriveeInexistanteException, PasCentreRechercheException {
+
+    public void joueurSeDeplacerVolCharter(Partie1Joueur partie1Joueur, Ville choix) throws CarteArriveeInexistanteException, PasCentreRechercheException {
         this.deplacement= new DeplacementVolCharter();
-        this.deplacement.operationDeplacement(joueur, choix);
+        this.deplacement.operationDeplacement(partie1Joueur, choix);
     }
 
-    public void joueurSeDeplacerVolDirect(Joueur joueur, Ville choix) throws CarteArriveeInexistanteException, PasCentreRechercheException {
+    public void joueurSeDeplacerVolDirect(Partie1Joueur partie1Joueur, Ville choix) throws CarteArriveeInexistanteException, PasCentreRechercheException {
         this.deplacement = new DeplacementVolDirect();
-        this.deplacement.operationDeplacement( joueur,choix);
+        this.deplacement.operationDeplacement( partie1Joueur,choix);
     }
 
     public void diminuerActions(){nombre_action --;}
@@ -229,7 +226,6 @@ public class Partie1Joueur {
         }
         return false;
     }
-
 
     public void addCarteDeffaussee(ICartes uneCarte) {
     }
