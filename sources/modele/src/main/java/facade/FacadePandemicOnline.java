@@ -31,6 +31,7 @@ public class FacadePandemicOnline implements IFacadePandemicOnline {
         Dao.creerPartie(id,nomJoueur);
     }
 
+
     @Override
     public boolean supprimerLesParties() {
         return Dao.supprimerLesParties();

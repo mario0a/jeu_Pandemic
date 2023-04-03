@@ -1,6 +1,5 @@
 package modele;
 
-import LesActions.EtatEpidemie;
 import facade.IFacadePandemicOnline;
 import facade.JeuDeCartes;
 import modele.interfaces.ICartes;
@@ -146,7 +145,7 @@ public class Plateau {
         return parUneNuitTranquille;
     }
 
-    public static void setParUneNuitTranquille(boolean parUneNuitTranquille) {
+    public void setParUneNuitTranquille(boolean parUneNuitTranquille) {
         this.parUneNuitTranquille = parUneNuitTranquille;
     }
 

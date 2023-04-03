@@ -1,0 +1,16 @@
+POST http://localhost:8081/pandemic/inscription
+Content-Type: application/json
+
+{
+    "nomJoueur": "lauriche",
+    "mdp": "123"
+}
+###
+
+POST http://localhost:8081/pandemic/creerPartie
+Content-Type: application/json
+
+{
+  "id": 10,
+  "nomJoueur": "lauriche"
+}

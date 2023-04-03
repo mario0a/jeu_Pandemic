@@ -32,32 +32,35 @@ Elle donne les éléments représentant une carte de type joueur.
 La classe CarteEvenement
 Elle dit de quoi est constituée une carte évènement.
 
-RELATION ENTRE LES DIFERENTES CLASSES
+RELATION ENTRE LES DIFFERENT CLASSES.
+
 Nous avons utilisé la composition pour établir les liens entre les différents objets.
 
 Tests Effectués
-TestVille qui contient les methodes de test pour :
-    Definir un centre de recherche
+TestVille qui contient les méthodes de test pour :
+    Définir un centre de recherche
     Preciser si une ville est un centre de recherche
     Avoir le nom d’une ville
     Ajouter des cubes maladie
     Ajouter voisin d’une ville
-TestCarte qui contient les methodes de test pour :
+TestCarte qui contient les méthodes de test pour :
     Nom de la ville
     Couleur de la maladie
 
 
-    TestVille qui contient les methodes de test pour :
-        Definir un centre de recherche
+    TestVille qui contient les méthodes de test pour :
+        Définir un centre de recherche
         Preciser si une ville est un centre de recherche
         Avoir le nom d’une ville
         Ajouter des cubes maladie
         Ajouter voisin d’une ville
-    TestCarte qui contient les methodes de test pour :
+    TestCarte qui contient les méthodes de test pour :
         Nom de la ville
         Couleur de la maladie
-    Persistance de données:
-    Grace a  la persistante de données en Mangodb on aura la  possibilité d’enregistrer l’etat des parties et pouvoir  reprendre une partie. On pourra ainsi avoir une historisation  des parties effectués , avec indication des différent scores.
+    Persistance de données en Mongodb :
+    Grâce à la persistante de données en Mongodb on aura la possibilité d’enregistrer l’état des parties et pouvoir reprendre une partie.
+    On pourra ainsi avoir une historisation des parties effectuées avec indication des différents scores.
+
 
 
 Améliorations en vue

@@ -15,8 +15,8 @@ public interface IFacadePandemicOnline {//contient les différentes actions qu'o
  public boolean inscription(String nomJoueur, String mdp);
 
  public boolean seConnecter(String nomJoueur, String mdp);
-
  public void creerPartie(Long id, String nomJoueur) throws PartiePleineException,ActionNotAutorizedException;
+
  public boolean supprimerLesParties();
  public Collection<Partie> getLesParties();
  public Collection<Joueur> getLesJoueurs();

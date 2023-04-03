@@ -10,8 +10,12 @@ import facade.FacadePandemicOnline;
 import facade.IFacadePandemicOnline;
 import modele.Joueur;
 import modele.Partie;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.util.UriComponentsBuilder;
 
+import java.net.URI;
 import java.util.Collection;
 
 @RestController
@@ -20,14 +24,19 @@ public class ControllerJoueur {
     private IFacadePandemicOnline iFacadePandemicOnline = new FacadePandemicOnline();
 
     @PostMapping(value = "/inscription"/*,headers = "Content-Type=application/json",consumes = "application/json",produces = "application/json"*/)
-    public boolean inscription(@RequestBody JoueurDto joueurDto) {
-        return  this.iFacadePandemicOnline.inscription(joueurDto.getNomJoueur(), joueurDto.getMdp());
+    public ResponseEntity<String> inscription(@RequestBody JoueurDto joueurDto, UriComponentsBuilder base) {
+        boolean resultat =this.iFacadePandemicOnline.inscription(joueurDto.getNomJoueur(), joueurDto.getMdp());
+        if(resultat){
+            URI location = base.path("/pandemic/inscription/{nomJoueur}").buildAndExpand(joueurDto.getNomJoueur()).toUri();
+            return ResponseEntity.created(location).body("Inscription réussie");
+        }
+        return ResponseEntity.status(HttpStatus.CONFLICT).body("Inscription échouée");
     }
+
     @PostMapping("/creerPartie")
     public void creerPartie(@RequestBody PartieDto partieDto) throws ActionNotAutorizedException, PartiePleineException {
         this.iFacadePandemicOnline.creerPartie(partieDto.getId(), partieDto.getNomJoueur());
     }
-
     @GetMapping("/lesParties")
     public Collection<Partie> getLesParties() {
         return this.iFacadePandemicOnline.getLesParties();

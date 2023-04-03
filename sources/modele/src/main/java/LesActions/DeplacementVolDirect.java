@@ -1,7 +1,7 @@
 package LesActions;
 
-import exceptions.CarteArriveeInexistanteException;
 import exceptions.PasCentreRechercheException;
+import modele.Partie1Joueur;
 import modele.interfaces.ICartes;
 import modele.Joueur;
 import modele.Ville;
@@ -12,11 +12,11 @@ import java.util.stream.Collectors;
 public class DeplacementVolDirect implements IDeplacements {
 
     @Override
-    public void operationDeplacement(Joueur joueur, Ville choix) throws PasCentreRechercheException {
-        if (joueur.getCartes_en_main().stream().anyMatch(carte -> carte.informations().equals(choix.getNomVille()))) {
-            ICartes uneCarte = joueur.getCartes_en_main().stream().filter(carte -> carte.informations().equals(choix.getNomVille())).collect(Collectors.toList()).get(0);
-            joueur.getCartes_en_main().remove(uneCarte);
-            joueur.getPartie().getPartie() .getDefausse_cartesJoueur().add(uneCarte);
+    public void operationDeplacement(Partie1Joueur partie1Joueur, Ville choix) throws PasCentreRechercheException {
+        if (partie1Joueur.getCartes_en_main().stream().anyMatch(carte -> carte.informations().equals(choix.getNomVille()))) {
+            ICartes uneCarte = partie1Joueur.getCartes_en_main().stream().filter(carte -> carte.informations().equals(choix.getNomVille())).collect(Collectors.toList()).get(0);
+            partie1Joueur.getCartes_en_main().remove(uneCarte);
+            partie1Joueur.getPlateau() .getDefausse_cartesJoueur().add(uneCarte);
         }
     }
 }

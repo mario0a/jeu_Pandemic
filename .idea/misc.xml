@@ -4,6 +4,7 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/sources/modele/pom.xml" />
+        <option value="$PROJECT_DIR$/pandemic_springBoot/pom.xml" />
       </list>
     </option>
   </component>

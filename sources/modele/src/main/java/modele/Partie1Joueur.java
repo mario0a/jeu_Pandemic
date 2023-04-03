@@ -227,6 +227,10 @@ public class Partie1Joueur {
         return false;
     }
 
+    public boolean isAutorisationDeplacementPion() {
+        return autorisationDeplacementPion;
+    }
+
     public void addCarteDeffaussee(ICartes uneCarte) {
     }
 }
