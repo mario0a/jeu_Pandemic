@@ -142,7 +142,7 @@ public class Dao {
             return false;
         }
     }
-
+//pour reprendre une partie
     public boolean reprendreUnePartie(Long idPartie, String nomJoueur) throws PartieNonSuspenduException {
         MongoCollection<Partie> partieMongoCollection = db.getCollection("parties", Partie.class);
         Collection<Partie> partieCollection = new ArrayList<>();
@@ -167,7 +167,7 @@ public class Dao {
         Partie partie = partieMongoCollection.find(Filters.and(Filters.eq("_id",idPartie),Filters.or(Filters.eq("etatPartie","EN_COURS"), Filters.eq("etatPartie","DEBUT")))).first();
         return Objects.isNull(partie);
     }
-
+    //pour récupérer le joueur créateur de la partie
     public  boolean createurPartie(Long idPartie, String nomJoueur){
         MongoCollection<Partie> partieMongoCollection = db.getCollection("parties", Partie.class);
         Collection<Partie> partieCollection = new ArrayList<>();
@@ -189,7 +189,7 @@ public class Dao {
         actions.traiterMaladie(partie1Joueur,couleurMaladie);
     }
 
-
+    //construction d'une station de recherche
     public void construireStationRecherche(Long idPartie,String nomJoueur, Actions actions) throws CentreRechercheDejaExistantException,
             NombreMaxCentreRechercheAtteintException, AbsenceCarteJoueurException {
         MongoCollection<Partie> partieMongoCollection = db.getCollection("parties", Partie.class);
@@ -198,7 +198,7 @@ public class Dao {
         Partie1Joueur partie1Joueur = (Partie1Joueur) partie.getPartieJoueur().stream().filter(partie1Joueur1 -> partie1Joueur1.getNom().equals(nomJoueur));
         actions.construireStationRecherche(partie1Joueur);
     }
-
+    //déplacement d'une station de recherche
     public void deplacerStationRecherche(Long idPartie,String nomJoueur, Actions actions, Ville ville) throws CentreRechercheDejaExistantException,
             CentreRechercheInexistantException, VilleIdentiqueException {
         MongoCollection<Partie> partieMongoCollection = db.getCollection("parties", Partie.class);
@@ -207,7 +207,7 @@ public class Dao {
         Partie1Joueur partie1Joueur = (Partie1Joueur) partie.getPartieJoueur().stream().filter(partie1Joueur1 -> partie1Joueur1.getNom().equals(nomJoueur));
         actions.deplacerStationRecherche(partie1Joueur,ville);
     }
-
+    //découvrir un remède
     public void decouvrirRemede(Long idPartie,String nomJoueur,Actions actions) throws CentreRechercheInexistantException{
         MongoCollection<Partie> partieMongoCollection = db.getCollection("parties", Partie.class);
         Collection<Partie> partieCollection = new ArrayList<>();
@@ -216,7 +216,7 @@ public class Dao {
         actions.decouvrirRemede(partie1Joueur);
     }
 
-
+    //piocher une carte
     public void piocherCarte(Long idPartie,String nomJoueur,Actions actions, List<CartesJoueur> cartesJoueurList) throws CartesJoueurInsuffisantes,
             NombreCarteDepasseException {
         MongoCollection<Partie> partieMongoCollection = db.getCollection("parties", Partie.class);
@@ -225,7 +225,7 @@ public class Dao {
         Partie1Joueur partie1Joueur = (Partie1Joueur) partie.getPartieJoueur().stream().filter(partie1Joueur1 -> partie1Joueur1.getNom().equals(nomJoueur));
         actions.piocherCarte(partie1Joueur,cartesJoueurList);
     }
-
+    //échanger une carte avec un autre joueur
     public void echangerCarte(Long idPartie,String nomJoueurDonneur, String nomJoueurReceveur, CartesJoueur carte,Actions actions) throws NombreCarteDepasseException, AbsenceCarteJoueurException, PositionJoueursDifferenteExceptions, CarteVilleDifferentePositionJoueur {
         MongoCollection<Partie> partieMongoCollection = db.getCollection("parties", Partie.class);
         Collection<Partie> partieCollection = new ArrayList<>();
