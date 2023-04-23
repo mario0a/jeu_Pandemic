@@ -1,49 +1,63 @@
 package facade;
 
 import modele.*;
-import modele.interfaces.ICartes;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class JeuDeCartes {
-    Plateau partie;
-    public static final List<ICartes> cartesJoueur = chargerCartes();
-    public static final List<ICartes> cartesPropagation = chargerCartesPropagation();
-    public static List<ICartes> chargerCartes(){
-        List<ICartes> cartes = new ArrayList<>();
+    Plateau plateau;
+
+    public JeuDeCartes(Plateau plateau) {
+        this.plateau = plateau;
+
+        this.plateau.setLesVilles(lesVilles());
+        this.plateau.setCartesJoueur(chargerCartes());
+        this.plateau.setCartesPropagation(chargerCartesPropagation());
+
+    }
+
+    public Plateau getPlateau() {
+        return plateau;
+    }
+
+    public JeuDeCartes setPlateau(Plateau plateau) {
+        this.plateau = plateau;
+        return this;
+    }
+
+    public List<Carte> chargerCartes(){
+        List<Carte> cartes = new ArrayList<>();
 
 
         /* CARTES EVENEMENT*/
-        cartes.add(new CarteEvenement("Pont aérien", TypeCarte.JOUEUR));
-        cartes.add(new CarteEvenement("Subventions publique", TypeCarte.JOUEUR));
-        cartes.add(new CarteEvenement("Prévisions", TypeCarte.JOUEUR));
-        cartes.add(new CarteEvenement("Par une nuit tranquille", TypeCarte.JOUEUR));
-        cartes.add(new CarteEvenement("Population résiliente", TypeCarte.JOUEUR));
+        cartes.add(new Carte("Pont aérien", TypeCarte.EVENEMENT));
+        cartes.add(new Carte("Subventions publique", TypeCarte.EVENEMENT));
+        cartes.add(new Carte("Prévisions", TypeCarte.EVENEMENT));
+        cartes.add(new Carte("Par une nuit tranquille", TypeCarte.EVENEMENT));
+        cartes.add(new Carte("Population résiliente", TypeCarte.EVENEMENT));
 
 
 
         /* CARTES EPIDEMIE*/
-        cartes.add(new CarteEpidemie("carte épidémie n°1", TypeCarte.JOUEUR));
-        cartes.add(new CarteEpidemie("carte épidémie n°2", TypeCarte.JOUEUR));
-        cartes.add(new CarteEpidemie("carte épidémie n°3", TypeCarte.JOUEUR));
-        cartes.add(new CarteEpidemie("carte épidémie n°4", TypeCarte.JOUEUR));
-        cartes.add(new CarteEpidemie("carte épidémie n°5", TypeCarte.JOUEUR));
-        cartes.add(new CarteEpidemie("carte épidémie n°6", TypeCarte.JOUEUR));
+        cartes.add(new Carte("carte épidémie n°1", TypeCarte.EPIDEMIE));
+        cartes.add(new Carte("carte épidémie n°2", TypeCarte.EPIDEMIE));
+        cartes.add(new Carte("carte épidémie n°3", TypeCarte.EPIDEMIE));
+        cartes.add(new Carte("carte épidémie n°4", TypeCarte.EPIDEMIE));
+        cartes.add(new Carte("carte épidémie n°5", TypeCarte.EPIDEMIE));
+        cartes.add(new Carte("carte épidémie n°6", TypeCarte.EPIDEMIE));
 
         /* CARTES VILLES*/
-        for (Ville v: lesVilles()){
-            cartes.add(new CarteVille(v,TypeCarte.JOUEUR));
+        for (Ville v: plateau.getLesVilles()){
+            cartes.add(new Carte(v.getNomVille(),TypeCarte.VILLE));
         }
-
-
-return cartes;
+        return cartes;
     }
 
-    private static List<ICartes> chargerCartesPropagation(){
-        List<ICartes> cartes = new ArrayList<>();
-        for (Ville v: lesVilles()){
-            cartes.add(new CarteVille(v,TypeCarte.PROPAGATION));
+    private List<Carte> chargerCartesPropagation(){
+        List<Carte> cartes = new ArrayList<>();
+        for (Ville v: plateau.getLesVilles()){
+            cartes.add(new Carte(v.getNomVille(),TypeCarte.PROPAGATION));
         }
         return cartes;
     }
@@ -136,206 +150,10 @@ return cartes;
 
         atlanta.ajouterVillesLiees(miami);
         miami.ajouterVillesLiees(atlanta);
-
-        miami.ajouterVillesLiees(mexico);
-        mexico.ajouterVillesLiees(miami);
-        miami.ajouterVillesLiees(bogota);
-        bogota.ajouterVillesLiees(miami);
-        mexico.ajouterVillesLiees(los_angeles);
-        los_angeles.ajouterVillesLiees(mexico);
-        mexico.ajouterVillesLiees(bogota);
-        bogota.ajouterVillesLiees(mexico);
-        mexico.ajouterVillesLiees(lima);
-        lima.ajouterVillesLiees(mexico);
-
-        lima.ajouterVillesLiees(santiago);
-        santiago.ajouterVillesLiees(lima);
-        lima.ajouterVillesLiees(bogota);
-        bogota.ajouterVillesLiees(lima);
-
-        bogota.ajouterVillesLiees(sao_paulo);
-        sao_paulo.ajouterVillesLiees(bogota);
-        bogota.ajouterVillesLiees(buenos_aires);
-        buenos_aires.ajouterVillesLiees(bogota);
-        buenos_aires.ajouterVillesLiees(sao_paulo);
-        sao_paulo.ajouterVillesLiees(buenos_aires);
-
-        new_york.ajouterVillesLiees(londres);
-        londres.ajouterVillesLiees(new_york);
-        new_york.ajouterVillesLiees(madrid);
-        madrid.ajouterVillesLiees(new_york);
-
-        madrid.ajouterVillesLiees(londres);
-        londres.ajouterVillesLiees(madrid);
-        madrid.ajouterVillesLiees(paris);
-        paris.ajouterVillesLiees(madrid);
-        madrid.ajouterVillesLiees(alger);
-        alger.ajouterVillesLiees(madrid);
-
-        paris.ajouterVillesLiees(londres);
-        londres.ajouterVillesLiees(paris);
-        paris.ajouterVillesLiees(alger);
-        alger.ajouterVillesLiees(paris);
-        paris.ajouterVillesLiees(essen);
-        essen.ajouterVillesLiees(paris);
-
-        londres.ajouterVillesLiees(essen);
-        essen.ajouterVillesLiees(londres);
-        essen.ajouterVillesLiees(milan);
-        milan.ajouterVillesLiees(essen);
-        essen.ajouterVillesLiees(saint_petersbourg);
-        saint_petersbourg.ajouterVillesLiees(essen);
-
-        saint_petersbourg.ajouterVillesLiees(moscou);
-        moscou.ajouterVillesLiees(saint_petersbourg);
-        saint_petersbourg.ajouterVillesLiees(istanbul);
-        istanbul.ajouterVillesLiees(saint_petersbourg);
-
-        milan.ajouterVillesLiees(paris);
-        paris.ajouterVillesLiees(milan);
-        milan.ajouterVillesLiees(istanbul);
-        istanbul.ajouterVillesLiees(milan);
-
-        istanbul.ajouterVillesLiees(moscou);
-        moscou.ajouterVillesLiees(istanbul);
-        moscou.ajouterVillesLiees(teheran);
-        teheran.ajouterVillesLiees(moscou);
-
-        istanbul.ajouterVillesLiees(alger);
-        alger.ajouterVillesLiees(istanbul);
-        istanbul.ajouterVillesLiees(le_caire);
-        le_caire.ajouterVillesLiees(istanbul);
-        istanbul.ajouterVillesLiees(bagdad);
-        bagdad.ajouterVillesLiees(istanbul);
-
-        alger.ajouterVillesLiees(madrid);
-        madrid.ajouterVillesLiees(alger);
-        alger.ajouterVillesLiees(paris);
-        paris.ajouterVillesLiees(alger);
-        alger.ajouterVillesLiees(istanbul);
-        istanbul.ajouterVillesLiees(alger);
-        alger.ajouterVillesLiees(le_caire);
-        le_caire.ajouterVillesLiees(alger);
-
-        le_caire.ajouterVillesLiees(bagdad);
-        bagdad.ajouterVillesLiees(le_caire);
-        le_caire.ajouterVillesLiees(riyad);
-        riyad.ajouterVillesLiees(le_caire);
-        le_caire.ajouterVillesLiees(khartoum);
-        khartoum.ajouterVillesLiees(le_caire);
-
-        bagdad.ajouterVillesLiees(riyad);
-        riyad.ajouterVillesLiees(bagdad);
-        bagdad.ajouterVillesLiees(teheran);
-        teheran.ajouterVillesLiees(bagdad);
-        bagdad.ajouterVillesLiees(karachi);
-        karachi.ajouterVillesLiees(bagdad);
-
-        teheran.ajouterVillesLiees(dehli);
-        dehli.ajouterVillesLiees(teheran);
-        teheran.ajouterVillesLiees(karachi);
-        karachi.ajouterVillesLiees(teheran);
-
-        dehli.ajouterVillesLiees(karachi);
-        karachi.ajouterVillesLiees(dehli);
-        dehli.ajouterVillesLiees(calcutta);
-        calcutta.ajouterVillesLiees(dehli);
-        dehli.ajouterVillesLiees(mumbai);
-        mumbai.ajouterVillesLiees(dehli);
-        dehli.ajouterVillesLiees(chennai);
-        chennai.ajouterVillesLiees(dehli);
-
-        karachi.ajouterVillesLiees(mumbai);
-        mumbai.ajouterVillesLiees(karachi);
-        karachi.ajouterVillesLiees(riyad);
-        riyad.ajouterVillesLiees(karachi);
-
-        mumbai.ajouterVillesLiees(chennai);
-        chennai.ajouterVillesLiees(mumbai);
-
-        calcutta.ajouterVillesLiees(chennai);
-        chennai.ajouterVillesLiees(calcutta);
-        calcutta.ajouterVillesLiees(hong_kong);
-        hong_kong.ajouterVillesLiees(calcutta);
-        calcutta.ajouterVillesLiees(bangkok);
-        bangkok.ajouterVillesLiees(calcutta);
-
-        chennai.ajouterVillesLiees(bangkok);
-        bangkok.ajouterVillesLiees(chennai);
-        chennai.ajouterVillesLiees(jakarta);
-        jakarta.ajouterVillesLiees(chennai);
-
-        bangkok.ajouterVillesLiees(hong_kong);
-        hong_kong.ajouterVillesLiees(bangkok);
-        bangkok.ajouterVillesLiees(ho_chi_minh_ville);
-        ho_chi_minh_ville.ajouterVillesLiees(bangkok);
-        bangkok.ajouterVillesLiees(jakarta);
-        jakarta.ajouterVillesLiees(bangkok);
-
-        hong_kong.ajouterVillesLiees(ho_chi_minh_ville);
-        ho_chi_minh_ville.ajouterVillesLiees(hong_kong);
-        hong_kong.ajouterVillesLiees(manille);
-        manille.ajouterVillesLiees(hong_kong);
-        hong_kong.ajouterVillesLiees(taipei);
-        taipei.ajouterVillesLiees(hong_kong);
-        hong_kong.ajouterVillesLiees(shangai);
-        shangai.ajouterVillesLiees(hong_kong);
-
-        jakarta.ajouterVillesLiees(sydney);
-        sydney.ajouterVillesLiees(jakarta);
-        jakarta.ajouterVillesLiees(ho_chi_minh_ville);
-        ho_chi_minh_ville.ajouterVillesLiees(jakarta);
-
-        ho_chi_minh_ville.ajouterVillesLiees(manille);
-        manille.ajouterVillesLiees(ho_chi_minh_ville);
-
-        manille.ajouterVillesLiees(sydney);
-        sydney.ajouterVillesLiees(manille);
-        manille.ajouterVillesLiees(taipei);
-        taipei.ajouterVillesLiees(manille);
-
-        taipei.ajouterVillesLiees(osaka);
-        osaka.ajouterVillesLiees(taipei);
-        taipei.ajouterVillesLiees(shangai);
-        shangai.ajouterVillesLiees(taipei);
-
-        shangai.ajouterVillesLiees(pekin);
-        pekin.ajouterVillesLiees(shangai);
-        shangai.ajouterVillesLiees(seoul);
-        seoul.ajouterVillesLiees(shangai);
-        shangai.ajouterVillesLiees(tokyo);
-        tokyo.ajouterVillesLiees(shangai);
-
-        osaka.ajouterVillesLiees(tokyo);
-        tokyo.ajouterVillesLiees(osaka);
-
-        tokyo.ajouterVillesLiees(seoul);
-        seoul.ajouterVillesLiees(tokyo);
-
-        seoul.ajouterVillesLiees(pekin);
-        pekin.ajouterVillesLiees(seoul);
-
-        khartoum.ajouterVillesLiees(lagos);
-        lagos.ajouterVillesLiees(khartoum);
-        khartoum.ajouterVillesLiees(kinshasa);
-        kinshasa.ajouterVillesLiees(khartoum);
-        khartoum.ajouterVillesLiees(johannesburg);
-        johannesburg.ajouterVillesLiees(khartoum);
-
-        johannesburg.ajouterVillesLiees(kinshasa);
-        kinshasa.ajouterVillesLiees(johannesburg);
-
-        kinshasa.ajouterVillesLiees(lagos);
-        lagos.ajouterVillesLiees(kinshasa);
-
-        lagos.ajouterVillesLiees(sao_paulo);
-        sao_paulo.ajouterVillesLiees(lagos);
-
-        sao_paulo.ajouterVillesLiees(madrid);
-        madrid.ajouterVillesLiees(sao_paulo);
-
         san_francisco.ajouterVillesLiees(los_angeles);
         los_angeles.ajouterVillesLiees(san_francisco);
+
+        // villesLiees incomplet
 
 
         lesVilles.add(bangkok);
@@ -394,11 +212,11 @@ return cartes;
 
         return lesVilles;
     }
-    public static List<ICartes> distribuerCartes(int i){
+    public List<Carte> distribuerCartes(int i){
         return switch (i) {
-            case 2 -> cartesJoueur.subList(0, 4);
-            case 3 -> cartesJoueur.subList(5, 8);
-            case 4 -> cartesJoueur.subList(8, 10);
+            case 2 -> this.plateau.getCartesJoueur().subList(0, 4);
+            case 3 -> this.plateau.getCartesJoueur().subList(5, 8);
+            case 4 -> this.plateau.getCartesJoueur().subList(8, 10);
             default -> null;
         };
     }

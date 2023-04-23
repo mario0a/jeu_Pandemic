@@ -1,12 +1,14 @@
 package modele;
 
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
+import java.util.*;
 
 public class Ville {
+    @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "nomVille")
     private String nomVille;
     private String nomPays;
     private int nombreDeCube;
@@ -15,10 +17,12 @@ public class Ville {
     private int nombreHabitant;
     private Set<Joueur> joueurs;
     private double superficie;
-    private List<Ville> villesLiees;
+    @JsonIdentityReference(alwaysAsId = true)
+    private List<String> villesLiees=new ArrayList<>();;
     //private int nombre_carte_propagation= 1; //chaque ville a exactement 1 carte propagation
     private Boolean aUnCentreDeRecherche;
 
+    public Ville(){}
     public Ville(String nomVille) {
         this.nomVille = nomVille;
     }
@@ -101,11 +105,11 @@ public class Ville {
         this.superficie = superficie;
     }
 
-    public List<Ville> getVillesLiees() {
+    public List<String> getVillesLiees() {
         return villesLiees;
     }
 
-    public void setVillesLiees(List<Ville> villesLiees) {
+    public void setVillesLiees(List<String> villesLiees) {
         this.villesLiees = villesLiees;
     }
     public Boolean getaUnCentreDeRecherche() {return aUnCentreDeRecherche;}
@@ -123,7 +127,7 @@ public class Ville {
         this.nombre_carte_propagation = nombre_carte_propagation;
     }
 */
-    public void ajouterVillesLiees(Ville ville){ this.villesLiees.add(ville);}
+    public void ajouterVillesLiees(Ville ville){ this.villesLiees.add(ville.getNomVille());}
 
 
     @Override

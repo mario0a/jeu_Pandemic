@@ -2,7 +2,6 @@ package modele;
 
 import facade.IFacadePandemicOnline;
 import facade.JeuDeCartes;
-import modele.interfaces.ICartes;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -10,41 +9,25 @@ import java.util.List;
 import org.bson.codecs.pojo.annotations.BsonProperty;
 
 public class Plateau {
-    @BsonProperty("_id")
-    private String id;
     private final List<Integer> PistevitesseDePropagation =List.of(2,2,2,3,3,4,4);
-    private List<ICartes> cartesJoueur;
-    private List<ICartes>carte_epidemie;
-    private List<Joueur> lesJoueurs;
-    private int nombreEclosion;
-    private int vitesseDePropagation;
-    private List<ICartes> cartesPropagation;
-    private List<ICartes> defausse_cartesJoueur;
-    private List<ICartes> defausse_carteDePropagation;
-    private List<Ville> lesVilles;
-    private List<Ville> villes_ontEclosion;
-    private List<IFacadePandemicOnline> stationDeRecherche;
+    private List<Carte> cartesJoueur=new ArrayList<>();
+    private List<Carte>carte_epidemie=new ArrayList<>();
+    private List<Joueur> lesJoueurs=new ArrayList<>();
+    private int nombreEclosion=0;
+    private int vitesseDePropagation=0;
+    private List<Carte> cartesPropagation=new ArrayList<>();
+    private List<Carte> defausse_cartesJoueur=new ArrayList<>();
+    private List<Carte> defausse_carteDePropagation=new ArrayList<>();
+    private List<Ville> lesVilles=new ArrayList<>();
+    private List<Ville> villes_ontEclosion=new ArrayList<>();
+    private List<Ville> stationDeRecherche=new ArrayList<>();//y'a un problème là
     private List<TypeRemede> lesRemedesActif = new ArrayList<>();
-    private List<Ville> lesStationsDeRecherche;
+    private List<Ville> lesStationsDeRecherche=new ArrayList<>();
     private EtatEpidemie etatEpidemie;
-    private boolean parUneNuitTranquille=false;
+    private Boolean parUneNuitTranquille=false; // tant que le boolean est à faux on peut faire la propagation sinon non
 
     public Plateau() {
-        this.nombreEclosion=0;
-        this.vitesseDePropagation=0;
-        this.cartesJoueur=new ArrayList<>();
-        this.defausse_carteDePropagation = new ArrayList<>();
-        this.lesVilles = JeuDeCartes.lesVilles();
-        this.carte_epidemie = new ArrayList<>();
-        this.lesJoueurs =new ArrayList<>();
-        this.cartesPropagation=new ArrayList<>();
-        this.defausse_cartesJoueur= new ArrayList<>();
 
-
-        for (Ville v: lesVilles){
-            cartesPropagation.add(new CarteEpidemie("propagation", TypeCarte.PROPAGATION));
-        }
-        Collections.shuffle(cartesPropagation);
     }
 
     public List<Joueur> getLesJoueurs() {
@@ -71,44 +54,60 @@ public class Plateau {
         this.vitesseDePropagation = vitesseDePropagation;
     }
 
-    public List<ICartes> getCartesJoueur() {
+    public List<Carte> getCartesJoueur() {
         return cartesJoueur;
     }
 
-    public void setCartesJoueur(List<ICartes> cartesJoueur) {
+    public void setCartesJoueur(List<Carte> cartesJoueur) {
         this.cartesJoueur = cartesJoueur;
     }
 
-    public List<ICartes> getCartesPropagation() {
+    public List<Carte> getCartesPropagation() {
         return cartesPropagation;
     }
 
-    public void setCartesPropagation(List<ICartes> cartesPropagation) {
+    public void setCartesPropagation(List<Carte> cartesPropagation) {
         this.cartesPropagation = cartesPropagation;
     }
 
-    public List<ICartes> getDefausse_cartesJoueur() {
+    public List<Carte> getDefausse_cartesJoueur() {
         return defausse_cartesJoueur;
     }
 
-    public void setDefausse_cartesJoueur(List<ICartes> defausse_cartesJoueur) {
+    public Boolean getParUneNuitTranquille() {
+        return parUneNuitTranquille;
+    }
+
+    public void setParUneNuitTranquille(Boolean parUneNuitTranquille) {
+        this.parUneNuitTranquille = parUneNuitTranquille;
+    }
+
+    public void setDefausse_cartesJoueur(List<Carte> defausse_cartesJoueur) {
         this.defausse_cartesJoueur = defausse_cartesJoueur;
     }
 
-    public List<ICartes> getDefausse_carteDePropagation() {
+    public List<Carte> getDefausse_carteDePropagation() {
         return defausse_carteDePropagation;
     }
 
-    public void setDefausse_carteDePropagation(List<ICartes> defausse_carteDePropagation) {
+    public void setDefausse_carteDePropagation(List<Carte> defausse_carteDePropagation) {
         this.defausse_carteDePropagation = defausse_carteDePropagation;
     }
 
-    public List<IFacadePandemicOnline> getStationDeRecherche(Ville ville) {
+    public List<Ville> getStationDeRecherche(Ville ville) {
         return this.stationDeRecherche;
     }
 
     public List<Ville> getLesVilles() {
         return lesVilles;
+    }
+
+    public EtatEpidemie getEtatEpidemie() {
+        return etatEpidemie;
+    }
+
+    public void setEtatEpidemie(EtatEpidemie etatEpidemie) {
+        this.etatEpidemie = etatEpidemie;
     }
 
     public void setLesVilles(List<Ville> lesVilles) {
@@ -128,33 +127,87 @@ public class Plateau {
     public void rejoindrePartie(Joueur joueur){this.lesJoueurs.add(joueur);}
     public void abandonnerPartie(Joueur joueur){this.lesJoueurs.remove(joueur);}
 
-    public void ajouterCartesJoueur(ICartes carte){this.cartesJoueur.add(carte);}
-    public void ajouterCartePropagation(ICartes carte){this.cartesPropagation.add(carte);}
-    public void ajouterCarteALaDefausse(ICartes carte){this.defausse_cartesJoueur.add(carte);}
-    public void ajouterCarteALaDefaussePropagation(ICartes carte){this.defausse_carteDePropagation.add(carte);}
+    public void ajouterCartesJoueur(Carte carte){this.cartesJoueur.add(carte);}
+    public void ajouterCartePropagation(Carte carte){this.cartesPropagation.add(carte);}
+    public void ajouterCarteALaDefausse(Carte carte){this.defausse_cartesJoueur.add(carte);}
+    public void ajouterCarteALaDefaussePropagation(Carte carte){this.defausse_carteDePropagation.add(carte);}
 
-    public EtatEpidemie getEtatEpidemie() {
-        return etatEpidemie;
-    }
-
-    public void setEtatEpidemie(EtatEpidemie etatEpidemie) {
-        this.etatEpidemie = etatEpidemie;
-    }
-
-    public boolean isParUneNuitTranquille() {
-        return parUneNuitTranquille;
-    }
-
-    public void setParUneNuitTranquille(boolean parUneNuitTranquille) {
-        this.parUneNuitTranquille = parUneNuitTranquille;
-    }
 
     public void diffusionEpidemie(){
+        // Si medeçin sur ville et que la maladie a un remède : bloquer les nouveaux cubes d'une maladie guérie
         villes_ontEclosion.addAll(lesVilles);
         int nombreCube=0;
         getPistevitesseDePropagation();
-        CarteVille cartePropagation = (CarteVille) cartesPropagation.remove(cartesPropagation.size()-1);
-        Ville villeInfectee = cartePropagation.getVille();
+        Carte cartePropagation = (Carte) cartesPropagation.remove(cartesPropagation.size()-1);
+        Ville villeInfectee = this.getVilleByNom(cartePropagation.getInformation());
         CouleursMaladie maladie = villeInfectee.getMaladie();
+    }
+
+    public List<Carte> getCarte_epidemie() {
+        return carte_epidemie;
+    }
+
+    public Plateau setCarte_epidemie(List<Carte> carte_epidemie) {
+        this.carte_epidemie = carte_epidemie;
+        return this;
+    }
+
+    public List<Ville> getVilles_ontEclosion() {
+        return villes_ontEclosion;
+    }
+
+    public Plateau setVilles_ontEclosion(List<Ville> villes_ontEclosion) {
+        this.villes_ontEclosion = villes_ontEclosion;
+        return this;
+    }
+
+    public List<Ville> getStationDeRecherche() {
+        return stationDeRecherche;
+    }
+
+    public Plateau setStationDeRecherche(List<Ville> stationDeRecherche) {
+        this.stationDeRecherche = stationDeRecherche;
+        return this;
+    }
+
+    public Plateau setLesRemedesActif(List<TypeRemede> lesRemedesActif) {
+        this.lesRemedesActif = lesRemedesActif;
+        return this;
+    }
+
+    public Plateau setLesStationsDeRecherche(List<Ville> lesStationsDeRecherche) {
+        this.lesStationsDeRecherche = lesStationsDeRecherche;
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return "Plateau{" +
+                "PistevitesseDePropagation=" + PistevitesseDePropagation +
+                //       ", cartesJoueur=" + cartesJoueur +
+                ", carte_epidemie=" + carte_epidemie +
+                ", lesJoueurs=" + lesJoueurs +
+                ", nombreEclosion=" + nombreEclosion +
+                ", vitesseDePropagation=" + vitesseDePropagation +
+                //       ", cartesPropagation=" + cartesPropagation +
+                ", defausse_cartesJoueur=" + defausse_cartesJoueur +
+                ", defausse_carteDePropagation=" + defausse_carteDePropagation +
+                //       ", lesVilles=" + lesVilles +
+                ", villes_ontEclosion=" + villes_ontEclosion +
+                ", stationDeRecherche=" + stationDeRecherche +
+                ", lesRemedesActif=" + lesRemedesActif +
+                ", lesStationsDeRecherche=" + lesStationsDeRecherche +
+                ", etatEpidemie=" + etatEpidemie +
+                ", parUneNuitTranquille=" + parUneNuitTranquille +
+                '}';
+    }
+
+    public Ville getVilleByNom(String nomVille){
+        for(Ville ville : this.lesVilles){
+            if(ville.getNomVille().equals(nomVille)) {
+                return ville;
+            }
+        }
+        return null;
     }
 }
