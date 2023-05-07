@@ -6,6 +6,7 @@ import lombok.Data;
 public class JoueurDto {
      String nomJoueur;
      String mdp;
+
      public JoueurDto(String nomJoueur, String mdp) {
           this.nomJoueur = nomJoueur;
           this.mdp = mdp;

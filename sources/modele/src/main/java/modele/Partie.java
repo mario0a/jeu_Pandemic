@@ -3,6 +3,8 @@ package modele;
 import exceptions.ActionNotAutorizedException;
 import exceptions.PartiePleineException;
 import facade.JeuDeCartes;
+import org.bson.codecs.pojo.annotations.BsonId;
+import org.bson.types.ObjectId;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -10,8 +12,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Partie {
-    private Long id;
+public class Partie{
+    @BsonId
+    private ObjectId id;
     private EtatPartie etatPartie = EtatPartie.DEBUT;
     private final LocalDateTime dateCreation = LocalDateTime.now();
     private Plateau plateau = new Plateau();
@@ -20,18 +23,20 @@ public class Partie {
 
     public Partie() {}
 
-    public Partie(Long id, Partie1Joueur partie1Joueur) {
+    public Partie(ObjectId id, Partie1Joueur partie1Joueur) {
         this.id = id;
         this.partieJoueur.add(partie1Joueur);
     }
 
-    public Partie(Long id, EtatPartie etatPartie, Plateau plateau, List<Carte> carteDefausse, List<Partie1Joueur> partieJoueur) {
+    public Partie(ObjectId id, EtatPartie etatPartie, Plateau plateau, List<Carte> carteDefausse, List<Partie1Joueur> partieJoueur) {
         this.id = id;
         this.etatPartie = etatPartie;
         this.plateau=plateau;
         this.carteDefausse = carteDefausse;
         this.partieJoueur = partieJoueur;
     }
+
+
 
     @Override
     public String toString() {
@@ -45,9 +50,9 @@ public class Partie {
                 '}';
     }
 
-    public Long getId() { return id; }
+    public ObjectId getId() { return id; }
 
-    public void setId(Long id) { this.id = id;}
+    public void setId(ObjectId id) { this.id = id;}
 
     public EtatPartie getEtatPartie() { return etatPartie;}
 

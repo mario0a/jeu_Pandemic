@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class ActionDto {
-    private Long idPartie;
+    private String idPartie;
     private String nomJoueur;
     private String element;
 

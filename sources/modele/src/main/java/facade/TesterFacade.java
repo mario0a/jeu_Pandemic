@@ -1,14 +1,15 @@
 package facade;
 
 import dao.Dao;
-import exceptions.PartiePleineException;
 
 public class TesterFacade {
+
+    private static Dao dao = new Dao();
     public static void main(String[] args) {
-        System.out.println(Dao.getDb());
-        Dao.inscription("Paul","Lauriche");
-        System.out.println(Dao.getDb().getCollection("joueurs").find().first());
-        Dao.seConnecter("pom","Lauriche");
+        System.out.println(dao.getDb());
+        dao.inscription("Paul","Lauriche");
+        System.out.println(dao.getDb().getCollection("joueurs").find().first());
+        dao.seConnecter("pom","Lauriche");
        /* try {
             Dao.creerPartie("1","Paul");
             Dao.partieInitialisee("1");
