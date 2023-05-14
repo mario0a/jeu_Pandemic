@@ -4,9 +4,17 @@ Le projet n'est pas en ligne donc pour pouvoir le lancer faut démarrer spring b
 
 
 
-Pour le backend, faut la JDK 17.
+Pour le backend, il faut la JDK 17 et démarrer seulement le projet springboot.
 
-Pour le frontend, faut installer la version 14.16.0 du node js
+Pour le frontend:
+    notice de lancement du projet angular:
+
+-récupérer le projet angular
+-l'ouvrir avec un IDE
+-installer la version 14.16.0 du node js
+-ouvrir le terminal et taper la commande `npm install`
+    -Si le npm pose problème: taper la commande `npm install -g @angular/cli`
+
 
 Pour pouvoir lancer le jeu, il faut démarrer spring boot (qui va tourner sur le port 8081) et angular (sur le port 4200) en même temps.
 
