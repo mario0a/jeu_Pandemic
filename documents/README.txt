@@ -1,3 +1,39 @@
+Deuxième semestre : Client léger Angular  et Spring boot
+
+Le projet n'est pas en ligne donc pour pouvoir le lancer faut démarrer spring boot et angular
+
+
+
+Pour le backend, faut la JDK 17.
+
+Pour le frontend, faut installer la version 14.16.0 du node js
+
+Pour pouvoir lancer le jeu, il faut démarrer spring boot (qui va tourner sur le port 8081) et angular (sur le port 4200) en même temps.
+
+Etant donné que nous avons deux clients (un client léger = Angular et un client lourd = JavaFx), nous avons deux backends qui sont quasiment similaire à quelques modifications près.
+
+Donc il se peut que l'un des deux clients ne fonctionne pas avec le backend de l'autre client.
+
+Ce backend fonctionne avec Angular.
+
+Toute les fonctionnalités du jeu sont développées dans le backend qui contient 3 modules:
+
+le modele : où se trouve toutes les entités et la façade ainsi que les interfaces
+
+pour les méthodes métiers et le dao pour les requêtes à la base de données MongoDB.
+
+ModeleDtos : qui contient toutes les dtos dont on a besoin pour transferer des données.
+
+Spring boot : qui contient les api développées qui sont les web services rest
+
+Anglar : c'est le client léger où on a développé les différents écrans du jeu.
+
+La communication se fait bien entre le frontend et le backend.
+
+
+
+Premier semestre : Le modèle du jeu Pandemic
+
 Documents
 CF : le diagramme de classe est dans "documents" sous forme d'image
 
