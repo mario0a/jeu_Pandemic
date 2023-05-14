@@ -1,6 +1,5 @@
 package facade;
 
-import LesActions.Actions;
 import controller.ModelController;
 import dao.Dao;
 import dtos.JoueurDto;
@@ -15,7 +14,6 @@ import org.modelmapper.ModelMapper;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 
 public class FacadePandemicOnline implements IFacadePandemicOnline {
     ModelController modelController = new ModelController();
@@ -41,7 +39,7 @@ public class FacadePandemicOnline implements IFacadePandemicOnline {
     }
 
     @Override
-    public PartieDto creerPartie(String nomJoueur) throws PartiePleineException, ActionNotAutorizedException{
+    public PartieDto creerPartie(String nomJoueur) throws ActionNotAutorizedException{
         Partie partie = dao.creerPartie(nomJoueur);
         PartieDto partieDto = modelMapper.map(partie, PartieDto.class);
         for(Partie1Joueur partie1Joueur:partie.getPartieJoueur()){

@@ -1,0 +1,23 @@
+
+m	java:S117#"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆ´åÃ8¥ÓÿÎ1
+E
+java:S5411$"(Use a primitive boolean expression here.(ı­€š8ªÓÿÎ1
+E
+java:S54110"(Use a primitive boolean expression here.(ı­€š8¬ÓÿÎ1
+E
+java:S54111"(Use a primitive boolean expression here.(Â– ô8­ÓÿÎ1
+J
+java:S54118"(Use a primitive boolean expression here.(ûñÃ¥úÿÿÿÿ8­ÓÿÎ1
+E
+java:S5411|"(Use a primitive boolean expression here.(àä¹8­ÓÿÎ1
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(’Êñªøÿÿÿÿ
+<
+java:S1640"Convert this Map to an EnumMap.(ïº»8±ÓÿÎ1
+t
+java:S37767"RRefactor this method to reduce its Cognitive Complexity from 41 to the 15 allowed.(ü‡Øıÿÿÿÿ8ÅÕÿÎ1
+[	java:S106˜"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ8ÖÕÿÎ1
+I
+java:S1128	",Remove this unused import 'java.util.Queue'.(Äá™ô8ğÍşÎ1
+Z
+java:S1128
+"8Remove this unused import 'java.util.stream.Collectors'.(Óóº´úÿÿÿÿ8ñÍşÎ1

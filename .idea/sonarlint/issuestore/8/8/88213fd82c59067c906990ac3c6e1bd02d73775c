@@ -1,0 +1,32 @@
+
+r	java:S117U"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(§¶ƒ¦üÿÿÿÿ8°Ê¢Î1
+r	java:S117]"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡Î¡‘úÿÿÿÿ8°Ê¢Î1
+m	java:S117Ÿ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–ÈçI8°Ê¢Î1
+…	java:S116"dRename this field "PistevitesseDePropagation" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶¯¤úÿÿÿÿ8½Ê¢Î1
+	java:S116"`Rename this field "defausse_cartesJoueur" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(şÄ¦‘üÿÿÿÿ8¾Ê¢Î1
+‚	java:S116"fRename this field "defausse_carteDePropagation" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÊÅ¥­8¾Ê¢Î1
+~	java:S116"]Rename this field "villes_ontEclosion" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(şÀÑşÿÿÿÿ8¾Ê¢Î1
+j	java:S100I"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ê•¾ß8ÇÊ¢Î1
+o	java:S100U"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(§¶ƒ¦üÿÿÿÿ8ÇÊ¢Î1
+o	java:S100Y"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÌŸ›øÿÿÿÿ8ÈÊ¢Î1
+o	java:S100]"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡Î¡‘úÿÿÿÿ8ÈÊ¢Î1
+N
+java:S1172a",Remove this unused method parameter "ville".(ıøÿÿÿÿÿ8ÉÊ¢Î1
+Y
+java:S1854";Remove this useless assignment to local variable "maladie".(–›½‡8ÎÊ¢Î1
+R
+java:S1481‹"/Remove this unused "nombreCube" local variable.(ŠÅ¼úÿÿÿÿ8ÏÊ¢Î1
+K
+java:S1905"(Remove this unnecessary cast to "Carte".(ç‡ºâıÿÿÿÿ8ĞÊ¢Î1
+J
+java:S1481",Remove this unused "maladie" local variable.(–›½‡8ÓÊ¢Î1
+k	java:S100›"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(†¬£ë8ÔÊ¢Î1
+j	java:S100Ÿ"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–ÈçI8ÕÊ¢Î1
+U
+java:S1128"9Remove this unused import 'facade.IFacadePandemicOnline'.(ÄÀË8äˆğÏ1
+Q
+java:S1128"/Remove this unused import 'facade.JeuDeCartes'.(Æ®¢¿ùÿÿÿÿ8æˆğÏ1
+T
+java:S1128"2Remove this unused import 'java.util.Collections'.(¢³ïÓşÿÿÿÿ8æˆğÏ1
+g
+java:S1128"JRemove this unused import 'org.bson.codecs.pojo.annotations.BsonProperty'.(˜Ç¿±8æˆğÏ1

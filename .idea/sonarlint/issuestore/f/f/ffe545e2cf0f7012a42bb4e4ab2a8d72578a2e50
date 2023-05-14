@@ -1,0 +1,10 @@
+
+Z
+java:S1874"DRemove this use of "WebSecurityConfigurerAdapter"; it is deprecated.(Ë¶Ï“
+]	java:S125N"<This block of commented-out lines of code should be removed.(ÔñÏèüÿÿÿÿ8ÿþüÍ1
+[
+java:S1128"?Remove this unused import 'io.jsonwebtoken.SignatureAlgorithm'.(ç±«g8üÁãÏ1
+\
+java:S1128":Remove this unused import 'io.jsonwebtoken.security.Keys'.(û±ÃŸúÿÿÿÿ8üÁãÏ1
+P
+java:S1128"3Remove this unused import 'javax.crypto.SecretKey'.(±•¸×8ýÁãÏ1

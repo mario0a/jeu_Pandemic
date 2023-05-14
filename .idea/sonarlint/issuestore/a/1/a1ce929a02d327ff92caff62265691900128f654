@@ -1,0 +1,16 @@
+
+
+java:S1488"]Immediately return this expression instead of assigning it to the temporary variable "token".(ş½È’øÿÿÿÿ8ïúûÍ1
+ˆ
+java:S14888"fImmediately return this expression instead of assigning it to the temporary variable "authentication".(¬ğé·şÿÿÿÿ8ğúûÍ1
+n
+java:S6204"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(°•¸8‹ûûÍ1
+R
+java:S1874!"0Remove this use of "signWith"; it is deprecated.(´²­úÿÿÿÿ8’ûûÍ1
+X	java:S125-"<This block of commented-out lines of code should be removed.(é›®¤8šûûÍ1
+P
+java:S1874.".Remove this use of "parser"; it is deprecated.(îšşıÿÿÿÿ8œûûÍ1
+W
+java:S1874."5Remove this use of "setSigningKey"; it is deprecated.(îšşıÿÿÿÿ8ûûÍ1
+o
+java:S62046"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹8 ûûÍ1

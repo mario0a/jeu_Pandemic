@@ -1,13 +1,16 @@
 package dao;
 
-import LesActions.Actions;
 import com.mongodb.MongoClientSettings;
 import com.mongodb.MongoWriteException;
 import com.mongodb.client.*;
 import com.mongodb.client.model.Filters;
+import com.mongodb.client.model.InsertManyOptions;
 import com.mongodb.client.model.Updates;
-import exceptions.*;
+import exceptions.ActionNotAutorizedException;
+import exceptions.PartieNonSuspenduException;
+import exceptions.PartiePleineException;
 import modele.*;
+import org.bson.BsonArray;
 import org.bson.Document;
 import org.bson.codecs.configuration.CodecRegistry;
 import org.bson.codecs.pojo.PojoCodecProvider;
@@ -80,12 +83,12 @@ public class Dao {
     public Partie actualiserPlateau(String idPartie) {
         return this.getPartie(idPartie);
     }
-    public Partie creerPartie(String nomJoueur) throws PartiePleineException, ActionNotAutorizedException {
+    public Partie creerPartie(String nomJoueur) throws ActionNotAutorizedException {
         MongoCollection<Partie> partieMongoCollection = db.getCollection(PARTIES, Partie.class);
         MongoCollection<Joueur> joueurMongoCollection = db.getCollection(JOUEURS, Joueur.class);
-
         if(Objects.nonNull(joueurMongoCollection.find(Filters.eq(NOM_JOUEUR, nomJoueur)).first())){
             ObjectId objectID = new ObjectId();
+            System.out.println(objectID.toHexString());
             partieMongoCollection.insertOne(new Partie(objectID,new Partie1Joueur(nomJoueur, true)));
             return partieMongoCollection.find(Filters.eq(ID_PARTIE, objectID)).first();
         }else{
