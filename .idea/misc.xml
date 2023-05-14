@@ -4,7 +4,6 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/sources/modele/pom.xml" />
         <option value="$PROJECT_DIR$/pandemic_springBoot/pom.xml" />
         <option value="$PROJECT_DIR$/sources/modeleDtos/pom.xml" />
         <option value="$PROJECT_DIR$/sources/pandemic_springBoot/pom.xml" />
