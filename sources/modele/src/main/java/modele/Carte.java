@@ -1,40 +1,22 @@
 package modele;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class Carte {
-    private String information;
+
+    private String nomCarte;
     private TypeCarte typeCarte;
+    private String description;
+    private String reference;
 
-    public Carte() {
-    }
-
-    public Carte(String information, TypeCarte typeCarte) {
-        this.information = information;
+    public Carte(String nomCarte, TypeCarte typeCarte, String reference) {
+        this.nomCarte = nomCarte;
         this.typeCarte = typeCarte;
-    }
-
-    public String getInformation() {
-        return information;
-    }
-
-    public Carte setInformation(String information) {
-        this.information = information;
-        return this;
-    }
-
-    public TypeCarte getTypeCarte() {
-        return typeCarte;
-    }
-
-    public Carte setTypeCarte(TypeCarte typeCarte) {
-        this.typeCarte = typeCarte;
-        return this;
-    }
-
-    @Override
-    public String toString() {
-        return "Carte{" +
-                "information='" + information + '\'' +
-                ", typeCarte=" + typeCarte +
-                '}';
+        this.reference = reference;
     }
 }

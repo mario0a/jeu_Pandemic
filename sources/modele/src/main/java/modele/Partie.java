@@ -3,6 +3,8 @@ package modele;
 import exceptions.ActionNotAutorizedException;
 import exceptions.PartiePleineException;
 import facade.JeuDeCartes;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.bson.codecs.pojo.annotations.BsonId;
 import org.bson.types.ObjectId;
 
@@ -10,18 +12,21 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.Map;
 
+
+@NoArgsConstructor
+@Data
 public class Partie{
     @BsonId
     private ObjectId id;
     private EtatPartie etatPartie = EtatPartie.DEBUT;
     private final LocalDateTime dateCreation = LocalDateTime.now();
+    private boolean initialisation = false;
     private Plateau plateau = new Plateau();
     private List<Carte> carteDefausse = new ArrayList<>();
     private List<Partie1Joueur> partieJoueur = new ArrayList<>();
-
-    public Partie() {}
+    private TourJoueur tourJoueur;
 
     public Partie(ObjectId id, Partie1Joueur partie1Joueur) {
         this.id = id;
@@ -50,31 +55,18 @@ public class Partie{
                 '}';
     }
 
-    public ObjectId getId() { return id; }
 
-    public void setId(ObjectId id) { this.id = id;}
 
-    public EtatPartie getEtatPartie() { return etatPartie;}
 
-    public void setEtatPartie(EtatPartie etatPartie) {this.etatPartie = etatPartie;}
 
-    public Plateau getPlateau() {
-        return plateau;
-    }
 
     public Partie setPlateau(Plateau plateau) {
         this.plateau = plateau;
         return this;
     }
 
-    public LocalDateTime getDateCreation() { return dateCreation; }
 
-    public List<Carte> getCarteDefausse() { return carteDefausse;}
 
-    //@JsonProperty("partieJoueur")
-    public List<Partie1Joueur> getPartieJoueur() {
-        return partieJoueur;
-    }
 
     public Partie setCarteDefausse(List<Carte> carteDefausse) {
         this.carteDefausse = carteDefausse;
@@ -94,35 +86,36 @@ public class Partie{
         }
     }
 
-    public boolean partieInitialisee() throws ActionNotAutorizedException {
-        if(this.getEtatPartie()==EtatPartie.DEBUT){
+    public Map<String,byte[]> partieInitialisee() throws ActionNotAutorizedException {
+        if(this.getEtatPartie() != EtatPartie.DEBUT)throw new ActionNotAutorizedException("");
+        if(this.partieJoueur.size() < 2) throw new ActionNotAutorizedException("");
+        if(this.getTourJoueur() == null) {
             this.attribuerRoleAuxJoueurs();
-            new JeuDeCartes(this.plateau);
-            return switch (this.partieJoueur.size()){
-                case 2,3,4 -> true;
-                default -> false;
-            };
-        }else{
-            throw new ActionNotAutorizedException();
+            JeuDeCartes jeuDeCartes = new JeuDeCartes(this.plateau);
+            tourJoueur = new TourJoueur(this.partieJoueur);
+            distributionInitialeEpidemie();
+            distributionInitialeJoueur();
+            this.setInitialisation(true);
+            return jeuDeCartes.getImageCarte();
         }
+        return Collections.emptyMap();
     }
 
     public void ajouterJoueur(String nomJoueur) {
         this.partieJoueur.add(new Partie1Joueur(nomJoueur));
     }
 
-
-    public void ajouterUneCarteALaDefausse(Carte carte){
-        this.carteDefausse.add(carte);
-    }
-
     public Partie1Joueur getPartieJoueurByNomJoueur(String nomJoueur) {
         return this.partieJoueur.stream().filter
                         (partieJoueur -> partieJoueur.getNom().equals(nomJoueur))
-                .collect(Collectors.toList()).get(0);
+                .toList().get(0);
     }
 
-    public void attribuerRoleAuxJoueurs(){
+    public Carte getCarteByNomCarte(String nomCarte){
+        return this.getCarteDefausse().stream().filter(carte -> carte.getNomCarte().equals(nomCarte)).toList().get(0);
+    }
+
+    private void attribuerRoleAuxJoueurs(){
         List<TypeRole> roles=new ArrayList<>();
         // Ajouter les autres rôles nécessaires à la liste "roles"
         roles.add(TypeRole.PLANIFICATEUR_DURGENCE);
@@ -144,9 +137,33 @@ public class Partie{
         }
     }
 
+    private void distributionInitialeEpidemie(){
+        int cube = 3;
+        Collections.shuffle(this.plateau.getCarteEpidemie());
+        for(int i = 0 ; i <= 9 ; i++) {
+            if(i % 3 == 0) cube--;
+            Carte carte = this.plateau.getCartesPropagation().remove(0);
+            this.plateau.getDefausse_carteDePropagation().add(carte);
+            Ville ville = this.plateau.getVilleByNom(carte.getNomCarte());
+            CouleursMaladie couleursMaladie = ville.getMaladie();
+            ville.ajouterCube(couleursMaladie, cube);
+        }
+    }
 
-   /* public Joueur getJoueurByName(String nomJoueur){
-        return this.partieJoueur.stream().filter(partie1Joueur -> partie1Joueur.getJoueur().equals(nomJoueur));
-        //return this.partieJoueur.stream().filter(partie1Joueur ->partie1Joueur.getJoueur().equals(nomJoueur)).collect(Collectors.toList()).get(0).getJoueur();
-    }*/
+    private void distributionInitialeJoueur(){
+        int nbCartesParJoueur = switch (this.partieJoueur.size()) {
+            case 2 -> 4;
+            case 3 -> 3;
+            case 4 -> 2;
+            default -> 0; // En cas de nombre de joueurs invalide, ne rien faire
+        };
+        if (nbCartesParJoueur > 0) {
+            Collections.shuffle(this.plateau.getCartesJoueur());
+            for (int i = 0; i < nbCartesParJoueur; i++) {
+                for (Partie1Joueur partieJoueur : this.partieJoueur) {
+                    partieJoueur.getCartesEnMain().add(this.plateau.getCartesJoueur().remove(0));
+                }
+            }
+        }
+    }
 }

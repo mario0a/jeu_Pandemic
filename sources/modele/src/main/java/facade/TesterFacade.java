@@ -6,9 +6,9 @@ public class TesterFacade {
 
     private static Dao dao = new Dao();
     public static void main(String[] args) {
-        System.out.println(dao.getDb());
+
         dao.inscription("Paul","Lauriche");
-        System.out.println(dao.getDb().getCollection("joueurs").find().first());
+
         dao.seConnecter("pom","Lauriche");
        /* try {
             Dao.creerPartie("1","Paul");

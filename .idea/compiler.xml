@@ -7,18 +7,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="pandemic_springBoot" />
         <module name="modele" />
+        <module name="modeleDtos" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="modele" target="17" />
-      <module name="pandemic_springBoot" target="17" />
+      <module name="jfx" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="pandemic_springBoot" options="-parameters" />
+      <module name="jfx" options="-parameters" />
+      <module name="pandemic_springBoot" options="" />
     </option>
   </component>
 </project>

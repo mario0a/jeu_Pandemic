@@ -3,23 +3,19 @@ package dao;
 import LesActions.Actions;
 import com.mongodb.MongoClientSettings;
 import com.mongodb.MongoWriteException;
-import com.mongodb.client.MongoClient;
-import com.mongodb.client.MongoClients;
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.*;
 import com.mongodb.client.model.Filters;
 import com.mongodb.client.model.Updates;
 import exceptions.*;
 import modele.*;
+import org.bson.Document;
 import org.bson.codecs.configuration.CodecRegistry;
 import org.bson.codecs.pojo.PojoCodecProvider;
 import org.bson.conversions.Bson;
+import org.bson.types.Binary;
 import org.bson.types.ObjectId;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 import static dao.DaoProperties.*;
 import static org.bson.codecs.configuration.CodecRegistries.fromProviders;
@@ -36,6 +32,7 @@ public class Dao {
                     .register(Carte.class)
                     .register(Ville.class)
                     .register(TypeRole.class)
+                    .register(TourJoueur.class)
                     .automatic(true).build()));
 
     private final MongoDatabase db = mongoClient.getDatabase(PANDEMIC).withCodecRegistry(pojoCodeRegistry);
@@ -68,29 +65,31 @@ public class Dao {
 
     //Initialiser une partie
     //FINI
-    public boolean partieInitialisee(String idPartie) throws ActionNotAutorizedException {
+    public Partie partieInitialisee(String idPartie) throws ActionNotAutorizedException {
         MongoCollection<Partie> partieMongoCollection = db.getCollection(PARTIES, Partie.class);
-        Partie partie = partieMongoCollection.find(Filters.eq(ID_PARTIE, getObjectIdByIdPartie(idPartie))).first();
-
-        if(partie != null && partie.partieInitialisee()) {
-            partieMongoCollection.updateOne(Filters.eq(ID_PARTIE, getObjectIdByIdPartie(idPartie)), Updates.combine(
-                    Updates.set(PARTIE_JOUEUR, partie.getPartieJoueur()),
-                    Updates.set(PLATEAU,partie.getPlateau())));
-            return true;
+        Partie partie = getPartie(idPartie);
+        if(partie.isInitialisation()){
+            return this.getPartie(idPartie);
         }
-        return false;
+        final Map<String, byte[]> imageMap = partie.partieInitialisee();
+        insererImage(imageMap);
+        partieMongoCollection.replaceOne(Filters.eq(ID_PARTIE, getObjectIdByIdPartie(idPartie)), partie);
+        return this.getPartie(idPartie);
     }
 
-    public String creerPartie(String nomJoueur) throws PartiePleineException, ActionNotAutorizedException {
+    public Partie actualiserPlateau(String idPartie) {
+        return this.getPartie(idPartie);
+    }
+    public Partie creerPartie(String nomJoueur) throws PartiePleineException, ActionNotAutorizedException {
         MongoCollection<Partie> partieMongoCollection = db.getCollection(PARTIES, Partie.class);
         MongoCollection<Joueur> joueurMongoCollection = db.getCollection(JOUEURS, Joueur.class);
 
         if(Objects.nonNull(joueurMongoCollection.find(Filters.eq(NOM_JOUEUR, nomJoueur)).first())){
             ObjectId objectID = new ObjectId();
             partieMongoCollection.insertOne(new Partie(objectID,new Partie1Joueur(nomJoueur, true)));
-            return objectID.toString();
+            return partieMongoCollection.find(Filters.eq(ID_PARTIE, objectID)).first();
         }else{
-            throw new ActionNotAutorizedException();
+            throw new ActionNotAutorizedException("");
         }
     }
 
@@ -100,7 +99,9 @@ public class Dao {
         MongoCollection<Joueur> joueurMongoCollection = db.getCollection(JOUEURS, Joueur.class);
 
         if(partie != null && Objects.nonNull(joueurMongoCollection.find(Filters.eq(NOM_JOUEUR, nomJoueur)).first())){
-            partie.ajouterJoueur(nomJoueur);
+            if(partie.getPartieJoueur().stream().noneMatch(partieJoueur -> partieJoueur.getNom().equals(nomJoueur))){
+                partie.ajouterJoueur(nomJoueur);
+            }
             partieMongoCollection.updateOne(Filters.eq(ID_PARTIE, getObjectIdByIdPartie(idPartie)), Updates.set(PARTIE_JOUEUR,partie.getPartieJoueur()));
             return partie;
         }
@@ -114,11 +115,19 @@ public class Dao {
         return joueurCollection;
     }
 
+    public Collection<Partie> getLesPartieARejoindre(){
+        MongoCollection<Partie> partieMongoCollection = db.getCollection(PARTIES, Partie.class);
+        Collection<Partie> partieCollection = new ArrayList<>();
+        partieMongoCollection.find(Filters.eq(ETAT_PARTIE, EtatPartie.DEBUT)).forEach(partieCollection::add);
+        return partieCollection;
+    }
     public boolean supprimerLesJoueurs(){
         MongoCollection<Joueur> joueurMongoCollection = db.getCollection(JOUEURS, Joueur.class);
         joueurMongoCollection.drop();
         return true;
     }
+
+
 
     //FINI
     public Collection<Partie> getLesParties() {
@@ -128,8 +137,9 @@ public class Dao {
         return partieCollection;
     }
 
-
-
+    public Partie getPartie(String idPartie) {
+        return db.getCollection(PARTIES, Partie.class).find(Filters.eq(ID_PARTIE,getObjectIdByIdPartie(idPartie))).first();
+    }
     public boolean supprimerLesParties(){
         MongoCollection<Partie> partieMongoCollection = db.getCollection(PARTIES, Partie.class);
         partieMongoCollection.drop();
@@ -218,91 +228,85 @@ public class Dao {
 
     // Les actions des joueurs
     //modification le 02/04/2023
-    public  void traiterMaladie(String idPartie, String nomJoueur, String couleurMaladieStr){
-        CouleursMaladie couleurMaladie = CouleursMaladie.valueOf(couleurMaladieStr);
+    public Partie traiterMaladie(Partie partie) {
         MongoCollection<Partie> partieMongoCollection = db.getCollection(PARTIES, Partie.class);
-        Partie partie = partieMongoCollection.find(Filters.eq(ID_PARTIE, getObjectIdByIdPartie(idPartie))).first();
-        if(partie != null) {
-            Partie1Joueur partie1Joueur = partie.getPartieJoueur().stream().filter(partie1Joueur1 -> partie1Joueur1.getNom().equals(nomJoueur)).findFirst().orElse(null);
-            if(partie1Joueur != null) {
-                new Actions().traiterMaladie(partie, partie1Joueur, couleurMaladie);
-                partieMongoCollection.updateOne(Filters.eq(ID_PARTIE, getObjectIdByIdPartie(idPartie)), Updates.combine(Updates.set(PARTIE_1JOUEUR, partie1Joueur)));
-            }
-        }
+        partieMongoCollection.replaceOne(Filters.eq(ID_PARTIE,partie.getId()), partie);
+        return this.getPartie(partie.getId().toString());
     }
     //modification le 02/04/2023
-    public void construireStationRecherche(String idPartie,String nomJoueur) throws CentreRechercheDejaExistantException,
-            NombreMaxCentreRechercheAtteintException, AbsenceCarteJoueurException {
+    public Partie construireStationRecherche(Partie partie) {
         MongoCollection<Partie> partieMongoCollection = db.getCollection(PARTIES, Partie.class);
-        Partie partie = partieMongoCollection.find(Filters.eq(ID_PARTIE, getObjectIdByIdPartie(idPartie))).first();
-        if(partie != null) {
-            Partie1Joueur partie1Joueur = (Partie1Joueur) partie.getPartieJoueur().stream().filter(partie1Joueur1 -> partie1Joueur1.getNom().equals(nomJoueur));
-            new Actions().construireStationRecherche(partie, partie1Joueur);
-            partieMongoCollection.updateOne(Filters.eq(ID_PARTIE, getObjectIdByIdPartie(idPartie)), Updates.combine(Updates.set(PARTIE, partie)));
-        }
+        partieMongoCollection.replaceOne(Filters.eq(ID_PARTIE,partie.getId()), partie);
+        return this.getPartie(partie.getId().toString());
     }
 
-    //modification le 02/04/2023
-    public void deplacerStationRecherche(String idPartie,String nomJoueur,String villeStr) throws CentreRechercheDejaExistantException,
-            CentreRechercheInexistantException, VilleIdentiqueException {
+    public Partie deplacerStationRecherche(Partie partie) {
         MongoCollection<Partie> partieMongoCollection = db.getCollection(PARTIES, Partie.class);
-        Partie partie = partieMongoCollection.find(Filters.eq(ID_PARTIE, getObjectIdByIdPartie(idPartie))).first();
-        if(partie != null) {
-            Partie1Joueur partie1Joueur = (Partie1Joueur) partie.getPartieJoueur().stream().filter(partie1Joueur1 -> partie1Joueur1.getNom().equals(nomJoueur));
-            Ville ville = (Ville) partie1Joueur.getVillesPartie().stream().filter(ville1 -> ville1.getNomVille().equals(villeStr));
-            new Actions().deplacerStationRecherche(partie1Joueur, ville);
-            partieMongoCollection.updateOne(Filters.eq(ID_PARTIE, getObjectIdByIdPartie(idPartie)), Updates.combine(Updates.set(PARTIE, partie)));
-        }
+        partieMongoCollection.replaceOne(Filters.eq(ID_PARTIE,partie.getId()), partie);
+        return this.getPartie(partie.getId().toString());
     }
 
-    //modification le 02/04/2023
-    public void decouvrirRemede(String idPartie,String nomJoueur) throws CentreRechercheInexistantException{
+    public Partie decouvrirRemede(Partie partie) {
         MongoCollection<Partie> partieMongoCollection = db.getCollection(PARTIES, Partie.class);
-        Partie partie = partieMongoCollection.find(Filters.eq(ID_PARTIE, getObjectIdByIdPartie(idPartie))).first();
-        if(partie != null) {
-            Partie1Joueur partie1Joueur = (Partie1Joueur) partie.getPartieJoueur().stream().filter(partie1Joueur1 -> partie1Joueur1.getNom().equals(nomJoueur));
-            new Actions().decouvrirRemede(partie, partie1Joueur);
-        }
-        //insérer en BDD
+        partieMongoCollection.replaceOne(Filters.eq(ID_PARTIE,partie.getId()), partie);
+        return this.getPartie(partie.getId().toString());
     }
 
-    //modification le 02/04/2023
-    public void piocherCarte(String idPartie,String nomJoueur, List<Carte> cartesJoueurList) throws CartesJoueurInsuffisantes,
-            NombreCarteDepasseException {
+    public Partie piocherCarte(Partie partie) {
         MongoCollection<Partie> partieMongoCollection = db.getCollection(PARTIES, Partie.class);
-        Partie partie = partieMongoCollection.find(Filters.eq(ID_PARTIE, getObjectIdByIdPartie(idPartie))).first();
-        if(partie != null) {
-            Partie1Joueur partie1Joueur = (Partie1Joueur) partie.getPartieJoueur().stream().filter(partie1Joueur1 -> partie1Joueur1.getNom().equals(nomJoueur));
-            new Actions().piocherCarte(partie1Joueur, cartesJoueurList);
-        }
-        //insérer en BDD
+        partieMongoCollection.replaceOne(Filters.eq(ID_PARTIE,partie.getId()), partie);
+        return this.getPartie(partie.getId().toString());
     }
 
-    //modification le 02/04/2023
-    //carteJoueur devient string entre dao et spring (faire un cast)
-    public void echangerCarte(String idPartie,String nomJoueurDonneur, String nomJoueurReceveur, Carte carte) throws NombreCarteDepasseException, AbsenceCarteJoueurException, PositionJoueursDifferenteExceptions, CarteVilleDifferentePositionJoueur {
+    public Partie echangerCarte(Partie partie) {
         MongoCollection<Partie> partieMongoCollection = db.getCollection(PARTIES, Partie.class);
-        Partie partie = partieMongoCollection.find(Filters.eq(ID_PARTIE, getObjectIdByIdPartie(idPartie))).first();
-        if(partie != null) {
-            Partie1Joueur joueurDonneur = (Partie1Joueur) partie.getPartieJoueur().stream().filter(partie1Joueur1 -> partie1Joueur1.getNom().equals(nomJoueurDonneur));
-            Partie1Joueur joueurReceveur = (Partie1Joueur) partie.getPartieJoueur().stream().filter(partie1Joueur1 -> partie1Joueur1.getNom().equals(nomJoueurReceveur));
-            new Actions().echangerCarte(joueurDonneur, joueurReceveur, carte);
-        }
-        //insérer en BDD
+        partieMongoCollection.replaceOne(Filters.eq(ID_PARTIE,partie.getId()), partie);
+        return this.getPartie(partie.getId().toString());
     }
 
-    public MongoDatabase getDb() {
-        return db;
+    public Partie passerTour(Partie partie) {
+        MongoCollection<Partie> partieMongoCollection = db.getCollection(PARTIES, Partie.class);
+        partieMongoCollection.replaceOne(Filters.eq(ID_PARTIE,partie.getId()), partie);
+        return this.getPartie(partie.getId().toString());
+    }
+
+    public Partie seDeplacer(Partie partie) {
+        MongoCollection<Partie> partieMongoCollection = db.getCollection(PARTIES, Partie.class);
+        partieMongoCollection.replaceOne(Filters.eq(ID_PARTIE,partie.getId()), partie);
+        return this.getPartie(partie.getId().toString());
     }
 
     // Méthodes interne au DAO
     private ObjectId getObjectIdByIdPartie(String idPartie){
         return new ObjectId(idPartie);
     }
+
+
+    private void insererImage(Map<String,byte[]> imageData){
+        MongoCollection<Document> collection = db.getCollection("images");
+        if(collection.countDocuments() == 0L) {
+            List<Document> lesDocuments = new ArrayList<>();
+            for (Map.Entry<String, byte[]> entry : imageData.entrySet()) {
+                Document document = new Document("_id", entry.getKey())
+                        .append("dataImage", new Binary(entry.getValue()));
+                lesDocuments.add(document);
+            }
+            collection.insertMany(lesDocuments);
+        }
+    }
+
+    public Map<String, byte[]> getImage(){
+        MongoCollection<Document> collection = db.getCollection("images");
+        FindIterable<Document> documents = collection.find();
+        Map<String,byte[]> imageMap = new HashMap<>();
+        for (Document document : documents) {
+            String nom = document.getString("_id");
+            byte[] imageBytes = document.get("dataImage", Binary.class).getData();
+            imageMap.put(nom,imageBytes);
+        }
+        return imageMap;
+    }
+
+
+
 }
-
-
-
-
-
-

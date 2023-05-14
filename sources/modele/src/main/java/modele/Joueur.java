@@ -7,16 +7,15 @@ import org.bson.codecs.configuration.CodecConfigurationException;
 import org.bson.codecs.pojo.annotations.BsonProperty;
 
 public class Joueur {
-
     private String nomJoueur = "" ;
     private String mdp = "";
-
     private Collection<String> roles=new ArrayList<>();
     public Joueur( String nomJoueur, String mdp) {
         this.nomJoueur = nomJoueur;
         this.mdp = mdp;
         this.roles.add("JOUEUR");
     }
+
     public Joueur(){}
 
     public Joueur(String joueur1) {

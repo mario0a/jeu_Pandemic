@@ -4,131 +4,42 @@ package modele;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.*;
 
+@Data
+@NoArgsConstructor
 public class Ville {
-    @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "nomVille")
+    //@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "nomVille")
     private String nomVille;
     private String nomPays;
-    private int nombreDeCube;
-    public Map<CouleursMaladie, Integer> cube;
+    private int nombreDeCube = 0;
+    private Map<String, Integer> cube = new HashMap<>();
     private CouleursMaladie maladie;
     private int nombreHabitant;
-    private Set<Joueur> joueurs;
+    private Set<Joueur> joueurs = new HashSet<>();
     private double superficie;
-    @JsonIdentityReference(alwaysAsId = true)
-    private List<String> villesLiees=new ArrayList<>();;
-    //private int nombre_carte_propagation= 1; //chaque ville a exactement 1 carte propagation
-    private Boolean aUnCentreDeRecherche;
+    // @JsonIdentityReference(alwaysAsId = true)
+    private List<String> villesLiees = new ArrayList<>();
+    private Boolean aUnCentreDeRecherche = false;
 
-    public Ville(){}
     public Ville(String nomVille) {
         this.nomVille = nomVille;
     }
 
-    public Ville(String nomVille, String nomPays, int nombreDeCube, CouleursMaladie couleursMaladie, int nombreHabitant, double superficie, Boolean aUnCentreDeRecherche) {
+    public Ville(String nomVille, String nomPays,CouleursMaladie couleursMaladie, int nombreHabitant, double superficie) {
         this.nomVille = nomVille;
         this.nomPays = nomPays;
-        this.nombreDeCube = nombreDeCube;
-        this.cube = cube;
         this.maladie = couleursMaladie;
         this.nombreHabitant = nombreHabitant;
         this.superficie = superficie;
-        this.villesLiees = villesLiees;
-        //this.nombre_carte_propagation = nombre_carte_propagation;
-        this.aUnCentreDeRecherche = aUnCentreDeRecherche;
-        joueurs = new HashSet<Joueur>();
     }
 
-    public String getNomVille() {
-        return nomVille;
+    public void ajouterVillesLiees(List<Ville> lesVoisines) {
+        this.villesLiees = lesVoisines.stream().map(Ville::getNomVille).toList();
     }
-
-    public void setNomVille(String nomVille) {
-        this.nomVille = nomVille;
-    }
-
-    public String getNomPays() {
-        return nomPays;
-    }
-
-    public void setNomPays(String nomPays) {
-        this.nomPays = nomPays;
-    }
-
-    public int getNombreDeCube() {
-        return nombreDeCube;
-    }
-
-    public void setNombreDeCube(int nombreDeCube) {
-        this.nombreDeCube = nombreDeCube;
-    }
-
-    public Map<CouleursMaladie, Integer> getCube() {
-        return cube;
-    }
-
-    public void setCube(Map<CouleursMaladie, Integer> cube) {
-        this.cube = cube;
-    }
-
-    public CouleursMaladie getMaladie() {
-        return maladie;
-    }
-
-    public void setMaladie(CouleursMaladie maladie) {
-        this.maladie = maladie;
-    }
-
-    public int getNombreHabitant() {
-        return nombreHabitant;
-    }
-
-    public void setNombreHabitant(int nombreHabitant) {
-        this.nombreHabitant = nombreHabitant;
-    }
-
-    public Set<Joueur> getJoueurs() {
-        return joueurs;
-    }
-
-    public void setJoueurs(Set<Joueur> joueurs) {
-        this.joueurs = joueurs;
-    }
-
-    public double getSuperficie() {
-        return superficie;
-    }
-
-    public void setSuperficie(double superficie) {
-        this.superficie = superficie;
-    }
-
-    public List<String> getVillesLiees() {
-        return villesLiees;
-    }
-
-    public void setVillesLiees(List<String> villesLiees) {
-        this.villesLiees = villesLiees;
-    }
-    public Boolean getaUnCentreDeRecherche() {return aUnCentreDeRecherche;}
-
-    public void setaUnCentreDeRecherche(Boolean aUnCentreDeRecherche) {
-        this.aUnCentreDeRecherche = aUnCentreDeRecherche;
-    }
-    public boolean aUnCentreDeRecherche(){return aUnCentreDeRecherche;}
-
-    /*public int getNombre_carte_propagation() {
-        return nombre_carte_propagation;
-    }
-
-    public void setNombre_carte_propagation(int nombre_carte_propagation) {
-        this.nombre_carte_propagation = nombre_carte_propagation;
-    }
-*/
-    public void ajouterVillesLiees(Ville ville){ this.villesLiees.add(ville.getNomVille());}
-
 
     @Override
     public boolean equals(Object obj) {
@@ -138,21 +49,10 @@ public class Ville {
             return false;
     }
 
-    public void ajouterCube(CouleursMaladie couleursMaladie){
-        int nombre = cube.get(couleursMaladie);
-        cube.put(couleursMaladie, nombre+1);
-
+    public void ajouterCube(CouleursMaladie couleursMaladie, int nombreDeCube){
+        String couleurMaladieStr = couleursMaladie.toString();
+        cube.putIfAbsent(couleurMaladieStr, 0);
+        cube.merge(couleurMaladieStr, nombreDeCube, Integer::sum);
     }
 
-    @Override
-    public String toString() {
-        return "Ville{" +
-                "nomVille='" + nomVille + '\'' +
-                ", nomPays='" + nomPays + '\'' +
-                ", nombreDeCube=" + nombreDeCube +
-                ", maladie=" + maladie +
-                ", nombreHabitant=" + nombreHabitant +
-                ", superficie=" + superficie +
-                '}';
-    }
 }

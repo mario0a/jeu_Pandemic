@@ -1,6 +1,12 @@
 package facade;
 
 import LesActions.Actions;
+import dtos.JoueurDto;
+import dtos.actions.*;
+import dtos.jeu.PlateauDto;
+import dtos.jeu.PlateauInitialDto;
+import dtos.parties.PartieDto;
+import dtos.parties.PartiesSuspenduesDto;
 import exceptions.*;
 import modele.*;
 
@@ -12,49 +18,62 @@ import java.util.List;
 public interface IFacadePandemicOnline {
  //contient les différentes actions qu'on peut effectuer sur le plateau
 
- public boolean inscription(String nomJoueur, String mdp);
- public Joueur findJoueurByName(String nomJoueur);
+ boolean inscription(String nomJoueur, String mdp);
+ JoueurDto findJoueurByName(String nomJoueur);
 
- public boolean seConnecter(String nomJoueur, String mdp);
+ boolean seConnecter(String nomJoueur, String mdp);
 
- public String creerPartie(String nomJoueur) throws PartiePleineException,ActionNotAutorizedException;
+ PartieDto creerPartie(String nomJoueur) throws PartiePleineException,ActionNotAutorizedException;
 
- public boolean partieInitialisee(String idPartie) throws ActionNotAutorizedException;
+ PlateauInitialDto partieInitialisee(String idPartie) throws ActionNotAutorizedException;
 
- public Partie rejoindrePartie(String idPartie,String nomJoueur);
- public boolean supprimerLesParties();
- public Collection<Partie> getLesParties();
- public Collection<Joueur> getLesJoueurs();
- public boolean supprimerLesJoueurs();
+ PlateauDto actualiserPlateau(String idPartie);
 
- public String getEtatPartie(String idPartie);
+ PartieDto rejoindrePartie(String idPartie, String nomJoueur);
+ boolean supprimerLesParties();
+ Collection<PartieDto> getLesParties();
 
- public Collection<Partie> getLesPartiesSuspendues();
- public Collection<Partie> getMesPartiesSuspendues(String nomJoueur);
+ Collection<PartieDto> getLesPartiesARejoindre();
+ Collection<JoueurDto> getLesJoueurs();
+ boolean supprimerLesJoueurs();
 
- public boolean suspendreLaPartie(String idPartie, String nomJoueur) throws PartieNonRepriseException;
+ String getEtatPartie(String idPartie);
 
- public boolean quitterLaPartie(String idPartie, String nomJoueur);
+ Collection<PartiesSuspenduesDto> getLesPartiesSuspendues();
+ Collection<PartiesSuspenduesDto> getMesPartiesSuspendues(String nomJoueur);
 
- public boolean reprendreUnePartie(String idPartie, String nomJoueur) throws PartieNonSuspenduException;
+ boolean suspendreLaPartie(String idPartie, String nomJoueur) throws PartieNonRepriseException;
 
- public boolean peutQuitterLaPartie(String idPartie);
+ boolean quitterLaPartie(String idPartie, String nomJoueur);
 
- public boolean createurPartie(String idPartie, String nomJoueur);
- //modification le 02/04/2023
- public void traiterMaladie(String idPartie, String nomJoueur, String couleurMaladieStr);
- //modification le 02/04/2023
- public void construireStationRecherche(String idPartie,String nomJoueur) throws CentreRechercheDejaExistantException,
-         NombreMaxCentreRechercheAtteintException, AbsenceCarteJoueurException;
- //modification le 02/04/2023
- public void deplacerStationRecherche(String idPartie,String nomJoueur, String villeStr) throws CentreRechercheDejaExistantException,
-         CentreRechercheInexistantException, VilleIdentiqueException;
+ boolean reprendreUnePartie(String idPartie, String nomJoueur) throws PartieNonSuspenduException;
 
- public void decouvrirRemede(String idPartie,String nomJoueur) throws CentreRechercheInexistantException;
- public void piocherCarte(String idPartie,String nomJoueur, List<Carte> cartesJoueurList) throws CartesJoueurInsuffisantes,
-         NombreCarteDepasseException;
+ boolean peutQuitterLaPartie(String idPartie);
 
- public void echangerCarte(String idPartie,String nomJoueurDonneur, String nomJoueurReceveur, Carte carte) throws NombreCarteDepasseException, AbsenceCarteJoueurException, PositionJoueursDifferenteExceptions, CarteVilleDifferentePositionJoueur;
+ boolean createurPartie(String idPartie, String nomJoueur);
 
+ PlateauDto traiterMaladie(TraiterMaladieDto traiterMaladieDto) throws ActionNotAutorizedException, ActionJoueurFiniException, PasTourJoueurException;
 
+ PlateauDto construireStationRecherche(NomJoueurDTO nomJoueurDTO) throws CentreRechercheDejaExistantException,
+         NombreMaxCentreRechercheAtteintException, AbsenceCarteJoueurException, ActionNotAutorizedException, ActionJoueurFiniException, PasTourJoueurException;
+
+ PlateauDto deplacerStationRecherche(VilleCarteDto villeDto) throws CentreRechercheDejaExistantException, CentreRechercheInexistantException, VilleIdentiqueException, ActionNotAutorizedException, ActionJoueurFiniException, PasTourJoueurException;
+
+ PlateauDto decouvrirRemede(NomJoueurDTO nomJoueurDTO) throws CentreRechercheInexistantException, ActionNotAutorizedException, ActionJoueurFiniException, PasTourJoueurException;
+
+ PlateauDto piocherCarte(NomJoueurDTO nomJoueurDTO) throws CartesJoueurInsuffisantes, NombreCarteDepasseException, ActionNotAutorizedException, ActionJoueurFiniException, PasTourJoueurException;
+
+ PlateauDto echangerCarte(EchangerCarteDto echangerCarteDto) throws NombreCarteDepasseException, AbsenceCarteJoueurException, PositionJoueursDifferenteExceptions, CarteVilleDifferentePositionJoueur, ActionNotAutorizedException, ActionJoueurFiniException, PasTourJoueurException;
+
+ PartieDto getPartie(String idPartie);
+
+ PlateauDto passerTour(NomJoueurDTO nomJoueurDTO) throws ActionNotAutorizedException, PasTourJoueurException;
+
+ PlateauDto seDeplacerVolDirect(DeplacementDto deplacementDto) throws VilleInexistanteException, PasCentreRechercheException, ActionJoueurFiniException, VilleNonVoisineException, PasTourJoueurException, AbsenceCarteJoueurException;
+
+ PlateauDto seDeplacerAvecVoiture(DeplacementDto deplacementDto) throws VilleInexistanteException, PasCentreRechercheException, ActionJoueurFiniException, VilleNonVoisineException, PasTourJoueurException, AbsenceCarteJoueurException;
+
+ PlateauDto seDeplacerNavette(DeplacementDto deplacementDto) throws VilleInexistanteException, PasCentreRechercheException, ActionJoueurFiniException, VilleNonVoisineException, PasTourJoueurException, AbsenceCarteJoueurException;
+
+ PlateauDto seDeplacerVolCharter(DeplacementDto deplacementDto) throws VilleInexistanteException, PasCentreRechercheException, ActionJoueurFiniException, VilleNonVoisineException, PasTourJoueurException, AbsenceCarteJoueurException;
 }

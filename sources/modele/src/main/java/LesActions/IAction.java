@@ -5,7 +5,13 @@ import modele.*;
 
 import java.util.List;
 
+
+import modele.Carte;
+
+
+
 public interface IAction {
+    //modification le 02/04/2023
     void traiterMaladie(Partie partie,Partie1Joueur partie1Joueur, CouleursMaladie couleurMaladieStr);
     void construireStationRecherche(Partie partie,Partie1Joueur partie1Joueur) throws CentreRechercheDejaExistantException, NombreMaxCentreRechercheAtteintException, AbsenceCarteJoueurException;
     void deplacerStationRecherche(Partie1Joueur partie1Joueur, Ville ville) throws CentreRechercheDejaExistantException, CentreRechercheInexistantException, VilleIdentiqueException;

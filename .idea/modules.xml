@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/sources/modele/modele.iml" filepath="$PROJECT_DIR$/sources/modele/modele.iml" />
-      <module fileurl="file://$PROJECT_DIR$/pandemic_springBoot/pandemic_springBoot.iml" filepath="$PROJECT_DIR$/pandemic_springBoot/pandemic_springBoot.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/projet-pandemic-1.iml" filepath="$PROJECT_DIR$/.idea/projet-pandemic-1.iml" />
     </modules>
   </component>

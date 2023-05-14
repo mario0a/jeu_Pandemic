@@ -13,11 +13,9 @@ import java.util.stream.Collectors;
 
 /*permet s'il y a plusieurs centres de recherches sur le plateau, de se déplacer de l'un de ces centres à un autre*/
 public class DeplacementNavette implements IDeplacements {
-
     @Override
     public void operationDeplacement(Partie partie, Partie1Joueur partie1Joueur, Ville choix) throws PasCentreRechercheException {
-        if (!partie1Joueur.getPosition().aUnCentreDeRecherche() || !choix.aUnCentreDeRecherche()) throw new PasCentreRechercheException();
+        if (Boolean.TRUE.equals(!partie1Joueur.getPosition().getAUnCentreDeRecherche()) || Boolean.TRUE.equals(!choix.getAUnCentreDeRecherche())) throw new PasCentreRechercheException();
         partie1Joueur.setPosition(choix);
     }
-
 }

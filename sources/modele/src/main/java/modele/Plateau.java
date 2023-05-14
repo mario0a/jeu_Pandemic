@@ -6,15 +6,18 @@ import facade.JeuDeCartes;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
+import lombok.NoArgsConstructor;
 import org.bson.codecs.pojo.annotations.BsonProperty;
 
+@NoArgsConstructor
 public class Plateau {
     private final List<Integer> PistevitesseDePropagation =List.of(2,2,2,3,3,4,4);
     private List<Carte> cartesJoueur=new ArrayList<>();
-    private List<Carte>carte_epidemie=new ArrayList<>();
+    private List<Carte> carteEpidemie =new ArrayList<>();
     private List<Joueur> lesJoueurs=new ArrayList<>();
-    private int nombreEclosion=0;
-    private int vitesseDePropagation=0;
+    private int nombreEclosion = 0;
+    private int vitesseDePropagation = 2;
     private List<Carte> cartesPropagation=new ArrayList<>();
     private List<Carte> defausse_cartesJoueur=new ArrayList<>();
     private List<Carte> defausse_carteDePropagation=new ArrayList<>();
@@ -26,9 +29,6 @@ public class Plateau {
     private EtatEpidemie etatEpidemie;
     private Boolean parUneNuitTranquille=false; // tant que le boolean est à faux on peut faire la propagation sinon non
 
-    public Plateau() {
-
-    }
 
     public List<Joueur> getLesJoueurs() {
         return lesJoueurs;
@@ -139,16 +139,16 @@ public class Plateau {
         int nombreCube=0;
         getPistevitesseDePropagation();
         Carte cartePropagation = (Carte) cartesPropagation.remove(cartesPropagation.size()-1);
-        Ville villeInfectee = this.getVilleByNom(cartePropagation.getInformation());
+        Ville villeInfectee = this.getVilleByNom(cartePropagation.getNomCarte());
         CouleursMaladie maladie = villeInfectee.getMaladie();
     }
 
-    public List<Carte> getCarte_epidemie() {
-        return carte_epidemie;
+    public List<Carte> getCarteEpidemie() {
+        return carteEpidemie;
     }
 
-    public Plateau setCarte_epidemie(List<Carte> carte_epidemie) {
-        this.carte_epidemie = carte_epidemie;
+    public Plateau setCarteEpidemie(List<Carte> carteEpidemie) {
+        this.carteEpidemie = carteEpidemie;
         return this;
     }
 
@@ -185,7 +185,7 @@ public class Plateau {
         return "Plateau{" +
                 "PistevitesseDePropagation=" + PistevitesseDePropagation +
                 //       ", cartesJoueur=" + cartesJoueur +
-                ", carte_epidemie=" + carte_epidemie +
+                ", carte_epidemie=" + carteEpidemie +
                 ", lesJoueurs=" + lesJoueurs +
                 ", nombreEclosion=" + nombreEclosion +
                 ", vitesseDePropagation=" + vitesseDePropagation +
